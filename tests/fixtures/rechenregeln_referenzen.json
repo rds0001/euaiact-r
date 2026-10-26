@@ -1,0 +1,4282 @@
+{
+  "herkunft": "Von Hand aus den angegebenen Formeln und gesetzlichen Beträgen hergeleitet, vor Implementierung.",
+  "faelle": [
+    {
+      "fall_id": "REF_BUSSE_VERBOT_GROSS",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "VERBOT",
+        "akteurklasse": "SONSTIGES_UNTERNEHMEN",
+        "weltweiter_vorjahresumsatz_eur": "1000000000"
+      },
+      "wert": "70000000",
+      "herleitung": "7 % von einer Milliarde = 70 Mio.; größer als 35 Mio."
+    },
+    {
+      "fall_id": "REF_BUSSE_VERBOT_KMU",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "VERBOT",
+        "akteurklasse": "KMU",
+        "weltweiter_vorjahresumsatz_eur": "10000000"
+      },
+      "wert": "700000",
+      "herleitung": "7 % von 10 Mio. = 700.000; für KMU der kleinere Betrag."
+    },
+    {
+      "fall_id": "REF_BUSSE_VERBOT_SMC",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "VERBOT",
+        "akteurklasse": "SMC",
+        "weltweiter_vorjahresumsatz_eur": "100000000"
+      },
+      "wert": "35000000",
+      "herleitung": "7 Mio. Umsatzanteil; die SMC-Min-Regel gilt nicht bei Artikel 99 Absatz 3. Deshalb 35 Mio."
+    },
+    {
+      "fall_id": "REF_BUSSE_PFLICHT_SMC",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "PFLICHT",
+        "akteurklasse": "SMC",
+        "weltweiter_vorjahresumsatz_eur": "100000000"
+      },
+      "wert": "3000000",
+      "herleitung": "3 Mio. Umsatzanteil statt 15 Mio.; SMC-Min-Regel gilt bei Absatz 4."
+    },
+    {
+      "fall_id": "REF_BUSSE_INFORMATION_SMC",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "INFORMATION",
+        "akteurklasse": "SMC",
+        "weltweiter_vorjahresumsatz_eur": "100000000"
+      },
+      "wert": "1000000",
+      "herleitung": "1 % von 100 Mio. = 1 Mio.; kleiner als 7,5 Mio."
+    },
+    {
+      "fall_id": "REF_BUSSE_NICHTUNTERNEHMEN",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "PFLICHT",
+        "akteurklasse": "KEIN_UNTERNEHMEN"
+      },
+      "wert": "15000000",
+      "herleitung": "Bei Nichtunternehmen gilt der Festbetrag. Umsatz wird nicht benötigt."
+    },
+    {
+      "fall_id": "REF_BUSSE_EXAKTE_DEZIMALE",
+      "regel_id": "AIA_099_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "PFLICHT",
+        "akteurklasse": "KMU",
+        "weltweiter_vorjahresumsatz_eur": "100.01"
+      },
+      "wert": "3.0003",
+      "herleitung": "100,01 * 3 / 100 = 3,0003. Ohne gesetzliche Rundungsregel bleibt das exakte mathematische Ergebnis erhalten."
+    },
+    {
+      "fall_id": "REF_GPAI_KEINE_KMU_MIN_REGEL",
+      "regel_id": "AIA_101_OBERGRENZE",
+      "eingaben": {
+        "weltweiter_vorjahresumsatz_eur": "10000000"
+      },
+      "wert": "15000000",
+      "herleitung": "3 % ergeben 300.000; Artikel 101 nennt den größeren Betrag ohne KMU-Min-Regel."
+    },
+    {
+      "fall_id": "REF_KMU_250",
+      "regel_id": "KMU_SCHWELLEN",
+      "eingaben": {
+        "jahresarbeitseinheiten": "250",
+        "jahresumsatz_eur": "1000000",
+        "jahresbilanzsumme_eur": "1000000"
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": false,
+        "smc_groessenrahmen": true
+      },
+      "herleitung": "Genau 250 unterschreitet die KMU-Personengrenze nicht. Der SMC-Größenrahmen wird eingehalten; dies bestimmt noch keinen SMC-Status."
+    },
+    {
+      "fall_id": "REF_KMU_FINANZ_ODER",
+      "regel_id": "KMU_SCHWELLEN",
+      "eingaben": {
+        "jahresarbeitseinheiten": "249.5",
+        "jahresumsatz_eur": "50000001",
+        "jahresbilanzsumme_eur": "43000000"
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": true,
+        "smc_groessenrahmen": true
+      },
+      "herleitung": "Personengrenze unterschritten und eine der beiden Finanzgrenzen eingehalten; Bilanzgleichheit genügt."
+    },
+    {
+      "fall_id": "REF_PARTNER_KEINE_SUMME",
+      "regel_id": "KMU_PARTNERANTEIL",
+      "eingaben": {
+        "kapitalanteil_hin": "0.3",
+        "stimmrechtsanteil_hin": "0.4",
+        "kapitalanteil_zurueck": "0.25",
+        "stimmrechtsanteil_zurueck": "0.35"
+      },
+      "wert": "0.4",
+      "herleitung": "Maßgeblich ist die größte Quote 40 %, nicht 70 % oder die Summe aller Anteile."
+    },
+    {
+      "fall_id": "REF_PANEL_EU_59",
+      "regel_id": "PANEL_EU_MINDESTZAHL",
+      "eingaben": {
+        "mitgliederzahl": 59
+      },
+      "wert": 48,
+      "herleitung": "4/5 von 59 = 47,2; mindestens vier Fünftel erfordert 48 Personen."
+    },
+    {
+      "fall_id": "REF_PANEL_MEHRHEIT_60",
+      "regel_id": "PANEL_EINFACHE_MEHRHEIT",
+      "eingaben": {
+        "mitgliederzahl": 60
+      },
+      "wert": 31,
+      "herleitung": "30 wäre nur die Hälfte. Die einfache Mehrheit von 60 Mitgliedern erfordert 31."
+    },
+    {
+      "fall_id": "MELDEFRIST_NORMAL",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": false
+      },
+      "wert": 15,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2): ohne besondere Verkürzung höchstens 15 Tage."
+    },
+    {
+      "fall_id": "MELDEFRIST_TOD",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": true
+      },
+      "wert": 10,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(4): Todesfall ohne Zweitagesgrund höchstens zehn Tage."
+    },
+    {
+      "fall_id": "MELDEFRIST_INFRA",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(3): schwere irreversible Infrastrukturstörung höchstens zwei Tage."
+    },
+    {
+      "fall_id": "MELDEFRIST_WEIT",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(3): weitverbreiteter Verstoß höchstens zwei Tage."
+    },
+    {
+      "fall_id": "MELDEFRIST_KUMULIERT",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Absätze 3/4 gleichzeitig: Zweitagesgrenze muss weiterhin eingehalten werden."
+    },
+    {
+      "fall_id": "MELDEFRIST_WEIT_UNBEKANNTER_TOD",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Bekannter Zweitagesgrund entscheidet auch bei unbekannten übrigen Merkmalen."
+    },
+    {
+      "fall_id": "MELDEFRIST_INFRA_UNBEKANNTER_REST",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "schwere_irreversible_kritische_infrastrukturstoerung": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Bekannter Infrastrukturfall entscheidet kürzeste Höchstdauer."
+    },
+    {
+      "fall_id": "MELDEFRIST_TOD_INFRA_OFFEN",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "todesfall": true
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Ein unbekannter Infrastrukturfall kann zwei statt zehn Tagen verlangen; nicht still ausschließen."
+    },
+    {
+      "fall_id": "MELDEFRIST_TOD_OFFEN",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Ohne Todesfallangabe bleibt Entscheidung zwischen 10 und 15 Tagen offen."
+    },
+    {
+      "fall_id": "MELDEFRIST_ALLES_OFFEN",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {},
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Keine Fakten erlauben keine Fristauswahl."
+    },
+    {
+      "fall_id": "MELDEFRIST_IRRELEVANT_UNGUELTIG",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "todesfall": "false"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Auch nach entscheidendem Zweitagesgrund ist Text statt Boolean ungültig."
+    },
+    {
+      "fall_id": "REF_030_AKKREDITIERT",
+      "regel_id": "AIA_030_EINWANDSPERIODE",
+      "eingaben": {
+        "notifizierungsgrundlage": "AKKREDITIERUNGSBESCHEINIGUNG"
+      },
+      "wert": {
+        "anzahl": 2,
+        "einheit": "WOCHE"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Bescheinigungsbasierte Notifizierung: zwei Wochen."
+    },
+    {
+      "fall_id": "REF_030_DOKUMENTE",
+      "regel_id": "AIA_030_EINWANDSPERIODE",
+      "eingaben": {
+        "notifizierungsgrundlage": "DOKUMENTENNACHWEISE"
+      },
+      "wert": {
+        "anzahl": 2,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Dokumentennachweise nach Absatz 3: zwei Kalendermonate, keine feste Tageszahl."
+    },
+    {
+      "fall_id": "REF_030_OFFEN",
+      "regel_id": "AIA_030_EINWANDSPERIODE",
+      "eingaben": {},
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Ohne Grundlage keine Auswahl der kürzeren Periode."
+    },
+    {
+      "fall_id": "REF_030_FALSCH",
+      "regel_id": "AIA_030_EINWANDSPERIODE",
+      "eingaben": {
+        "notifizierungsgrundlage": "KEINE"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Unbekannte Grundlage ist kein stillschweigender Zweimonatsfall."
+    },
+    {
+      "fall_id": "REF_DAUER_ANBIETER_ZEHN_JAHRE",
+      "regel_id": "AIA_018_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Artikel 18 Absatz 1 verlangt zehn Jahre; weder Monate noch pauschal 3650 Tage."
+    },
+    {
+      "fall_id": "REF_DAUER_UNTERAUFTRAG_FUENF_JAHRE",
+      "regel_id": "AIA_033_004_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Artikel 33 Absatz 4: fünf Jahre ab Beendigung der Unterbeauftragung, nicht die Anbieterfrist aus Artikel 18."
+    },
+    {
+      "fall_id": "REF_DAUER_BENENNUNG_ZEHN_TAGE",
+      "regel_id": "AIA_036_005_MITTEILUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "TAG"
+      },
+      "herleitung": "Artikel 36 Absatz 5 nennt zehn Tage; nicht zehn Arbeitstage."
+    },
+    {
+      "fall_id": "REF_DAUER_WIDERRUF_BEWERTUNG_ZWOELF_MONATE",
+      "regel_id": "AIA_036_009_BEWERTUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 12,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Zwölf Monate für Abschluss der Bewertung nach Absatz 9 Buchstabe b, getrennt von neunmonatiger Grundgültigkeit."
+    },
+    {
+      "fall_id": "REF_DAUER_VORANKUENDIGUNG_EIN_JAHR",
+      "regel_id": "AIA_036_003_VORANKUENDIGUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Bei geplanter Einstellung mindestens ein Jahr vorher; Richtung VOR ist separat in den Regelmetadaten festgelegt."
+    },
+    {
+      "fall_id": "REF_DAUER_KEIN_VERSTECKTES_DATUM",
+      "regel_id": "AIA_018_AUFBEWAHRUNGSDAUER",
+      "eingaben": {
+        "ereignisdatum": "2026-10-24"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Dauerfunktion nimmt kein verstecktes Ereignisdatum an; Datumsermittlung ist ein gesonderter Aufruf."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_EINWAND_VERBOT",
+      "regel_id": "AIA_079_008_EINWANDSDAUER",
+      "eingaben": {
+        "massnahmenanlass": "VERBOT_ARTIKEL_5"
+      },
+      "wert": {
+        "anzahl": 30,
+        "einheit": "TAG"
+      },
+      "herleitung": "Artikel 79 Absatz 8 verkürzt den Einwandzeitraum bei Artikel-5-Verboten auf 30 Tage."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_EINWAND_SONSTIG",
+      "regel_id": "AIA_079_008_EINWANDSDAUER",
+      "eingaben": {
+        "massnahmenanlass": "SONSTIGE_NICHTKONFORMITAET"
+      },
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Für andere Fälle beträgt der Einwandzeitraum drei Monate, nicht pauschal 90 Tage."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_ENTSCHEIDUNG_VERBOT",
+      "regel_id": "AIA_081_001_ENTSCHEIDUNGSDAUER",
+      "eingaben": {
+        "massnahmenanlass": "VERBOT_ARTIKEL_5"
+      },
+      "wert": {
+        "anzahl": 60,
+        "einheit": "TAG"
+      },
+      "herleitung": "Bei Artikel-5-Verboten entscheidet die Kommission innerhalb 60 Tagen ab Artikel-79-Absatz-5-Mitteilung."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_ENTSCHEIDUNG_SONSTIG",
+      "regel_id": "AIA_081_001_ENTSCHEIDUNGSDAUER",
+      "eingaben": {
+        "massnahmenanlass": "SONSTIGE_NICHTKONFORMITAET"
+      },
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Sonst sechs Monate ab Mitteilung, nicht erst ab Einwand oder Konsultation."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_REALLABOR_BESCHEID",
+      "regel_id": "AIA_058_002_A_BESCHEIDDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Artikel 58 Absatz 2 Buchstabe a verlangt Information zur Entscheidung binnen drei Monaten des Antrags."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_REALTEST_ANTWORT",
+      "regel_id": "AIA_060_004_B_ANTWORTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 30,
+        "einheit": "TAG"
+      },
+      "herleitung": "Artikel 60 Absatz 4 Buchstabe b nennt 30 Tage; Genehmigungsfiktion bleibt national bedingt."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_REALTEST_HOECHSTDAUER",
+      "regel_id": "AIA_060_004_F_TESTHOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Erste Testperiode höchstens sechs Monate, zusätzlich nicht länger als erforderlich."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_REALTEST_VERLAENGERUNG",
+      "regel_id": "AIA_060_004_F_VERLAENGERUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Weitere Testperiode höchstens sechs Monate mit vorheriger Mitteilung und Notwendigkeitserläuterung."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_KORREKTUR_MAXIMAL",
+      "regel_id": "AIA_079_002_MAXIMALDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 15,
+        "einheit": "ARBEITSTAG"
+      },
+      "herleitung": "Artikel 79 Absatz 2 nennt höchstens 15 Arbeitstage oder kürzere sektorale Frist; dies ist nur die allgemeine Obergrenze."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_REALLABOR_BERICHTSTURNUS",
+      "regel_id": "AIA_057_016_BERICHTSTURNUS",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Ein Jahr nach Errichtung und jährlich bis Beendigung; Abschlussbericht zusätzlich."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_ERKLAERUNG_AUFBEWAHRUNG",
+      "regel_id": "AIA_047_001_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "herleitung": "EU-Konformitätserklärung zehn Jahre nach Inverkehrbringen oder Inbetriebnahme verfügbar halten."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_BESCHEINIGUNG_ANNI",
+      "regel_id": "AIA_044_002_ANNI_HOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Bescheinigungsperiode nach Anhang I höchstens fünf Jahre; keine automatische fünfjährige Gültigkeit."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_BESCHEINIGUNG_ANNIII",
+      "regel_id": "AIA_044_002_ANNIII_HOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 4,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Bescheinigungsperiode nach Anhang III höchstens vier Jahre; tatsächliche Laufzeit steht in Bescheinigung."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_ANLASS_FEHLT",
+      "regel_id": "AIA_079_008_EINWANDSDAUER",
+      "eingaben": {},
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Keine Standardfrist aus fehlender oder unbekannter Anlasskategorie ableiten."
+    },
+    {
+      "fall_id": "REF_VERFAHRENSDAUER_ANLASS_UNGUELTIG",
+      "regel_id": "AIA_079_008_EINWANDSDAUER",
+      "eingaben": {
+        "massnahmenanlass": "ALLE_FAELLE"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Keine Standardfrist aus fehlender oder unbekannter Anlasskategorie ableiten."
+    },
+    {
+      "fall_id": "REF_GPAIEINSTUFUNG_DAUER_AIA_052_001_MELDEHOECHSTDAUER",
+      "regel_id": "AIA_052_001_MELDEHOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "WOCHE"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_052/1 nennt 2 WOCHE. Unverzüglich zusätzlich zur Zweiwochen-Höchstgrenze; die Dauer ist keine Warteerlaubnis."
+    },
+    {
+      "fall_id": "REF_GPAIEINSTUFUNG_DAUER_AIA_052_005_WARTEZEIT",
+      "regel_id": "AIA_052_005_WARTEZEIT",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_052/5 nennt 6 MONAT. Mindestwartezeit für erneuten Antrag; objektive detaillierte neue Gründe und begründeter Antrag zusätzlich."
+    },
+    {
+      "fall_id": "REF_GPAIMANDAT_DAUER_ZEHN_JAHRE",
+      "regel_id": "AIA_054_003_B_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 54 Absatz 3 Buchstabe b nennt zehn Jahre ab Inverkehrbringen des Modells, nicht ab Mandatsunterzeichnung."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_1",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 1
+      },
+      "wert": 1,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 1 benannten Mitgliedstaatenvertretern erfordern mindestens 1 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_2",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 2
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 2 benannten Mitgliedstaatenvertretern erfordern mindestens 2 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_3",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 3
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 3 benannten Mitgliedstaatenvertretern erfordern mindestens 2 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_26",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 26
+      },
+      "wert": 18,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 26 benannten Mitgliedstaatenvertretern erfordern mindestens 18 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_27",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 27
+      },
+      "wert": 18,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 27 benannten Mitgliedstaatenvertretern erfordern mindestens 18 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_28",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 28
+      },
+      "wert": 19,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 28 benannten Mitgliedstaatenvertretern erfordern mindestens 19 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_1000",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 1000
+      },
+      "wert": 667,
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel von 1000 benannten Mitgliedstaatenvertretern erfordern mindestens 667 ganze Ja-Stimmen; Beobachter nicht mitzählen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_NULL",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_NULLZAHL",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 0
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_BOOL",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": true
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_TEXT",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": "27"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_BRUCH",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 26.5
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_STIMMEN_GRENZE",
+      "regel_id": "AIA_065_005_ZWEIDRITTELMEHRHEIT",
+      "eingaben": {
+        "benannte_mitgliedstaatenvertreter": 1001
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Vertreterzahl ist explizite positive ganze Zahl mit technischer Obergrenze 1000; fehlende Kenntnis nicht durch aktuelle Mitgliederzahl ersetzen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_DAUER_AIA_065_003_AMTSDAUER",
+      "regel_id": "AIA_065_003_AMTSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_065/3 nennt 3 Jahre. Einmalige Verlängerung separat prüfen; keine automatische Neubenennung."
+    },
+    {
+      "fall_id": "REF_GREMIEN_DAUER_AIA_067_004_AMTSDAUER",
+      "regel_id": "AIA_067_004_AMTSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_067/4 nennt 2 Jahre. Mögliche Verlängerung separat; keine automatische Verlängerung."
+    },
+    {
+      "fall_id": "REF_GREMIEN_DAUER_AIA_067_004_VERLAENGERUNGSHOECHSTDAUER",
+      "regel_id": "AIA_067_004_VERLAENGERUNGSHOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 4,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_067/4 nennt 4 Jahre. Nur genannter Verlängerungsparameter; keine ungeprüfte kumulative Gesamtamtsdauer ableiten."
+    },
+    {
+      "fall_id": "REF_GREMIEN_DAUER_AIA_067_006_AMTSDAUER",
+      "regel_id": "AIA_067_006_AMTSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_067/6 nennt 2 Jahre. Einmalige Verlängerung separat prüfen."
+    },
+    {
+      "fall_id": "REF_GREMIEN_DAUER_AIA_070_006_BERICHTSINTERVALL",
+      "regel_id": "AIA_070_006_BERICHTSINTERVALL",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_070/6 nennt 2 Jahre. Erster gesetzlicher Termin und konkrete Folgetermine separat; Bericht enthält finanzielle/personelle Ressourcen und Angemessenheitsbewertung."
+    },
+    {
+      "fall_id": "REF_KIBUEROFOLGEN_DAUER_AIA_075_002A_ANTWORTHOECHSTDAUER",
+      "regel_id": "AIA_075_002A_ANTWORTHOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 4,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_075/2a nennt 4 MONAT. Ohne unangemessene Verzögerung zusätzlich; Information an zentrale Kontaktstelle über Befugnisausübung oder Gründe der Nichtausübung."
+    },
+    {
+      "fall_id": "REF_KIBUEROFOLGEN_DAUER_AIA_075_003_INFOHOECHSTDAUER",
+      "regel_id": "AIA_075_003_INFOHOECHSTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 30,
+        "einheit": "TAG"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_075/3 nennt 30 TAG. Unverzügliche Bereitstellung relevanter Information zusätzlich; nicht pauschal jedes KI-Büro-Verfahren."
+    },
+    {
+      "fall_id": "REF_KIBUEROFOLGEN_DAUER_AIA_075C_008_VERFOLGUNGSDAUER",
+      "regel_id": "AIA_075C_008_VERFOLGUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_075c/8 nennt 5 JAHR. Gesetzliche Grunddauer, keine endgültige Verjährungsentscheidung; Unterbrechung und ergänzende Durchführungsregeln separat."
+    },
+    {
+      "fall_id": "REF_KIBUEROFOLGEN_DAUER_AIA_075C_008_VOLLSTRECKUNGSDAUER",
+      "regel_id": "AIA_075C_008_VOLLSTRECKUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "ART_075c/8 nennt 5 JAHR. Vollstreckung eigenständig von Verfolgung; Unterbrechung und weitere Durchführungsregeln separat."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_002_DELEGATIONSDAUER",
+      "regel_id": "AIA_097_002_DELEGATIONSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Artikel 97 Absatz 2 nennt 5 JAHR; Richtung NACH und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_002_VERLAENGERUNGSDAUER",
+      "regel_id": "AIA_097_002_VERLAENGERUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Artikel 97 Absatz 2 nennt 5 JAHR; Richtung NACH und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_002_BERICHTSVORLAUF",
+      "regel_id": "AIA_097_002_BERICHTSVORLAUF",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 9,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Artikel 97 Absatz 2 nennt 9 MONAT; Richtung VOR und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_002_WIDERSPRUCHSVORLAUF",
+      "regel_id": "AIA_097_002_WIDERSPRUCHSVORLAUF",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Artikel 97 Absatz 2 nennt 3 MONAT; Richtung VOR und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_006_EINWENDUNGSDAUER",
+      "regel_id": "AIA_097_006_EINWENDUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Artikel 97 Absatz 6 nennt 3 MONAT; Richtung NACH und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DELEGATION_DAUER_AIA_097_006_VERLAENGERUNGSDAUER",
+      "regel_id": "AIA_097_006_VERLAENGERUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Artikel 97 Absatz 6 nennt 3 MONAT; Richtung NACH und Ereignisanker separat, kein abgeleitetes Kalenderdatum."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_ABZUG",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 80,
+        "qualifiziert_ausgenommene_anhangsseiten": 30
+      },
+      "wert": 50,
+      "status": "AUSGEWERTET",
+      "herleitung": "80 Gesamtseiten abzüglich 30 tatsächlich qualifiziert ausgenommener Anhangseiten ergeben 50 anrechenbare Seiten."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_OHNE_ANHANG",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 51,
+        "qualifiziert_ausgenommene_anhangsseiten": 0
+      },
+      "wert": 51,
+      "status": "AUSGEWERTET",
+      "herleitung": "Keine Anhangseiten ausgenommen; 51 Seiten bleiben anzurechnen."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_ALLES_ANHANG",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 10,
+        "qualifiziert_ausgenommene_anhangsseiten": 10
+      },
+      "wert": 0,
+      "status": "AUSGEWERTET",
+      "herleitung": "Differenz null; reine Zählrechnung, keine Aussage zum Vorliegen einer inhaltlich vollständigen Stellungnahme."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_MEHR_ABZUG_ALS_GESAMT",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 10,
+        "qualifiziert_ausgenommene_anhangsseiten": 11
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Ausgenommene Seiten sind Teilmenge der Gesamtseiten; mehr Abzug als Gesamtumfang ist widersprüchlich."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_ABZUG_FEHLT",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 50
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Fehlender Abzug wird nicht stillschweigend mit null Seiten gleichgesetzt."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_BRUCHTEIL",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": 50,
+        "qualifiziert_ausgenommene_anhangsseiten": 0.5
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Die Zählrechnung verwendet ganze Seiten, keine Bruchteilswerte."
+    },
+    {
+      "fall_id": "REF_DVOFORMAT_RECHNUNG_BOOL",
+      "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+      "eingaben": {
+        "gesamtseiten_einreichung": true,
+        "qualifiziert_ausgenommene_anhangsseiten": 0
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Boolean ist keine Seitenanzahl."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_008_003_NACHLAUF",
+      "regel_id": "DVO_1755_008_003_NACHLAUF",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Artikel 8/3: 3 JAHR; Nachlauf für einschlägige neue Beschäftigungsbeziehungen externer Zugangsberater; keine allgemeine Karenzzeit oder Tätigkeitsuntersagung."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_008_006_ANTRAGSDAUER",
+      "regel_id": "DVO_1755_008_006_ANTRAGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "WOCHE"
+      },
+      "herleitung": "Lokaler Artikel 8/6: 1 WOCHE; Antragsfenster für begründeten Zusatzakteneinsichtsantrag; Ausnahme und Unentbehrlichkeit separat."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_009_006_EINWANDSDAUER",
+      "regel_id": "DVO_1755_009_006_EINWANDSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "WOCHE"
+      },
+      "herleitung": "Lokaler Artikel 9/6: 1 WOCHE; Einwandsfenster; tatsächliche Mitteilung und specialrechtlicher Beginn separat."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_009_006_MINDESTVORLAUF",
+      "regel_id": "DVO_1755_009_006_MINDESTVORLAUF",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "WOCHE"
+      },
+      "herleitung": "Lokaler Artikel 9/6: 1 WOCHE; Nur Mindestabstand zum in der Entscheidung bestimmten Datum; Offenlegung erst nach diesem Datum, nicht automatisch am Ende der Mindestwoche."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_010_001_GRUNDFRIST",
+      "regel_id": "DVO_1755_010_001_GRUNDFRIST",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Artikel 10/1: 5 JAHR; Nur Grunddauer der Verfolgungsverjährung. Unterbrechung, Hemmung und doppelte Grundfrist separat; kein abschließendes Verjährungsdatum."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_010_004_DOPPELTE_GRUNDFRIST",
+      "regel_id": "DVO_1755_010_004_DOPPELTE_GRUNDFRIST",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Artikel 10/4: 10 JAHR; Zweimal fünf Jahre = zehn Jahre, zuzüglich Zeiten der Hemmung nach Absatz 5. Keine absolute Zehnjahresobergrenze trotz Hemmung und keine Übertragung auf Vollstreckung."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DAUER_011_001_GRUNDFRIST",
+      "regel_id": "DVO_1755_011_001_GRUNDFRIST",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Artikel 11/1: 5 JAHR; Nur Grunddauer der Vollstreckungsverjährung. Unterbrechungen nach Absatz 3/4 und Hemmung nach Absatz 5 separat, keine abschließende Terminberechnung."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_PARTNER",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40",
+        "hinzurechnungsquote": "0.25"
+      },
+      "wert": "110",
+      "status": "AUSGEWERTET",
+      "herleitung": "100 Basis plus 25 Prozent von 40 ergibt 110; volle Partnerdaten dürfen nicht ungeprüft zu 140 führen."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_PERSONAL",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "8.5",
+        "noch_hinzuzurechnender_unternehmenswert": "3.75",
+        "hinzurechnungsquote": "0.4"
+      },
+      "wert": "10",
+      "status": "AUSGEWERTET",
+      "herleitung": "8,5 JAE plus 40 Prozent von 3,75 JAE = 10 JAE, ohne Ganzzahlrundung."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_KLEIN",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "0.0001",
+        "noch_hinzuzurechnender_unternehmenswert": "0.0002",
+        "hinzurechnungsquote": "0.25"
+      },
+      "wert": "0.00015",
+      "status": "AUSGEWERTET",
+      "herleitung": "Auch kleinste Bruchteile exakt erhalten; keine Cent- oder JAE-Rundung."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_GROSSE_ZAHL",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "0.75",
+        "noch_hinzuzurechnender_unternehmenswert": "9007199254740993",
+        "hinzurechnungsquote": "0.25"
+      },
+      "wert": "2251799813685249",
+      "status": "AUSGEWERTET",
+      "herleitung": "Jenseits des sicheren Binär-Ganzzahlbereichs: Viertel 2251799813685248,25 plus 0,75 ergibt exakt 2251799813685249."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_NEUNEN",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "0",
+        "noch_hinzuzurechnender_unternehmenswert": "99999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "hinzurechnungsquote": "0.99"
+      },
+      "wert": "98999999999999999999999999999999999999999999999999999999999999999999999999999999.01",
+      "status": "AUSGEWERTET",
+      "herleitung": "(10^80 - 1) mal 99/100 = 99 mal 10^78 minus 0,99; unabhängige algebraische Erwartung."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_NULLQUOTE",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "12.50",
+        "noch_hinzuzurechnender_unternehmenswert": "999",
+        "hinzurechnungsquote": "0"
+      },
+      "wert": "12.5",
+      "status": "AUSGEWERTET",
+      "herleitung": "Explizite Nullquote ergibt null Hinzurechnung; kein Nachweis, dass Partnerklassifikation sachlich richtig ist."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_VOLLEQUOTE",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "12.5",
+        "noch_hinzuzurechnender_unternehmenswert": "0.50",
+        "hinzurechnungsquote": "1"
+      },
+      "wert": "13",
+      "status": "AUSGEWERTET",
+      "herleitung": "Volle Quote addiert gesamten Zusatzwert; kanonische Ausgabe ohne unnötige Nullen."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_QUOTE_FEHLT",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Fehlende Quote nicht als 25 Prozent oder volle Einbeziehung erfinden."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_ZUSATZ_FEHLT",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "hinzurechnungsquote": "0"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Rechenvertrag verlangt qualifizierten Zusatzwert auch bei expliziter Nullquote."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_QUOTE_UEBER_EINS",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40",
+        "hinzurechnungsquote": "1.01"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Quote über eins ist unzulässig."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_NEGATIV",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "-1",
+        "hinzurechnungsquote": "0.25"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Nichtnegative Größenaggregation unterstützt keine versteckte Negativkorrektur."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_FLOAT",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40",
+        "hinzurechnungsquote": 0.25
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Quote als Dezimaltext erforderlich; kein Binär-Gleitkommawert."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_BOOL",
+      "regel_id": "KMU_PARTNER_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": true,
+        "noch_hinzuzurechnender_unternehmenswert": "40",
+        "hinzurechnungsquote": "0.25"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Boolean ist kein exakter Aggregationsbasiswert."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_VERBUND",
+      "regel_id": "KMU_VERBUND_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40"
+      },
+      "wert": "140",
+      "status": "AUSGEWERTET",
+      "herleitung": "Noch nicht konsolidierter Verbundwert wird vollständig hinzugefügt, nicht nur mit Beteiligungsquote gewichtet."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_VERBUND_BEREITS_ERFASST",
+      "regel_id": "KMU_VERBUND_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "140",
+        "noch_hinzuzurechnender_unternehmenswert": "0"
+      },
+      "wert": "140",
+      "status": "AUSGEWERTET",
+      "herleitung": "Extern qualifiziert bereits vollständig enthaltener Wert: noch hinzuzurechnender Teil explizit null."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_VERBUND_UEBERTRAG",
+      "regel_id": "KMU_VERBUND_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "99999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "noch_hinzuzurechnender_unternehmenswert": "1"
+      },
+      "wert": "100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "status": "AUSGEWERTET",
+      "herleitung": "80 Neunen plus eins erzeugt exakt eine Eins mit 80 Nullen, ohne Präzisionsverlust."
+    },
+    {
+      "fall_id": "REF_AGGREGATION_VERBUND_QUOTE_UNZULAESSIG",
+      "regel_id": "KMU_VERBUND_HINZURECHNUNG",
+      "eingaben": {
+        "aggregationsbasiswert": "100",
+        "noch_hinzuzurechnender_unternehmenswert": "40",
+        "hinzurechnungsquote": "0.4"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Verbundregel hat feste 100-Prozent-Hinzurechnung; Nutzerquote wird als unbekanntes Feld abgewiesen."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_1",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 1
+      },
+      "wert": 1,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 1 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 1."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_2",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 2
+      },
+      "wert": 1,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 2 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 1."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_3",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 3
+      },
+      "wert": 1,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 3 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 1."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_4",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 4
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 4 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 2."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_59",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 59
+      },
+      "wert": 20,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 59 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 20."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_60",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 60
+      },
+      "wert": 20,
+      "status": "AUSGEWERTET",
+      "herleitung": "Mindestens ein Drittel von 60 Mitgliedern verlangt die kleinste ausreichende ganze Personenzahl 20."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_NULL",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 0
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Mitgliederzahl muss eine native ganze Zahl von 1 bis 60 sein."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_ZU_VIELE",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 61
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Mitgliederzahl muss eine native ganze Zahl von 1 bis 60 sein."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_BRUCH",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": 1.5
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Mitgliederzahl muss eine native ganze Zahl von 1 bis 60 sein."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_BOOLEAN",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": true
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Mitgliederzahl muss eine native ganze Zahl von 1 bis 60 sein."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_TEXT",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {
+        "mitgliederzahl": "3"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Mitgliederzahl muss eine native ganze Zahl von 1 bis 60 sein."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_DRITTEL_FEHLT",
+      "regel_id": "PANEL_DRITTEL_AUTORISIERUNG",
+      "eingaben": {},
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Ohne Gesamtmitgliederzahl kein Quorum ableitbar."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_004_001_AMTSZEIT",
+      "regel_id": "DVO_0454_004_001_AMTSZEIT",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 4/1 bestimmt 2 JAHR; Bezug: Beginn der konkreten Bestellung. Zweijährige Amtszeit mit möglichen Verlängerungen; Ersatzbestellung nur Restlaufzeit, keine pauschale neue Vollamtszeit."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_008_003_PRUEFINTERVALL",
+      "regel_id": "DVO_0454_008_003_PRUEFINTERVALL",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 8/3 bestimmt 2 JAHR; Bezug: Letzte Überprüfung der Geschäftsordnung. Spätestens alle zwei Jahre überprüfen, bei Bedarf aktualisieren; kein gesetzlicher Zwang zu Änderungen bei jeder Überprüfung."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_014_006_BEARBEITUNG",
+      "regel_id": "DVO_0454_014_006_BEARBEITUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "WOCHE"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 14/6 bestimmt 2 WOCHE; Bezug: Eingang des vollständigen Marktaufsichtsantrags. Nachforderung vor Entscheidung: Antrag erst mit Zusatzinformation vollständig; keine pauschale Frist ab erstem unvollständigem Eingang."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_016_005_BEARBEITUNG",
+      "regel_id": "DVO_0454_016_005_BEARBEITUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "WOCHE"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 16/5 bestimmt 2 WOCHE; Bezug: Eingang des vollständigen Informationshilfeantrags. Nachforderung vor Entscheidung: Antrag erst mit Zusatzinformation vollständig; Vollständigkeit vorgelagert qualifizieren."
+    },
+    {
+      "fall_id": "REF_PANELZAHL_019_002_BEARBEITUNG",
+      "regel_id": "DVO_0454_019_002_BEARBEITUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "WOCHE"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 19/2 bestimmt 2 WOCHE; Bezug: Eingang der vollständigen qualifizierten Warnung. Nachforderung vor Entscheidung: Warnung erst mit Zusatzinformation vollständig; keine automatische fachliche Reaktion oder Maßnahme aus Fristablauf."
+    },
+    {
+      "fall_id": "REF_MASCHDAUER_PERIODE",
+      "regel_id": "OMN_003_03_DAUER_PERIODE",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 5,
+        "einheit": "JAHR"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel 3 Nummer 3: 5 JAHR, NACH Beginn 19.07.2023 für Artikel 6(2)/(11), 7(2), Beginn 27.07.2026 für Artikel 8 dritter Absatz; Verlängerungen gleicher Dauer. Eigenständige Maschinenregel."
+    },
+    {
+      "fall_id": "REF_MASCHDAUER_BERICHT",
+      "regel_id": "OMN_003_03_DAUER_BERICHT",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 9,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel 3 Nummer 3: 9 MONAT, VOR Ende der jeweiligen Fünfjahresperiode. Eigenständige Maschinenregel."
+    },
+    {
+      "fall_id": "REF_MASCHDAUER_WIDERSPRUCH",
+      "regel_id": "OMN_003_03_DAUER_WIDERSPRUCH",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel 3 Nummer 3: 3 MONAT, VOR Ende der jeweiligen Delegationsperiode. Eigenständige Maschinenregel."
+    },
+    {
+      "fall_id": "REF_MASCHDAUER_EINWAND",
+      "regel_id": "OMN_003_03_DAUER_EINWAND",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel 3 Nummer 3: 2 MONAT, NACH Notifikation des konkreten Akts an Europäisches Parlament und Rat. Eigenständige Maschinenregel."
+    },
+    {
+      "fall_id": "REF_MASCHDAUER_EINWANDVERLAENGERUNG",
+      "regel_id": "OMN_003_03_DAUER_EINWANDVERLAENGERUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 2,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel 3 Nummer 3: 2 MONAT, NACH Ursprüngliches Ende der Einwendungsfrist bei wirksamer Initiative eines Organs. Eigenständige Maschinenregel."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_GLEICH",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_FRUEHER",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T09:59:59Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_SPAETER",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:01Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_MIKROSEKUNDE_SPAET",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00.000001Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_MIKROSEKUNDE_FRUEH",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T09:59:59.999999Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_BRUCH_NULLEN",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00.1Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00.100000Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_OFFSET_GLEICH",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T12:00:00+02:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_OFFSET_DATUMSGRENZE",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-26T00:30:00+02:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T22:45:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_NEGATIVER_OFFSET",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T08:00:00-03:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_HERBST_DOPPELTE_UHRZEIT",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T02:30:00+02:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T02:30:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_HERBST_UMGEKEHRT",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T02:30:00+01:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T02:30:00+02:00"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_SCHALTJAHR_2000",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2000-02-29T23:59:59Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2000-03-01T00:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_JAHR_1",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "0001-01-01T00:00:00+01:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "0001-01-01T00:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_JAHR_9999",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "9999-12-31T23:59:59.999999-01:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "9999-12-31T23:59:59.999999Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_UTC_PLUS_NULL",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-01-01T00:00:00+00:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-01-01T00:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Gleichzeitigkeit genügt; spätere Information verletzt das Zeitkriterium. Offsets werden vor dem Vergleich berücksichtigt, keine lexikographische Rohtextsortierung."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_OHNE_OFFSET",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_UNBEKANNTER_OFFSET",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00-00:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_SCHALTSEKUNDE",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:60Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_STUNDE_24",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T24:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_KEIN_SCHALTJAHR_1900",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "1900-02-29T10:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_JAHR_NULL",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "0000-01-01T00:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_OFFSET_24",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00+24:00",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_OFFSET_MINUTE_60",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00+01:60",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_ZU_VIELE_NACHKOMMASTELLEN",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00.0000001Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_ZEILENUMBRUCH",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00Z\n",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_ZAHL",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": 123,
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_BOOLEAN",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": true,
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_NUR_DATUM",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_DATUM_UNGUELTIG",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-04-31T10:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ungültige Kalender-/Uhrzeit, unbekannter Offset oder Wert außerhalb des expliziten technischen Zeitstempelprofils wird abgewiesen, nicht still konvertiert."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_INFORMATION_OFFEN",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": null,
+        "erste_interaktion_oder_exposition_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Unbekannter Bereitstellungszeitpunkt ist keine rechtzeitige Information."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_KONTAKT_OFFEN",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-10-25T10:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Ohne Erstkontaktzeitpunkt ist kein Vergleich möglich."
+    },
+    {
+      "fall_id": "REF_ZEITPUNKT_UNGUELTIG_TROTZ_LUECKE",
+      "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+      "eingaben": {
+        "transparenzinformation_zeitpunkt": "2026-04-31T10:00:00Z",
+        "erste_interaktion_oder_exposition_zeitpunkt": null
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 50 Absatz 5: spätestens bei erster Interaktion oder Exposition. Fehlender anderer Zeitpunkt verdeckt keine ungültigen Kalenderdaten."
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_VORHER",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:00Z",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:01Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": true,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_GLEICH",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:00Z",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": false,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_NACHHER",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:01Z",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": false,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_MIKRO",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:00.000001Z",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00.000002Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": true,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_OFFSET_GLEICH",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T11:00:00+01:00",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": false,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_FRAKTION_GLEICH",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:00.1Z",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00.100000Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": false,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_SOMMERZEITFALTE",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T02:30:00+02:00",
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T02:30:00+01:00"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": true,
+      "status": "AUSGEWERTET"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_ABSCHLUSS_OFFEN",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": null,
+        "erstmaliger_einsatz_zeitpunkt": "2026-10-25T10:00:00Z"
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": null,
+      "status": "EINGABE_FEHLT"
+    },
+    {
+      "fall_id": "REF_FRIAZEIT_EINSATZ_OFFEN",
+      "regel_id": "AIA_027_001_VOR_EINSATZ",
+      "eingaben": {
+        "fria_abschluss_zeitpunkt": "2026-10-25T10:00:00Z",
+        "erstmaliger_einsatz_zeitpunkt": null
+      },
+      "herleitung": "Artikel 27(1)/(2): Abschluss strikt vor erstem Einsatz. UTC-Zeitpunkte vergleichen, gleiche Instanten auch bei anderen Offsets oder Dezimaldarstellungen nicht als vorher bewerten.",
+      "wert": null,
+      "status": "EINGABE_FEHLT"
+    },
+    {
+      "fall_id": "REF_JAE_KMU_GANZ",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": "1",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_HALB_HALB",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0.5",
+        "anrechenbarer_jahresanteil": "0.5"
+      },
+      "wert": "0.25",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_SAISON",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1",
+        "anrechenbarer_jahresanteil": "0.25"
+      },
+      "wert": "0.25",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_NULL",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": "0",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_GENAU",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0.123456789",
+        "anrechenbarer_jahresanteil": "0.2"
+      },
+      "wert": "0.0246913578",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_OFFEN",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": null,
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_NEGATIV",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "-0.1",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_UEBER_EINS",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1.0000000001",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_BRUCH",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1/3",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_KMU_FLOAT",
+      "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": 0.5,
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_GANZ",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": "1",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_HALB_HALB",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0.5",
+        "anrechenbarer_jahresanteil": "0.5"
+      },
+      "wert": "0.25",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_SAISON",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1",
+        "anrechenbarer_jahresanteil": "0.25"
+      },
+      "wert": "0.25",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_NULL",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": "0",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_GENAU",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "0.123456789",
+        "anrechenbarer_jahresanteil": "0.2"
+      },
+      "wert": "0.0246913578",
+      "status": "AUSGEWERTET",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_OFFEN",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": null,
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_NEGATIV",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "-0.1",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_UEBER_EINS",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1.0000000001",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_BRUCH",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": "1/3",
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SMC_FLOAT",
+      "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+      "eingaben": {
+        "arbeitszeitanteil_an_vollzeit": 0.5,
+        "anrechenbarer_jahresanteil": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Qualifizierter homogener Abschnitt: Teilzeitanteil mal anrechenbarer Jahresanteil. Halbtags für ein halbes Jahr ergibt 0.25 JAE; keine Rundung, keine implizite Basis und keine Bruchtext-/Floatkonvertierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_DEZIMAL",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "0.1",
+        "zusaetzliche_jahresarbeitseinheiten": "0.2"
+      },
+      "wert": "0.3",
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_ABSCHNITTE",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "0.25",
+        "zusaetzliche_jahresarbeitseinheiten": "0.5"
+      },
+      "wert": "0.75",
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_UEBERTRAG",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "999.999",
+        "zusaetzliche_jahresarbeitseinheiten": "0.001"
+      },
+      "wert": "1000",
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_NULL",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "0",
+        "zusaetzliche_jahresarbeitseinheiten": "0"
+      },
+      "wert": "0",
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_OFFEN",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "1",
+        "zusaetzliche_jahresarbeitseinheiten": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_JAE_SUMME_NEGATIV",
+      "regel_id": "JAE_DEZIMALSUMME",
+      "eingaben": {
+        "bisherige_jahresarbeitseinheiten": "1",
+        "zusaetzliche_jahresarbeitseinheiten": "-1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Addition disjunkter qualifizierter Beiträge für denselben Zeitraum. Dezimalarithmetik ohne binäre Rundung oder heimliche Deduplizierung."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_VOR",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T00:59:59.999999Z",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_GLEICH",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T01:00:00Z",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_NACH",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T01:00:00.000001Z",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_ZEITUMSTELLUNG",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T02:30:00+02:00",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T02:15:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_OFFSETGLEICH",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T02:00:00+01:00",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_FEHLT",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": null,
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_KEIN_OFFSET",
+      "regel_id": "AIA_026_010_ANTRAG_VOR_EINSATZ",
+      "eingaben": {
+        "biometrie_genehmigungsantrag_zeitpunkt": "2026-10-25T01:00:00",
+        "nachtraegliche_fernidentifizierung_einsatzbeginn_zeitpunkt": "2026-10-25T01:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel 26(10): Ex ante bedeutet strikt vor Einsatzbeginn. UTC-Zeitpunkte mit Mikrosekunden vergleichen, insbesondere bei wiederholter lokaler Stunde. Gleichzeitigkeit erfüllt nur diesen Zweig nicht; Nachantrag und F011 bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_VORFALL_BEHOERDENDAUER",
+      "regel_id": "AIA_073_008_BEHOERDENDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 7,
+        "einheit": "TAG"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(8) setzt sieben Tage ab Meldungsempfang für angemessene Maßnahmen; diese Regel liefert allein den gesetzlichen Dauerparameter, kein automatisch berechnetes Enddatum."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_0",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_1",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_2",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": null
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_3",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_4",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_5",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": null
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_6",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_7",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_8",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": true,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": null
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_9",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_10",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_11",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": null
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_12",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": true
+      },
+      "wert": 10,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_13",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": false
+      },
+      "wert": 15,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_14",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_15",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": true
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_16",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": false
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_17",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": false,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_18",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": true
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_19",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": false
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_20",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": true,
+        "todesfall": null
+      },
+      "wert": 2,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_21",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": true
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_22",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": false
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_23",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": false,
+        "todesfall": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_24",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": true
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_25",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": false
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_VORFALLDAUER_26",
+      "regel_id": "AIA_073_MELDEFRISTTAGE",
+      "eingaben": {
+        "weitverbreiteter_verstoss": null,
+        "schwere_irreversible_kritische_infrastrukturstoerung": null,
+        "todesfall": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel 73(2)–(4): Zwei Tage bei mindestens einem Zweitagesgrund, sonst zehn Tage bei Tod, sonst fünfzehn. Unbekannte Tatsachen nur entscheidungsrelevant, wenn mögliche Dauern auseinanderfallen. Kein Aufschub sofortiger Meldung."
+    },
+    {
+      "fall_id": "REF_LIEFERDAUER_SECHS_MONATE",
+      "regel_id": "AIA_019_001_REGELMINDESTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 19(1): Grundsätzlich mindestens sechs Monate als isolierter Parameter. Zweckangemessenheit und abweichendes Recht werden damit nicht entschieden."
+    },
+    {
+      "fall_id": "REF_BETREIBERDAUER_SECHS_MONATE",
+      "regel_id": "AIA_026_006_REGELMINDESTDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 6,
+        "einheit": "MONAT"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel26(6): Grundsätzlich mindestens sechs Monate als isolierter Betreiberprotokollparameter; Zweckangemessenheit und abweichendes Recht separat, keine Löschfreigabe."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_001",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-01-27"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_002",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-01-28"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_003",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-01-29"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_004",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-02-29"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_005",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "0001-01-01"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_006",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "9999-12-31"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_007",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_008",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2027-02-29"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_009",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-02-30"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_010",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "0000-01-01"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_011",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-1-28"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_012",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-01-28T00:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_013",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": "2028-01-28\n"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_014",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": 20280128
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_BENENNUNGSDATUM_015",
+      "regel_id": "AIA_043_003_ANTRAGSTERMIN",
+      "eingaben": {
+        "benennungsantrag_datum": true
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel43(3): qualifiziertes Antragsdatum bis einschließlich28.01.2028; strikte Kalender-/Typprüfung unabhängig vom Pflichtauslöser."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_001",
+      "regel_id": "AIA_049_ANBIETER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T09:59:59.999999Z",
+        "erstes_inverkehrbringen_oder_inbetriebnahme_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_002",
+      "regel_id": "AIA_049_ANBIETER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T10:00:00Z",
+        "erstes_inverkehrbringen_oder_inbetriebnahme_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_003",
+      "regel_id": "AIA_049_ANBIETER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T11:00:00+01:00",
+        "erstes_inverkehrbringen_oder_inbetriebnahme_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_004",
+      "regel_id": "AIA_049_ANBIETER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T10:00:00.000001Z",
+        "erstes_inverkehrbringen_oder_inbetriebnahme_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_005",
+      "regel_id": "AIA_049_ANBIETER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": null,
+        "erstes_inverkehrbringen_oder_inbetriebnahme_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_006",
+      "regel_id": "AIA_049_BETREIBER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T09:59:59.999999Z",
+        "erste_inbetriebnahme_oder_nutzung_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_007",
+      "regel_id": "AIA_049_BETREIBER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T10:00:00Z",
+        "erste_inbetriebnahme_oder_nutzung_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_008",
+      "regel_id": "AIA_049_BETREIBER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T11:00:00+01:00",
+        "erste_inbetriebnahme_oder_nutzung_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_009",
+      "regel_id": "AIA_049_BETREIBER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": "2028-01-01T10:00:00.000001Z",
+        "erste_inbetriebnahme_oder_nutzung_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_REGISTERZEIT_010",
+      "regel_id": "AIA_049_BETREIBER_VOR_ERSTEREIGNIS",
+      "eingaben": {
+        "registrierungsabschluss_zeitpunkt": null,
+        "erste_inbetriebnahme_oder_nutzung_zeitpunkt": "2028-01-01T10:00:00Z"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel49: vor bedeutet strikt früher; Offsetäquivalenz ist Gleichzeitigkeit, Mikrosekunden ohne Rundung vergleichen."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_001",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "1",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "6"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Ein Drittel Pensum für ein halbes Bezugsjahr ist exakt ein Sechstel JAE; kein gerundeter Dezimalbruch."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_002",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "0",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "0",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Nullanrechenbarer Beitrag bleibt kanonisch0/1."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_003",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "4",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Anteil größer1 ist außerhalb des definierten Einzelbeitragsvertrags."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_004",
+      "regel_id": "SMC_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "1",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "6"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Ein Drittel Pensum für ein halbes Bezugsjahr ist exakt ein Sechstel JAE; kein gerundeter Dezimalbruch."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_005",
+      "regel_id": "SMC_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "0",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "0",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Nullanrechenbarer Beitrag bleibt kanonisch0/1."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_006",
+      "regel_id": "SMC_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "4",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Anteil größer1 ist außerhalb des definierten Einzelbeitragsvertrags."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_007",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "2",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "3",
+        "jahresabschnitt_nenner": "4"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "2"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_008",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "9007199254740993",
+        "pensum_nenner": "18014398509481986",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "1"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "2"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_009",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "pensum_nenner": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "1"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_010",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_011",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "1",
+        "pensum_nenner": "0",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_012",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": "01",
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_013",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": 1,
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_014",
+      "regel_id": "KMU_JAE_RATIONALBEITRAG",
+      "eingaben": {
+        "pensum_zaehler": null,
+        "pensum_nenner": "3",
+        "jahresabschnitt_zaehler": "1",
+        "jahresabschnitt_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Exakte Kürzung oder explizite kanonische Feld-/Nenner-/Längengrenze; keine implizite Umwandlung."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_015",
+      "regel_id": "JAE_RATIONALSUMME",
+      "eingaben": {
+        "beitrag_links_zaehler": "1",
+        "beitrag_links_nenner": "3",
+        "beitrag_rechts_zaehler": "1",
+        "beitrag_rechts_nenner": "6"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "2"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Disjunkte qualifizierte Beiträge exakt addieren und kürzen."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_016",
+      "regel_id": "JAE_RATIONALSUMME",
+      "eingaben": {
+        "beitrag_links_zaehler": "1",
+        "beitrag_links_nenner": "3",
+        "beitrag_rechts_zaehler": "2",
+        "beitrag_rechts_nenner": "3"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Disjunkte qualifizierte Beiträge exakt addieren und kürzen."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_017",
+      "regel_id": "JAE_RATIONALSUMME",
+      "eingaben": {
+        "beitrag_links_zaehler": "0",
+        "beitrag_links_nenner": "7",
+        "beitrag_rechts_zaehler": "0",
+        "beitrag_rechts_nenner": "9"
+      },
+      "wert": {
+        "zaehler": "0",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Disjunkte qualifizierte Beiträge exakt addieren und kürzen."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_018",
+      "regel_id": "JAE_RATIONALSUMME",
+      "eingaben": {
+        "beitrag_links_zaehler": "499",
+        "beitrag_links_nenner": "2",
+        "beitrag_rechts_zaehler": "1",
+        "beitrag_rechts_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "250",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Disjunkte qualifizierte Beiträge exakt addieren und kürzen."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_019",
+      "regel_id": "JAE_RATIONALGEWICHT",
+      "eingaben": {
+        "beitrag_links_zaehler": "2",
+        "beitrag_links_nenner": "3",
+        "gewicht_zaehler": "1",
+        "gewicht_nenner": "4"
+      },
+      "wert": {
+        "zaehler": "1",
+        "nenner": "6"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel JAE mit Quote1/4 ergibt1/6; Quote null ergibt null; Quote über1 ist ungültig."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_020",
+      "regel_id": "JAE_RATIONALGEWICHT",
+      "eingaben": {
+        "beitrag_links_zaehler": "2",
+        "beitrag_links_nenner": "3",
+        "gewicht_zaehler": "0",
+        "gewicht_nenner": "4"
+      },
+      "wert": {
+        "zaehler": "0",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Zwei Drittel JAE mit Quote1/4 ergibt1/6; Quote null ergibt null; Quote über1 ist ungültig."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_021",
+      "regel_id": "JAE_RATIONALGEWICHT",
+      "eingaben": {
+        "beitrag_links_zaehler": "2",
+        "beitrag_links_nenner": "3",
+        "gewicht_zaehler": "5",
+        "gewicht_nenner": "4"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Zwei Drittel JAE mit Quote1/4 ergibt1/6; Quote null ergibt null; Quote über1 ist ungültig."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_022",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "29",
+        "jae_nenner": "3",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": true,
+        "klein": true,
+        "kmu": true,
+        "smc_groessenrahmen": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_023",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "30",
+        "jae_nenner": "3",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": true,
+        "kmu": true,
+        "smc_groessenrahmen": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_024",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "499",
+        "jae_nenner": "2",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": true,
+        "smc_groessenrahmen": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_025",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "500",
+        "jae_nenner": "2",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": false,
+        "smc_groessenrahmen": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_026",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "1499",
+        "jae_nenner": "2",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": false,
+        "smc_groessenrahmen": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_027",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "1500",
+        "jae_nenner": "2",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": false,
+        "smc_groessenrahmen": false
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_028",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "1500",
+        "jae_nenner": "2",
+        "jahresumsatz_eur": null,
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": false,
+        "klein": false,
+        "kmu": false,
+        "smc_groessenrahmen": false
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "750JAE überschreitet jede strikte Personalschwelle; Finanzlücken nicht entscheidend."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_029",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": null,
+        "jae_nenner": "3",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": {
+        "kleinst": null,
+        "klein": null,
+        "kmu": null,
+        "smc_groessenrahmen": null
+      },
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Unbekannter Personalzähler bleibt trotz erfüllter Finanzalternative entscheidend."
+    },
+    {
+      "fall_id": "REF_RATIONALJAE_030",
+      "regel_id": "KMU_RATIONALSCHWELLEN",
+      "eingaben": {
+        "jae_zaehler": "1",
+        "jae_nenner": "0",
+        "jahresumsatz_eur": "0",
+        "jahresbilanzsumme_eur": null
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Nenner0 ist auch bei gültiger Finanzalternative ungültig."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_001",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "1",
+        "monatsbruch_nenner": "2"
+      },
+      "wert": {
+        "zaehler": "15",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Halber Monat entspricht15Tagen unabhängig vom konkreten Monat."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_002",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "1",
+        "monatsbruch_nenner": "3"
+      },
+      "wert": {
+        "zaehler": "10",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Drittelmonat entspricht10Tagen."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_003",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "1",
+        "monatsbruch_nenner": "7"
+      },
+      "wert": {
+        "zaehler": "30",
+        "nenner": "7"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Siebtelmonat bleibt30/7Tage; weder4 noch5Tage runden."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_004",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "0",
+        "monatsbruch_nenner": "9"
+      },
+      "wert": {
+        "zaehler": "0",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Kein Bruchanteil ist0/1Tage."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_005",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "5",
+        "monatsbruch_nenner": "6"
+      },
+      "wert": {
+        "zaehler": "25",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Fünf Sechstel entsprechen25Tagen."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_006",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "1",
+        "monatsbruch_nenner": "1"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Ganzer Monat gehört zur Kalenderregel, nicht zur Bruchteilsregel."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_007",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "3",
+        "monatsbruch_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Gemischte Periode zuerst ausdrücklich in ganzen Monat und echten Bruch trennen."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_008",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "1",
+        "monatsbruch_nenner": "0"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Nenner darf nicht null sein."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_009",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "01",
+        "monatsbruch_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Keine führenden Nullen im kanonischen Text."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_010",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": 1,
+        "monatsbruch_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Keine binäre Zahleneingabe."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_011",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": null,
+        "monatsbruch_nenner": "2"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Unbekannter Bruchanteil wird nicht null."
+    },
+    {
+      "fall_id": "REF_MONATSBRUCH_012",
+      "regel_id": "EU_1182_MONATSBRUCH_TAGE",
+      "eingaben": {
+        "monatsbruch_zaehler": "9007199254740993",
+        "monatsbruch_nenner": "18014398509481986"
+      },
+      "wert": {
+        "zaehler": "15",
+        "nenner": "1"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Halber Monat auch oberhalb2^53 exakt ohne Double-Umweg."
+    },
+    {
+      "fall_id": "REF_REALLABORTERMIN_001",
+      "regel_id": "AIA_057_001_BETRIEBSTERMIN",
+      "eingaben": {
+        "nationale_reallaborabdeckung_betriebsbereit_seit": "2027-08-01"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel57(1) nennt spätestens2August2027; Gleichheit ist rechtzeitig, Folgetag verspätet, ungültiges oder unbekanntes Datum nicht korrigieren."
+    },
+    {
+      "fall_id": "REF_REALLABORTERMIN_002",
+      "regel_id": "AIA_057_001_BETRIEBSTERMIN",
+      "eingaben": {
+        "nationale_reallaborabdeckung_betriebsbereit_seit": "2027-08-02"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel57(1) nennt spätestens2August2027; Gleichheit ist rechtzeitig, Folgetag verspätet, ungültiges oder unbekanntes Datum nicht korrigieren."
+    },
+    {
+      "fall_id": "REF_REALLABORTERMIN_003",
+      "regel_id": "AIA_057_001_BETRIEBSTERMIN",
+      "eingaben": {
+        "nationale_reallaborabdeckung_betriebsbereit_seit": "2027-08-03"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel57(1) nennt spätestens2August2027; Gleichheit ist rechtzeitig, Folgetag verspätet, ungültiges oder unbekanntes Datum nicht korrigieren."
+    },
+    {
+      "fall_id": "REF_REALLABORTERMIN_004",
+      "regel_id": "AIA_057_001_BETRIEBSTERMIN",
+      "eingaben": {
+        "nationale_reallaborabdeckung_betriebsbereit_seit": "2027-02-30"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel57(1) nennt spätestens2August2027; Gleichheit ist rechtzeitig, Folgetag verspätet, ungültiges oder unbekanntes Datum nicht korrigieren."
+    },
+    {
+      "fall_id": "REF_REALLABORTERMIN_005",
+      "regel_id": "AIA_057_001_BETRIEBSTERMIN",
+      "eingaben": {
+        "nationale_reallaborabdeckung_betriebsbereit_seit": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel57(1) nennt spätestens2August2027; Gleichheit ist rechtzeitig, Folgetag verspätet, ungültiges oder unbekanntes Datum nicht korrigieren."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_SAMSTAG",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2026-10-24"
+      },
+      "wert": {
+        "wirksam_ab": "2026-10-24",
+        "am_prueftag_wirksam": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_VORTAG",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2026-10-23"
+      },
+      "wert": {
+        "wirksam_ab": "2026-10-24",
+        "am_prueftag_wirksam": false
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_SPAETER",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": true,
+        "widerruf_prueftag": "2026-10-24",
+        "widerruf_festgelegter_tag": "2026-11-01"
+      },
+      "wert": {
+        "wirksam_ab": "2026-11-01",
+        "am_prueftag_wirksam": false
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_SPAETER_GRENZE",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": true,
+        "widerruf_prueftag": "2026-11-01",
+        "widerruf_festgelegter_tag": "2026-11-01"
+      },
+      "wert": {
+        "wirksam_ab": "2026-11-01",
+        "am_prueftag_wirksam": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_ZU_FRUEH",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": true,
+        "widerruf_prueftag": "2026-10-24",
+        "widerruf_festgelegter_tag": "2026-10-23"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_SPAETER_FEHLT",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": true,
+        "widerruf_prueftag": "2026-10-24"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_FESTLEGUNG_UNBEKANNT",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": null,
+        "widerruf_prueftag": "2026-10-24"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_UNGUELTIG_TROTZ_OPTIONAL",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2026-10-24",
+        "widerruf_festgelegter_tag": "2026-02-30"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_SCHALTJAHR",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2028-02-28",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2028-02-29"
+      },
+      "wert": {
+        "wirksam_ab": "2028-02-29",
+        "am_prueftag_wirksam": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_BEREICHSENDE",
+      "regel_id": "AIA_097_003_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "9999-12-31",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2026-10-24"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_MASCHINEN",
+      "regel_id": "OMN_003_03_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": false,
+        "widerruf_prueftag": "2026-10-24"
+      },
+      "wert": {
+        "wirksam_ab": "2026-10-24",
+        "am_prueftag_wirksam": true
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_WIDERRUFZEIT_MASCHINEN_SPAETER",
+      "regel_id": "OMN_003_03_WIRKSAMKEIT",
+      "eingaben": {
+        "widerruf_amtsblattdatum": "2026-10-23",
+        "widerruf_spaeterer_tag_festgelegt": true,
+        "widerruf_prueftag": "2026-10-24",
+        "widerruf_festgelegter_tag": "2026-11-01"
+      },
+      "wert": {
+        "wirksam_ab": "2026-11-01",
+        "am_prueftag_wirksam": false
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel97(3) bzw. entsprechender Maschinen-Artikel47(3): Tag nach tatsächlicher Amtsblattveröffentlichung oder ausdrücklich späterer Tag, ohne Wochenendverschiebung. Zeitpunkt, Erlass, betroffenes Organ und Delegationsumfang bleiben getrennt."
+    },
+    {
+      "fall_id": "REF_MASCHINENFOLGETERMIN_0",
+      "regel_id": "OMN_003_01_ANWENDUNGSTERMIN",
+      "eingaben": {
+        "maschinen_ki_folgeakt_anwendbar_ab": "2028-08-01"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel3 Nummer1: konkrete delegierte Akte müssen bis2August2028 anwendbar sein; einschließlich benanntem Grenztag, kein allgemeiner Anwendungsbeginn der Maschinenverordnung."
+    },
+    {
+      "fall_id": "REF_MASCHINENFOLGETERMIN_1",
+      "regel_id": "OMN_003_01_ANWENDUNGSTERMIN",
+      "eingaben": {
+        "maschinen_ki_folgeakt_anwendbar_ab": "2028-08-02"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel3 Nummer1: konkrete delegierte Akte müssen bis2August2028 anwendbar sein; einschließlich benanntem Grenztag, kein allgemeiner Anwendungsbeginn der Maschinenverordnung."
+    },
+    {
+      "fall_id": "REF_MASCHINENFOLGETERMIN_2",
+      "regel_id": "OMN_003_01_ANWENDUNGSTERMIN",
+      "eingaben": {
+        "maschinen_ki_folgeakt_anwendbar_ab": "2028-08-03"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Änderungsakt Artikel3 Nummer1: konkrete delegierte Akte müssen bis2August2028 anwendbar sein; einschließlich benanntem Grenztag, kein allgemeiner Anwendungsbeginn der Maschinenverordnung."
+    },
+    {
+      "fall_id": "REF_MASCHINENFOLGETERMIN_3",
+      "regel_id": "OMN_003_01_ANWENDUNGSTERMIN",
+      "eingaben": {
+        "maschinen_ki_folgeakt_anwendbar_ab": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Änderungsakt Artikel3 Nummer1: konkrete delegierte Akte müssen bis2August2028 anwendbar sein; einschließlich benanntem Grenztag, kein allgemeiner Anwendungsbeginn der Maschinenverordnung."
+    },
+    {
+      "fall_id": "REF_MASCHINENFOLGETERMIN_4",
+      "regel_id": "OMN_003_01_ANWENDUNGSTERMIN",
+      "eingaben": {
+        "maschinen_ki_folgeakt_anwendbar_ab": "2028-02-30"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Änderungsakt Artikel3 Nummer1: konkrete delegierte Akte müssen bis2August2028 anwendbar sein; einschließlich benanntem Grenztag, kein allgemeiner Anwendungsbeginn der Maschinenverordnung."
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_HUNDERT",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": "100"
+      },
+      "wert": "5",
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend."
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_NULL",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": "0"
+      },
+      "wert": "0",
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend."
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_SUBCENT",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": "0.01"
+      },
+      "wert": "0.0005",
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend."
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_EXAKT",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": "12345678901234567890.123456"
+      },
+      "wert": "617283945061728394.5061728",
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend."
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_NEGATIV",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": "-1"
+      },
+      "wert": null,
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend.",
+      "status": "EINGABE_UNGUELTIG"
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_BINAR",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": 100
+      },
+      "wert": null,
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend.",
+      "status": "EINGABE_UNGUELTIG"
+    },
+    {
+      "fall_id": "REF_ZWANGSEINKOMMEN_FEHLT",
+      "regel_id": "AIA_075C_005_TAGESEINKOMMEN",
+      "eingaben": {
+        "qualifiziertes_durchschnittliches_tageseinkommen_eur": null
+      },
+      "wert": null,
+      "herleitung": "75c(5):5Prozent gleichMultiplikationmit0.05; exakterDezimaltextohneRundung. Negative/Binärzahleneingabenungültig; fehlendeBasisbleibtfehlend.",
+      "status": "EINGABE_FEHLT"
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_005_GLEICH",
+      "regel_id": "AIA_005_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T01:00:00Z",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:00:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_005_SPAETER",
+      "regel_id": "AIA_005_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T01:00:00.000001Z",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:00:00+01:00"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_005_OFFSET",
+      "regel_id": "AIA_005_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T02:30:00+02:00",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:15:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_005_LUECKE",
+      "regel_id": "AIA_005_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": null,
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:15:00+01:00"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_026_GLEICH",
+      "regel_id": "AIA_026_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T01:00:00Z",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:00:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_026_SPAETER",
+      "regel_id": "AIA_026_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T01:00:00.000001Z",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:00:00+01:00"
+      },
+      "wert": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_026_OFFSET",
+      "regel_id": "AIA_026_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": "2026-10-25T02:30:00+02:00",
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:15:00+01:00"
+      },
+      "wert": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_BIOMETRIEZEIT_026_LUECKE",
+      "regel_id": "AIA_026_BIOMETRIE_ZEITPUNKT_BIS_FRISTENDE",
+      "eingaben": {
+        "biometrie_gepruefter_zeitpunkt": null,
+        "biometrie_qualifiziertes_antragsfristende": "2026-10-25T02:15:00+01:00"
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Technischer Vergleich unter ausdrücklich vorgelagert qualifiziertem inklusivem Fristende: gleicher UTC-Zeitpunkt umfasst, eine Mikrosekunde später nicht; Offset normalisieren; fehlenden Zeitpunkt nicht erfinden. Keine rechtliche Bestimmung des Fristendes."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_2_ERSTER",
+      "regel_id": "AIA_112_002_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2028-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(2):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_2_FEHLT",
+      "regel_id": "AIA_112_002_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(2):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_2_NEGATIV",
+      "regel_id": "AIA_112_002_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(2):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_2_ZWEITER",
+      "regel_id": "AIA_112_002_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": "2032-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(2):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_3_ERSTER",
+      "regel_id": "AIA_112_003_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2029-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(3):Ersttermin2August2029;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_3_FEHLT",
+      "regel_id": "AIA_112_003_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(3):Ersttermin2August2029;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_3_NEGATIV",
+      "regel_id": "AIA_112_003_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(3):Ersttermin2August2029;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_3_ZWEITER",
+      "regel_id": "AIA_112_003_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": "2033-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(3):Ersttermin2August2029;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_5_ERSTER",
+      "regel_id": "AIA_112_005_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2028-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(5):Ersttermin2August2028;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_5_FEHLT",
+      "regel_id": "AIA_112_005_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(5):Ersttermin2August2028;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_5_NEGATIV",
+      "regel_id": "AIA_112_005_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(5):Ersttermin2August2028;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_5_KEINE_WIEDERKEHR",
+      "regel_id": "AIA_112_005_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(5):Ersttermin2August2028;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_6_ERSTER",
+      "regel_id": "AIA_112_006_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2028-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(6):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_6_FEHLT",
+      "regel_id": "AIA_112_006_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(6):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_6_NEGATIV",
+      "regel_id": "AIA_112_006_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(6):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_6_ZWEITER",
+      "regel_id": "AIA_112_006_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": "2032-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(6):Ersttermin2August2028;danachalle4Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_7_ERSTER",
+      "regel_id": "AIA_112_007_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2028-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(7):Ersttermin2August2028;danachalle3Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_7_FEHLT",
+      "regel_id": "AIA_112_007_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(7):Ersttermin2August2028;danachalle3Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_7_NEGATIV",
+      "regel_id": "AIA_112_007_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(7):Ersttermin2August2028;danachalle3Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_7_ZWEITER",
+      "regel_id": "AIA_112_007_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": "2031-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(7):Ersttermin2August2028;danachalle3Jahre. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_13_ERSTER",
+      "regel_id": "AIA_112_013_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 0
+      },
+      "wert": "2031-08-02",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel112(13):Ersttermin2August2031;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_13_FEHLT",
+      "regel_id": "AIA_112_013_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Artikel112(13):Ersttermin2August2031;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_13_NEGATIV",
+      "regel_id": "AIA_112_013_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": -1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(13):Ersttermin2August2031;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_EVALUATIONSTERMIN_13_KEINE_WIEDERKEHR",
+      "regel_id": "AIA_112_013_TERMIN",
+      "eingaben": {
+        "evaluationszyklus_index": 1
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel112(13):Ersttermin2August2031;EinmaligerTermin,keineWiederkehrvorschrifterfinden. FehlendenIndexnichtausSystemdatumableiten;negativeIndizesungültig."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_022_003_B_AUFBEWAHRUNGSDAUER",
+      "regel_id": "AIA_022_003_B_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 22(3)(b): Unterlagen des Bevollmächtigten zehn Jahre nach Inverkehrbringen/Inbetriebnahme. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_023_005_AUFBEWAHRUNGSDAUER",
+      "regel_id": "AIA_023_005_AUFBEWAHRUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 10,
+        "einheit": "JAHR"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 23(5): Einführerkopien zehn Jahre nach Inverkehrbringen/Inbetriebnahme. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_003_FORTGELTUNG",
+      "regel_id": "AIA_036_003_FORTGELTUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 9,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(3): Bedingte Fortgeltung neun Monate nach Einstellung; kein bedingungsloser Gültigkeitsnachweis. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_007_B_BERICHTSDAUER",
+      "regel_id": "AIA_036_007_B_BERICHTSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(7)(b): Behördenbericht binnen drei Monaten nach Notifizierung der Benennungsänderung. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_008_A_BESTAETIGUNGSDAUER",
+      "regel_id": "AIA_036_008_A_BESTAETIGUNGSDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 1,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(8)(a): Behördliche Bestätigung binnen einem Monat nach Aussetzung/Einschränkung. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_008_B_UEBERNAHMEDAUER",
+      "regel_id": "AIA_036_008_B_UEBERNAHMEDAUER",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(8)(b): Schriftliche Anbieterbestätigung binnen drei Monaten im einschlägigen Ersatzübernahmefall. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_009_GRUNDFORTGELTUNG",
+      "regel_id": "AIA_036_009_GRUNDFORTGELTUNG",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 9,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(9): Neunmonatige bedingte Grundfortgeltung; Voraussetzungen separat. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_AIA_036_009_VERLAENGERUNGSSCHRITT",
+      "regel_id": "AIA_036_009_VERLAENGERUNGSSCHRITT",
+      "eingaben": {},
+      "wert": {
+        "anzahl": 3,
+        "einheit": "MONAT"
+      },
+      "herleitung": "Lokaler Primär-/Lesefassungsabgleich Artikel 36(9): Einzelner gewährter zusätzlicher Dreimonatsschritt; keine Auflösung der Gesamtdauerfrage F009. Nur Dauerparameter, kein konkretes Fristende."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_VERBOT",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "VERBOT"
+      },
+      "wert": "1500000",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel100(2) nennt ausdrücklich bis zu 1.500.000 EUR für Artikel5-Verstöße."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_SONSTIGES",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "SONSTIGE_ANFORDERUNG"
+      },
+      "wert": "750000",
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel100(3) nennt bis zu 750.000 EUR für sonstige Anforderungen/Pflichten."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_FEHLEND",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {},
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Ohne Verstoßkategorie lässt sich keine der beiden Obergrenzen auswählen."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_NULL",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": null
+      },
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Explizit unbekannte Kategorie bleibt unbekannt."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_FREMD",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": "PFLICHT"
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Artikel99-Kategorien werden nicht stillschweigend auf Artikel100 übertragen."
+    },
+    {
+      "fall_id": "REF_REGISTERABSCHLUSS_EDPS_TYP",
+      "regel_id": "AIA_100_OBERGRENZE",
+      "eingaben": {
+        "verstosskategorie": true
+      },
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Boolean ist keine qualifizierte Artikel100-Verstoßkategorie."
+    }
+  ],
+  "quellenfassung": "EUAIACT_2026_07_27",
+  "schemaversion": "0.1.0"
+}

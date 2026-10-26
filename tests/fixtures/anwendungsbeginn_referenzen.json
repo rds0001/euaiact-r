@@ -1,0 +1,226 @@
+{
+  "herkunft": "Manuell aus ANWENDUNGSBEGINN.md vor Implementierung; keine Auswerterergebnisse.",
+  "faelle": [
+    {
+      "fall_id": "ARTIKEL_5_BA_BB_1A_1B_2026-12-01",
+      "eingaben": {
+        "bereich": "ARTIKEL_5_BA_BB_1A_1B",
+        "stichtag": "2026-12-01",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": false,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "ARTIKEL_5_BA_BB_1A_1B_2026-12-02",
+      "eingaben": {
+        "bereich": "ARTIKEL_5_BA_BB_1A_1B",
+        "stichtag": "2026-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": true,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5_2027-12-01",
+      "eingaben": {
+        "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5",
+        "stichtag": "2027-12-01",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": false,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5_2027-12-02",
+      "eingaben": {
+        "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5",
+        "stichtag": "2027-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": true,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "HOCHRISIKO_ANHANG_I_ABSCHNITT_1_BIS_3_OHNE_6_5_2028-08-01",
+      "eingaben": {
+        "bereich": "HOCHRISIKO_ANHANG_I_ABSCHNITT_1_BIS_3_OHNE_6_5",
+        "stichtag": "2028-08-01",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": false,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "HOCHRISIKO_ANHANG_I_ABSCHNITT_1_BIS_3_OHNE_6_5_2028-08-02",
+      "eingaben": {
+        "bereich": "HOCHRISIKO_ANHANG_I_ABSCHNITT_1_BIS_3_OHNE_6_5",
+        "stichtag": "2028-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": true,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "ARTIKEL_101_2026-08-01",
+      "eingaben": {
+        "bereich": "ARTIKEL_101",
+        "stichtag": "2026-08-01",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": false,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "ARTIKEL_101_2026-08-02",
+      "eingaben": {
+        "bereich": "ARTIKEL_101",
+        "stichtag": "2026-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": true,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel 113: Tag vor dem ausdrücklich genannten Beginn ist noch nicht erfasst; der Beginn selbst ist eingeschlossen."
+    },
+    {
+      "fall_id": "URSPRUENGLICHE_PLANUNG",
+      "eingaben": {
+        "bereich": "HOCHRISIKO_ANHANG_I_ARTIKEL_6_1_UND_ZUGEHOERIGE_PFLICHTEN",
+        "stichtag": "2027-08-02",
+        "quellenfassung": "EUAIACT_2024_08_01"
+      },
+      "erwartung": {
+        "wert": true,
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Ursprünglicher Artikel 113 Buchstabe c nennt 2. August 2027. Ausdrücklich historische Planung, kein aktueller Rechtsstand."
+    },
+    {
+      "fall_id": "KEINE_RETROAKTIVE_NEUFASSUNG",
+      "eingaben": {
+        "bereich": "ALLGEMEIN",
+        "stichtag": "2025-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Die neue Fassung war zum Stichtag noch nicht in Kraft. Keine heimliche Auswahl der früheren Fassung."
+    },
+    {
+      "fall_id": "DATUM_UNBEKANNT",
+      "eingaben": {
+        "bereich": "ARTIKEL_101",
+        "stichtag": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "Ohne Stichtag ist kein Datumsvergleich möglich."
+    },
+    {
+      "fall_id": "BEREICH_UNGUELTIG_VOR_FEHLEND",
+      "eingaben": {
+        "bereich": "ALLE_PFLICHTEN",
+        "stichtag": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Die unwahre Zusammenfassung aller Pflichten ist kein zulässiger Bereich; fehlender Stichtag verdeckt diesen Vertragsfehler nicht."
+    },
+    {
+      "fall_id": "F002_VOLLSTAENDIG",
+      "eingaben": {
+        "bereich": "ARTIKEL_4A",
+        "stichtag": "2026-07-28",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "REGEL_UNGEKLAERT"
+      },
+      "herleitung": "Vollständige Eingabe; offene Rechtsauslegung ist kein fehlendes Unternehmensdatum."
+    },
+    {
+      "fall_id": "F002_SPAETER",
+      "eingaben": {
+        "bereich": "ARTIKEL_4A",
+        "stichtag": "2026-10-24",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "REGEL_UNGEKLAERT"
+      },
+      "herleitung": "Nicht freigegebener Beginn wird auch bei späterem Stichtag nicht stillschweigend festgelegt."
+    },
+    {
+      "fall_id": "F002_FEHLEND",
+      "eingaben": {
+        "bereich": "ARTIKEL_4A",
+        "stichtag": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "Der ausdrücklich erforderliche Stichtag fehlt; keine Systemuhrannahme."
+    },
+    {
+      "fall_id": "F002_UNGUELTIG",
+      "eingaben": {
+        "bereich": "ARTIKEL_4A",
+        "stichtag": "2026-02-30",
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Ungültiges Kalenderdatum bleibt Eingabefehler trotz bekannter Fachfrage."
+    },
+    {
+      "fall_id": "F002_ALTFASSUNG",
+      "eingaben": {
+        "bereich": "ARTIKEL_4A",
+        "stichtag": "2026-07-20",
+        "quellenfassung": "EUAIACT_2024_08_01"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Artikel 4a ist in der historischen Quellenfassung nicht vorhanden."
+    }
+  ]
+}

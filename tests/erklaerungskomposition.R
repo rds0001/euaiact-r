@@ -1,0 +1,10 @@
+library(euaiact)
+f <- "EUAIACT_2026_07_27"
+aktuell <- ermittle_pflicht("P_AIA_047_001", list(anbieterrolle=FALSE, hochrisikosystem=TRUE), quellenfassung=f)
+historisch <- ermittle_pflicht("P_AIA_047_001_AUFBEWAHRUNG", list(akteur_hat_hochrisikosystem_als_anbieter_inverkehrgebracht_oder_inbetriebgenommen=TRUE), quellenfassung=f)
+stopifnot(identical(aktuell$wert$ausloeser_erfuellt,FALSE),isTRUE(historisch$wert$ausloeser_erfuellt),historisch$wert$erfuellung=="NICHT_GEPRUEFT",identical(historisch$wert$fristregel_ids,list("AIA_047_001_AUFBEWAHRUNGSDAUER")))
+verfuegbar <- pruefe_tatbestand("AIA_047_001_VERFUEGBARKEIT", list(eu_erklaerung_zustaendigen_nationalen_behoerden_verfuegbar=TRUE,eu_erklaerung_zehnjahreszeitraum_ab_markt_oder_inbetriebnahme_eingehalten=TRUE), quellenfassung=f)
+vorlage <- pruefe_tatbestand("AIA_047_001_KOPIEKRITERIUM", list(angeforderte_eu_erklaerungskopie_zustaendiger_nationaler_behoerde_vorgelegt=FALSE), quellenfassung=f)
+pflicht <- ermittle_pflicht("P_AIA_047_001_KOPIE",list(anbieterrolle=TRUE,hochrisikosystem=TRUE,zustaendige_nationale_behoerde_fordert_eu_erklaerung_an=TRUE),quellenfassung=f)
+stopifnot(isTRUE(verfuegbar$wert),identical(vorlage$wert,FALSE),isTRUE(pflicht$wert$ausloeser_erfuellt),identical(pflicht$wert$erfuellungskriterien,list("AIA_047_001_KOPIEKRITERIUM")),pflicht$wert$erfuellung=="NICHT_GEPRUEFT")
+cat("2 Erklaerungskompositionen bestanden\n")

@@ -1,0 +1,2493 @@
+{
+  "spezifikation": "QUALIFIZIERTE_GRUPPENAGGREGATION_0_1_0",
+  "faelle": [
+    {
+      "fall_id": "REF_GRUPPE_PARTNER_VERBUND",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "150"
+        }
+      },
+      "herleitung": "EigenerVerbund100+20 plusPartnerverbund(80+40)*0.25=150;PartnerdesPartnersE bleibt unberücksichtigt."
+    },
+    {
+      "fall_id": "REF_GRUPPE_KONSOLIDIERT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "AB",
+            "unternehmen_ids": [
+              "A",
+              "B"
+            ],
+            "wert": "110"
+          },
+          {
+            "kreis_id": "CD",
+            "unternehmen_ids": [
+              "C",
+              "D"
+            ],
+            "wert": "100"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "135"
+        }
+      },
+      "herleitung": "QualifiziertkonsolidierterAB-Wert110 undCD-Wert100zu25Prozent=135;keine erneuteEinzelhinzurechnung. Konsolidierungseffekte sind inQuellwerten enthalten."
+    },
+    {
+      "fall_id": "REF_GRUPPE_VERBUNDZYKLUS",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          },
+          {
+            "von": "B",
+            "nach": "A",
+            "art": "VERBUND"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "150"
+        }
+      },
+      "herleitung": "Verbundzyklus verändertkeineIdentitätundwirdnur einmal berücksichtigt."
+    },
+    {
+      "fall_id": "REF_GRUPPE_REIHENFOLGE",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "E",
+          "D",
+          "C",
+          "B",
+          "A"
+        ],
+        "beziehungen": [
+          {
+            "von": "E",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.5"
+          },
+          {
+            "von": "D",
+            "nach": "C",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "B",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "B",
+            "nach": "A",
+            "art": "VERBUND"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "150"
+        }
+      },
+      "herleitung": "QualifizierteKontroll-/PartnerrelationfürAggregationungerichtet;DatenreihenfolgeverändertwederGewichte nochSumme."
+    },
+    {
+      "fall_id": "REF_GRUPPE_KONSOLIDIERUNG_DOPPELT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          },
+          {
+            "kreis_id": "AB_doppelt",
+            "unternehmen_ids": [
+              "A",
+              "B"
+            ],
+            "wert": "120"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "EinzelundKonsolidierungsdatenmitgleichemUnternehmenskreis dürfen nichtaddiertwerden."
+    },
+    {
+      "fall_id": "REF_GRUPPE_MISCHQUOTE",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "ABC",
+            "unternehmen_ids": [
+              "A",
+              "B",
+              "C"
+            ],
+            "wert": "200"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Ein unaufgeschlüsselterDatenkreis mit100und25ProzentGewichtdarf nichtpauschalgewichtetwerden."
+    },
+    {
+      "fall_id": "REF_GRUPPE_MEHRERE_PARTNERPFADE",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          },
+          {
+            "von": "A",
+            "nach": "D",
+            "art": "PARTNER",
+            "quote": "0.25"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "MehrereWegezwischenidentischenVerbundgruppen benötigeneineeinzige vorgelagertqualifizierteGruppenquote;weder blindaddierennochmaximieren."
+    },
+    {
+      "fall_id": "REF_GRUPPE_PARTNER_IM_VERBUND",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          },
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "PARTNER",
+            "quote": "0.25"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "EinVerbundwirdnichtzusätzlichalsPartnergezählt."
+    },
+    {
+      "fall_id": "REF_GRUPPE_DATENKREIS_FEHLT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "FehlendeDatenfüreinUnternehmendesPartnerverbundssindkeineNull."
+    },
+    {
+      "fall_id": "REF_GRUPPE_WERT_FEHLT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": null
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "UnbekanntergewichteterWert verhindertGesamtsumme."
+    },
+    {
+      "fall_id": "REF_GRUPPE_IRRELEVANTER_WERT_FEHLT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": null
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "150"
+        }
+      },
+      "herleitung": "PartnerdesPartnershatGewicht0;fehlenderWertistfürdieseAggregationnichtrelevant."
+    },
+    {
+      "fall_id": "REF_GRUPPE_KREIS_OFFEN",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": false,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "UnvollständigerBeziehungskreisbelegtkeinevollständigeAggregation."
+    },
+    {
+      "fall_id": "REF_GRUPPE_PARTNERQUOTE_KLEIN",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.249999999999999999"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Partnerquote unter25ProzentistkeinqualifizierterPartnervertrag;keinefreieGewichtung."
+    },
+    {
+      "fall_id": "REF_GRUPPE_BINAERZAHL",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": 0.1
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "BinäreGleitkommaFinanzwertewerdennichtalsetakteDezimaltexteangenommen."
+    },
+    {
+      "fall_id": "REF_GRUPPE_GROSSE_BILANZ",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "9007199254740993.01"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "BILANZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "9007199254741043.01"
+        }
+      },
+      "herleitung": "ExakteBilanzsummeoberhalb2^53;20+30HinzurechnungohnebinäreRundung."
+    },
+    {
+      "fall_id": "REF_GRUPPE_RATIONALE_JAE",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": {
+              "zaehler": "1",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-A",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-B",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": {
+              "zaehler": "4",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-C-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-C-1",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-D",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": {
+              "zaehler": "100",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-E-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-1",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-2",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-3",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-4",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-5",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-6",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-7",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-8",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-9",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-10",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-11",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-12",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-13",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-14",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-15",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-16",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-17",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-18",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-19",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-20",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-21",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-22",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-23",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-24",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-25",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-26",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-27",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-28",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-29",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-30",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-31",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-32",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-33",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          }
+        ],
+        "groesse": "JAE",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": {
+            "zaehler": "3",
+            "nenner": "2"
+          }
+        }
+      },
+      "herleitung": "1/3+2/3+(4/3+2/3)*1/4=3/2JAE;keineRundung,nicht100/3desPartnerpartners."
+    },
+    {
+      "fall_id": "REF_GRUPPE_PERSONENSEGMENT_DOPPELT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": {
+              "zaehler": "1",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-A",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-A",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": {
+              "zaehler": "4",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-C-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-C-1",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-D",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": {
+              "zaehler": "100",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-E-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-1",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-2",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-3",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-4",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-5",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-6",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-7",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-8",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-9",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-10",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-11",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-12",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-13",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-14",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-15",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-16",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-17",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-18",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-19",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-20",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-21",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-22",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-23",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-24",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-25",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-26",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-27",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-28",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-29",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-30",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-31",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-32",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-33",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          }
+        ],
+        "groesse": "JAE",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "DerselberealequalifizierteArbeitsanteildarfunterverschiedenenDatenkreisenkein zweitesMalgezähltwerden."
+    },
+    {
+      "fall_id": "REF_GRUPPE_PERSON_MEHRERE_ANTEILE",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": {
+              "zaehler": "1",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-A",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-A",
+                "segment_id": "anderer-qualifizierter-Arbeitsanteil"
+              }
+            ]
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": {
+              "zaehler": "4",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-C-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-C-1",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-D",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": {
+              "zaehler": "100",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-E-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-1",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-2",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-3",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-4",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-5",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-6",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-7",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-8",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-9",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-10",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-11",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-12",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-13",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-14",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-15",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-16",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-17",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-18",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-19",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-20",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-21",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-22",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-23",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-24",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-25",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-26",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-27",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-28",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-29",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-30",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-31",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-32",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-33",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          }
+        ],
+        "groesse": "JAE",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": {
+            "zaehler": "3",
+            "nenner": "2"
+          }
+        }
+      },
+      "herleitung": "VerschiedenebelegteArbeitsanteilederselbenPersondürfennichtdurchNamensdeduplikationverschwinden."
+    },
+    {
+      "fall_id": "REF_GRUPPE_AUTONOM",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A"
+        ],
+        "beziehungen": [],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "summe": "100"
+        }
+      },
+      "herleitung": "VollständigqualifizierterautonomerKreisenthältnureigeneDaten."
+    },
+    {
+      "fall_id": "REF_GRUPPE_UNBEKANNTE_ID",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "X",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "GraphkantenmüssenaufbekannteUnternehmenverweisen."
+    },
+    {
+      "fall_id": "REF_GRUPPE_PERSONENINVENTAR_FEHLT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": {
+              "zaehler": "1",
+              "nenner": "3"
+            },
+            "personensegmente": []
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-B",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": {
+              "zaehler": "4",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-C-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-C-1",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": {
+              "zaehler": "2",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-D",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": {
+              "zaehler": "100",
+              "nenner": "3"
+            },
+            "personensegmente": [
+              {
+                "person_id": "person-E-0",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-1",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-2",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-3",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-4",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-5",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-6",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-7",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-8",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-9",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-10",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-11",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-12",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-13",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-14",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-15",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-16",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-17",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-18",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-19",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-20",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-21",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-22",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-23",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-24",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-25",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-26",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-27",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-28",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-29",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-30",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-31",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-32",
+                "segment_id": "abschnitt-2025"
+              },
+              {
+                "person_id": "person-E-33",
+                "segment_id": "abschnitt-2025"
+              }
+            ]
+          }
+        ],
+        "groesse": "JAE",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "PositiveJAEohnePersonensegmentinventarliefernnachdiesemDoppelerfassungsschutzvertragkeineSumme."
+    },
+    {
+      "fall_id": "REF_GRUPPE_IDENTITAET_DOPPELT",
+      "eingaben": {
+        "stamm_id": "A",
+        "unternehmen": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "A"
+        ],
+        "beziehungen": [
+          {
+            "von": "A",
+            "nach": "B",
+            "art": "VERBUND"
+          },
+          {
+            "von": "B",
+            "nach": "C",
+            "art": "PARTNER",
+            "quote": "0.25"
+          },
+          {
+            "von": "C",
+            "nach": "D",
+            "art": "VERBUND"
+          },
+          {
+            "von": "C",
+            "nach": "E",
+            "art": "PARTNER",
+            "quote": "0.5"
+          }
+        ],
+        "datenkreise": [
+          {
+            "kreis_id": "A",
+            "unternehmen_ids": [
+              "A"
+            ],
+            "wert": "100"
+          },
+          {
+            "kreis_id": "B",
+            "unternehmen_ids": [
+              "B"
+            ],
+            "wert": "20"
+          },
+          {
+            "kreis_id": "C",
+            "unternehmen_ids": [
+              "C"
+            ],
+            "wert": "80"
+          },
+          {
+            "kreis_id": "D",
+            "unternehmen_ids": [
+              "D"
+            ],
+            "wert": "40"
+          },
+          {
+            "kreis_id": "E",
+            "unternehmen_ids": [
+              "E"
+            ],
+            "wert": "1000"
+          }
+        ],
+        "groesse": "UMSATZ_EUR",
+        "bezugsperiode": "2025",
+        "kreis_vollstaendig": true,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "IdentitätistkeinezweiteUnternehmenseinheit."
+    }
+  ]
+}

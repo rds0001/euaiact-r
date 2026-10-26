@@ -1,0 +1,21 @@
+library(euaiact)
+f <- "EUAIACT_2026_07_27"
+t <- function(id,data) pruefe_tatbestand(paste0("DVO_0454_",id),data,f)
+p <- function(id,data) ermittle_pflicht(paste0("P_DVO_0454_",id),data,f)
+third <- berechne_regel("PANEL_DRITTEL_AUTORISIERUNG",list(mitgliederzahl=60L),f)$wert
+majority <- berechne_regel("PANEL_EINFACHE_MEHRHEIT",list(mitgliederzahl=60L),f)$wert
+request <- t("015_002_ANTRAGSBEFUGNIS",list(antragsteller_ist_mitglied_des_wissenschaftlichen_gremiums=TRUE,antragsteller_vom_sekretariat_zum_berichterstatter_der_aufgabe_bestellt=TRUE,mindestens_ein_drittel_aller_panelmitglieder_hat_antragsteller_autorisiert=20>=third))
+warning <- t("018_001_MEHRHEITSBESCHLUSS",list(panelwarnung_von_mindestens_einfacher_mehrheit_aller_mitglieder_beschlossen=20>=majority))
+stopifnot(third==20L,majority==31L,isTRUE(request$wert),identical(warning$wert,FALSE))
+duty <- p("004_003_ERSATZBESTELLUNG",list(panel_experte_tatsaechlich_entlassen=TRUE,entlassung_waehrend_laufender_amtszeit=TRUE))
+actual <- t("004_003_ERSATZNACHWEIS",list(ersatzexperte_tatsaechlich_durch_kommission_bestellt=FALSE))
+stopifnot(isTRUE(duty$wert$ausloeser_erfuellt),"DVO_0454_004_003_ERSATZNACHWEIS" %in% unlist(duty$wert$erfuellungskriterien),duty$wert$erfuellung=="NICHT_GEPRUEFT",identical(actual$wert,FALSE))
+assessed <- t("019_001_ENTSCHEIDUNG",list(ki_buero_hat_panelwarnung_tatsaechlich_bewertet=TRUE,ki_buero_hat_ueber_91_bis_93_massnahmen_tatsaechlich_entschieden=TRUE))
+duty <- p("019_001_WARNUNGSSCHLIESSUNG",list(ki_buero_hat_qualifizierte_warnung_nach_90_1_bewertet=TRUE,ki_buero_hat_entschieden_keine_massnahmen_nach_91_bis_93_einzuleiten=TRUE))
+actual <- t("019_001_SCHLIESSUNGSNACHWEIS",list(qualifizierte_panelwarnung_tatsaechlich_geschlossen=NULL))
+stopifnot(isTRUE(assessed$wert),isTRUE(duty$wert$ausloeser_erfuellt),duty$wert$erfuellung=="NICHT_GEPRUEFT",actual$status=="EINGABE_FEHLT",is.null(actual$wert))
+content <- t("017_003_VORABUNTERLAGEN",list(berichterstatter_hat_alleinige_verwendung_fuer_15_3_zwecke_erklaert=TRUE,berichterstatter_hat_modalitaeten_und_sicherungen_vertraulicher_handhabung_beschrieben=TRUE))
+chronology <- t("017_003_VORHER",list(ki_buero_hat_berichterstatter_vor_zugang_zu_vorabunterlagen_aufgefordert=TRUE,panel_vorabunterlagen_tatsaechlich_vor_zugangsgewaehrung_eingereicht=FALSE))
+duty <- p("017_ZUGANG",list(ki_buero_gewaehrt_panelzugang_zu_angeforderter_information=TRUE))
+stopifnot(isTRUE(content$wert),identical(chronology$wert,FALSE),"DVO_0454_017_003_VORHER" %in% unlist(duty$wert$erfuellungskriterien),duty$wert$erfuellung=="NICHT_GEPRUEFT")
+cat("Four panel procedure compositions passed\n")

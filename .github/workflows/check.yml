@@ -1,0 +1,52 @@
+name: R package checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: r-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  package:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, r: 'release'}
+          - {os: ubuntu-latest, r: 'oldrel-1'}
+          - {os: ubuntu-latest, r: 'devel'}
+          - {os: ubuntu-latest, r: '4.1'}
+          - {os: windows-latest, r: 'release'}
+          - {os: macos-latest, r: 'release'}
+    env:
+      _R_CHECK_CRAN_INCOMING_REMOTE_: 'false'
+      _R_CHECK_FORCE_SUGGESTS_: 'false'
+      # Explicit local size budget for the bundled offline rule catalogue.
+      # CRAN admission is separate; all other notes still fail this workflow.
+      _R_CHECK_PKG_SIZES_THRESHOLD_: '6'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.r }}
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--as-cran")'
+          error-on: '"note"'
+          upload-results: never
+      - name: Install and run synthetic company examples
+        shell: Rscript {0}
+        run: |
+          install.packages(".", repos = NULL, type = "source")
+          setwd(tempdir())
+          source(system.file("examples", "unternehmen.R", package = "euaiact"))

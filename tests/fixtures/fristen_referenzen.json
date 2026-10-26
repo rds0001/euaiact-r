@@ -1,0 +1,504 @@
+{
+  "quellenfassung": "EUAIACT_2026_07_27",
+  "kalender": {
+    "von": "2024-01-01",
+    "bis": "2029-12-31",
+    "feiertage": [],
+    "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+  },
+  "faelle": [
+    {
+      "fall_id": "FRIST_ZWEI_ARBEITSTAGE",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "FRIST",
+      "wert": "2026-10-27",
+      "herleitung": "Ereignis Freitag. Samstag/Sonntag enthalten keine Arbeitstage; Montag und Dienstag liefern die nach Artikel 3 Absatz 5 erforderlichen zwei Arbeitstage."
+    },
+    {
+      "fall_id": "FRIST_EIN_TAG_WOCHENENDE",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 1,
+      "einheit": "TAG",
+      "modus": "FRIST",
+      "wert": "2026-10-26",
+      "herleitung": "Ein Tag endet rechnerisch Samstag; Verschiebung auf Montag. Die Mindestzahl von zwei Arbeitstagen gilt nicht für eine Eintagesfrist."
+    },
+    {
+      "fall_id": "TERMIN_KEINE_VERSCHIEBUNG",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "FESTER_TERMIN",
+      "wert": "2026-10-25",
+      "herleitung": "Artikel 5 nimmt Artikel 3 Absätze 4 und 5 aus. Der feste Termin bleibt Sonntag."
+    },
+    {
+      "fall_id": "OMNIBUS_INKRAFT",
+      "ereignisdatum": "2026-07-24",
+      "anzahl": 3,
+      "einheit": "TAG",
+      "modus": "INKRAFTTRETEN",
+      "wert": "2026-07-27",
+      "herleitung": "Veröffentlichung 24. Juli, dritter folgender Tag 27. Juli, Beginn des Tages. Keine Zwei-Arbeitstage-Verlängerung."
+    },
+    {
+      "fall_id": "MONAT_FEHLENDER_TAG",
+      "ereignisdatum": "2026-01-31",
+      "anzahl": 1,
+      "einheit": "MONAT",
+      "modus": "FESTER_TERMIN",
+      "wert": "2026-02-28",
+      "herleitung": "Der Februar hat keinen 31. Tag; der letzte Februartag tritt an seine Stelle."
+    },
+    {
+      "fall_id": "JAHR_SCHALTTAG",
+      "ereignisdatum": "2024-02-29",
+      "anzahl": 1,
+      "einheit": "JAHR",
+      "modus": "FESTER_TERMIN",
+      "wert": "2025-02-28",
+      "herleitung": "Der entsprechende Tag fehlt im Folgejahr; letzter Februartag."
+    },
+    {
+      "fall_id": "ARBEITSTAGE_FREITAG",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 2,
+      "einheit": "ARBEITSTAG",
+      "modus": "FRIST",
+      "wert": "2026-10-27",
+      "herleitung": "Montag und Dienstag sind die ersten beiden folgenden Arbeitstage."
+    },
+    {
+      "fall_id": "WOCHE_KORRESPONDENZ",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 1,
+      "einheit": "WOCHE",
+      "modus": "FRIST",
+      "wert": "2026-10-30",
+      "herleitung": "Eine Woche endet am gleichnamigen Wochentag der Folgewoche, hier Freitag."
+    },
+    {
+      "fall_id": "ARBEITSTAG_EIN_TAG",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 1,
+      "einheit": "ARBEITSTAG",
+      "modus": "FRIST",
+      "wert": "2026-10-26",
+      "herleitung": "Eine Frist von einem Arbeitstag endet am Montag. Die zwischenliegenden Wochenendtage machen sie nicht zu einer Frist von mindestens zwei Arbeitstagen."
+    },
+    {
+      "fall_id": "FESTER_TERMIN_OHNE_KALENDER",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "FESTER_TERMIN",
+      "kalender": null,
+      "wert": "2026-10-25",
+      "herleitung": "Artikel 5 nimmt die Arbeitstagsverlängerungen aus. Zwei Kalendertage nach Freitag enden am Sonntag; ein Feiertagskalender ist für diese feste Datumsberechnung nicht erforderlich."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_01",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 3,
+      "einheit": "TAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-28",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Erster Folgetag mit Arbeitstag ist Montag 26.; drei Kalendertage enden Mittwoch 28."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_02",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 3,
+      "einheit": "TAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [
+          "2026-10-26"
+        ],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-29",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Montag ist ausdrücklich Feiertag; Dienstag 27. ist Tag 1, Donnerstag 29. Tag 3."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_03",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 3,
+      "einheit": "ARBEITSTAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-28",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Montag, Dienstag und Mittwoch sind drei Arbeitstage ab erstem folgenden Arbeitstag."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_04",
+      "ereignisdatum": "2026-10-22",
+      "anzahl": 5,
+      "einheit": "TAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-27",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Beginn Freitag, danach zählen Samstag und Sonntag innerhalb der fünftägigen Kalenderfrist mit."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_05",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 1,
+      "einheit": "TAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-26",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Ein Tag: erster Folgearbeitstag Montag ist zugleich der letzte gezählte Tag; keine zusätzliche Tagesverschiebung."
+    },
+    {
+      "fall_id": "VERFAHREN_1755_06",
+      "ereignisdatum": "2026-10-22",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "VERFAHREN_1755_TAGE",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      },
+      "wert": "2026-10-26",
+      "herleitung": "DVO 2026/1755 Artikel 12(2), VO 1182/71 Artikel 3: Freitag ist Tag 1, Samstag Tag 2; Ende verschiebt auf Montag und enthält dann zwei Arbeitstage."
+    },
+    {
+      "fall_id": "FRIST_RUECK_EINTAG_SONNTAG",
+      "ereignisdatum": "2026-10-26",
+      "anzahl": 1,
+      "einheit": "TAG",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-25",
+      "herleitung": "Artikel 3(4) Satz 2: Rückwärtsfrist endet rechnerisch Sonntag; keine Verschiebung. Absatz 5 gilt nicht für einen Tag."
+    },
+    {
+      "fall_id": "FRIST_RUECK_ZWEITAGE_MONTAG",
+      "ereignisdatum": "2026-10-26",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-22",
+      "herleitung": "Bezugstag Montag zählt nicht; Samstag/Sonntag liefern keinen Arbeitstag. Freitag und Donnerstag sind die zwei erforderlichen Arbeitstage. Keine Vorwärtsverschiebung."
+    },
+    {
+      "fall_id": "FRIST_RUECK_ZWEITAGE_FREITAG",
+      "ereignisdatum": "2026-10-23",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-21",
+      "herleitung": "Donnerstag und Mittwoch sind die zwei gezählten Tage und Arbeitstage."
+    },
+    {
+      "fall_id": "FRIST_RUECK_WOCHE_SONNTAG",
+      "ereignisdatum": "2026-10-25",
+      "anzahl": 1,
+      "einheit": "WOCHE",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-18",
+      "herleitung": "Korrespondenzsonntag eine Woche vorher bleibt erhalten; innerhalb liegen mindestens zwei Arbeitstage."
+    },
+    {
+      "fall_id": "FRIST_RUECK_MONAT_ENDE",
+      "ereignisdatum": "2026-03-31",
+      "anzahl": 1,
+      "einheit": "MONAT",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-02-28",
+      "herleitung": "Februar hat keinen 31.; letzter Monatstag ist Samstag und bleibt unverändert."
+    },
+    {
+      "fall_id": "FRIST_RUECK_MONAT_SCHALTJAHR",
+      "ereignisdatum": "2024-03-31",
+      "anzahl": 1,
+      "einheit": "MONAT",
+      "modus": "RUECKWAERTS",
+      "wert": "2024-02-29",
+      "herleitung": "Schaltjahr: letzter Februartag ist der 29."
+    },
+    {
+      "fall_id": "FRIST_RUECK_JAHR_SCHALTTAG",
+      "ereignisdatum": "2024-02-29",
+      "anzahl": 1,
+      "einheit": "JAHR",
+      "modus": "RUECKWAERTS",
+      "wert": "2023-02-28",
+      "herleitung": "Fehlender 29. Februar im Zieljahr wird auf letzten Februartag begrenzt.",
+      "kalender": {
+        "von": "2023-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      }
+    },
+    {
+      "fall_id": "FRIST_RUECK_DREI_ARBEITSTAGE",
+      "ereignisdatum": "2026-10-26",
+      "anzahl": 3,
+      "einheit": "ARBEITSTAG",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-21",
+      "herleitung": "Bezugstag Montag ausgeschlossen; Freitag, Donnerstag, Mittwoch zählen."
+    },
+    {
+      "fall_id": "FRIST_RUECK_NEUN_MONATE",
+      "ereignisdatum": "2028-07-27",
+      "anzahl": 9,
+      "einheit": "MONAT",
+      "modus": "RUECKWAERTS",
+      "wert": "2027-10-27",
+      "herleitung": "Neun korrespondierende Monate vor dem ausdrücklich übergebenen Enddatum; keine implizite Wahl einer Delegationskohorte."
+    },
+    {
+      "fall_id": "FRIST_RUECK_DREI_MONATE",
+      "ereignisdatum": "2028-07-27",
+      "anzahl": 3,
+      "einheit": "MONAT",
+      "modus": "RUECKWAERTS",
+      "wert": "2028-04-27",
+      "herleitung": "Drei korrespondierende Monate vor dem übergebenen Enddatum; konkrete Einspruchsgrundlage separat."
+    },
+    {
+      "fall_id": "FRIST_RUECK_FEIERTAG",
+      "ereignisdatum": "2026-10-26",
+      "anzahl": 2,
+      "einheit": "TAG",
+      "modus": "RUECKWAERTS",
+      "wert": "2026-10-21",
+      "herleitung": "Freitag 23. ist ausdrücklich Feiertag; Donnerstag 22. und Mittwoch 21. sind die zwei nötigen Arbeitstage vor Montag 26.",
+      "kalender": {
+        "von": "2024-01-01",
+        "bis": "2029-12-31",
+        "feiertage": [
+          "2026-10-23"
+        ],
+        "bezug": "SYNTHETISCH: für diese Referenzfälle ausdrücklich keine Feiertage"
+      }
+    },
+    {
+      "fall_id": "FRIST_STUNDE_001",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-23T11:00:00Z",
+        "ende_exklusiv": "2026-10-23T12:00:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_002",
+      "ereignisdatum": "2026-10-23T10:00:00Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-23T11:00:00Z",
+        "ende_exklusiv": "2026-10-23T12:00:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_003",
+      "ereignisdatum": "2026-10-23T10:59:59.999999Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-23T11:00:00Z",
+        "ende_exklusiv": "2026-10-23T12:00:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_004",
+      "ereignisdatum": "2026-10-23T10:30:00+05:30",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-23T05:30:00Z",
+        "ende_exklusiv": "2026-10-23T06:30:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_005",
+      "ereignisdatum": "2026-10-23T10:30:00-03:30",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-23T14:30:00Z",
+        "ende_exklusiv": "2026-10-23T15:30:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_006",
+      "ereignisdatum": "2026-10-23T23:20:00Z",
+      "anzahl": 24,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2026-10-24T00:00:00Z",
+        "ende_exklusiv": "2026-10-25T00:00:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_007",
+      "ereignisdatum": "2028-02-28T23:59:59Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": {
+        "beginn": "2028-02-29T00:00:00Z",
+        "ende_exklusiv": "2028-02-29T01:00:00Z"
+      },
+      "status": "AUSGEWERTET",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_008",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": 48,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "REGEL_UNGEKLAERT",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_009",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": 72,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "REGEL_UNGEKLAERT",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_010",
+      "ereignisdatum": null,
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_011",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": null,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_012",
+      "ereignisdatum": "2026-10-23T10:30:00",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_013",
+      "ereignisdatum": "2026-02-30T10:30:00Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_014",
+      "ereignisdatum": "9999-12-31T23:30:00Z",
+      "anzahl": 1,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_015",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": true,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    },
+    {
+      "fall_id": "FRIST_STUNDE_016",
+      "ereignisdatum": "2026-10-23T10:30:00Z",
+      "anzahl": 0,
+      "einheit": "STUNDE",
+      "modus": "FRIST",
+      "kalender": null,
+      "wert": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "1182/71Artikel3(1)/(2)(a): Ereignisstunde ausgeschlossen, ganze folgende Stunden, exklusive UTC-Endgrenze; keine Wochenendverschiebung. Ab48Stunden entscheidungsrelevante F011-Grenze."
+    }
+  ]
+}

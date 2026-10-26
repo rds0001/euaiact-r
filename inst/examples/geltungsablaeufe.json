@@ -1,0 +1,993 @@
+{
+  "kennzeichnung": "SYNTHETISCH",
+  "umfang": "Zwölf explizite Norm-/Rollen-/Zeit-/Bestandskompositionen. Teilbefunde bleiben mit Quellen und Lücken sichtbar; keine globale Konformitätsentscheidung.",
+  "faelle": [
+    {
+      "fall_id": "NEUES_VERBOT_VOR_BEGINN",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-NEUES_VERBOT_VOR_BEGINN",
+        "gegenstand_id": "gegenstand-NEUES_VERBOT_VOR_BEGINN",
+        "vorgang_id": "vorgang-NEUES_VERBOT_VOR_BEGINN",
+        "stichtag": "2026-12-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_005_001_BA",
+            "eingaben": {
+              "inverkehrbringen_oder_inbetriebnahme": false,
+              "verwendung": true,
+              "betreiberzweck_erzeugung_oder_manipulation_betroffenen_materials": true,
+              "realistische_darstellung_identifizierbarer_person": true,
+              "darstellung_intimer_koerperteile": true,
+              "darstellung_sexuell_expliziter_aktivitaet": false,
+              "generierung": true,
+              "einwilligung_frei": false,
+              "medizinischer_diagnose_oder_behandlungszweck": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "ARTIKEL_5_BA_BB_1A_1B"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": false
+          }
+        }
+      ],
+      "herleitung": "Neuesba-Verbot sachlich erfüllt, jedoch Beginn erst2Dezember2026; kein bereits geltendes Verbot aus positivem Sachbefund."
+    },
+    {
+      "fall_id": "NEUES_VERBOT_AM_BEGINN",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-NEUES_VERBOT_VOR_BEGINN",
+        "gegenstand_id": "gegenstand-NEUES_VERBOT_VOR_BEGINN",
+        "vorgang_id": "vorgang-NEUES_VERBOT_VOR_BEGINN",
+        "stichtag": "2026-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_005_001_BA",
+            "eingaben": {
+              "inverkehrbringen_oder_inbetriebnahme": false,
+              "verwendung": true,
+              "betreiberzweck_erzeugung_oder_manipulation_betroffenen_materials": true,
+              "realistische_darstellung_identifizierbarer_person": true,
+              "darstellung_intimer_koerperteile": true,
+              "darstellung_sexuell_expliziter_aktivitaet": false,
+              "generierung": true,
+              "einwilligung_frei": false,
+              "medizinischer_diagnose_oder_behandlungszweck": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "ARTIKEL_5_BA_BB_1A_1B"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        }
+      ],
+      "herleitung": "Der fixe Anwendungsbeginn2Dezember2026 ist eingeschlossen."
+    },
+    {
+      "fall_id": "BESTAND_BESEITIGT_ARTIKEL5_NICHT",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-BESTAND_BESEITIGT_ARTIKEL5_NICHT",
+        "gegenstand_id": "gegenstand-BESTAND_BESEITIGT_ARTIKEL5_NICHT",
+        "vorgang_id": "vorgang-BESTAND_BESEITIGT_ARTIKEL5_NICHT",
+        "stichtag": "2026-10-25",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_005_001_A",
+            "eingaben": {
+              "inverkehrbringen_inbetriebnahme_oder_verwendung": true,
+              "unterschwellige_techniken": false,
+              "gezielt_manipulative_oder_taeuschende_techniken": true,
+              "ziel_oder_wirkung_wesentliche_verhaltensverzerrung": true,
+              "erhebliche_beeintraechtigung_informierter_entscheidung": true,
+              "dadurch_sonst_nicht_getroffene_entscheidung": true,
+              "dadurch_erheblicher_schaden_oder_vernuenftigerweise_wahrscheinlich": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "KAPITEL_I_II_BESTAND"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "GROSS_IT_ANHANG_X",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2024-01-01"
+              },
+              "inbetriebnahme": {
+                "erfolgt": false
+              }
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "erfuellungsfrist": "2030-12-31",
+              "friststatus": "VOR_FRISTTAG"
+            }
+          }
+        }
+      ],
+      "herleitung": "Artikel111(1) lässtArtikel5 ausdrücklich unberührt; laufendeAnpassungsfrist ist keineVerbotsausnahme."
+    },
+    {
+      "fall_id": "HR_BESTAND_UNVERAENDERT",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-HR_BESTAND_UNVERAENDERT",
+        "gegenstand_id": "gegenstand-HR_BESTAND_UNVERAENDERT",
+        "vorgang_id": "vorgang-HR_BESTAND_UNVERAENDERT",
+        "stichtag": "2027-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": false,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": true,
+              "hochrisiko_nach_artikel_6_absatz_1": false,
+              "betreiberrolle": true,
+              "betreiber_niederlassung_in_union": true,
+              "betreiber_ist_natuerliche_person": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_026_001",
+            "eingaben": {
+              "betreiberrolle": true,
+              "hochrisikosystem": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "HOCHRISIKO_ANHANG_III",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2027-12-01"
+              },
+              "inbetriebnahme": {
+                "erfolgt": false
+              },
+              "aenderungen": [],
+              "aenderungshistorie_vollstaendig": true,
+              "fuer_behoerden_bestimmt": false,
+              "anbieter_oder_betreiber": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "aenderungsvorbehalt_ausgeloest": false,
+              "behoerdenfrist_betroffen": false,
+              "erfuellungsfrist": null,
+              "friststatus": "KEINE_BEHOERDENFRIST"
+            }
+          }
+        }
+      ],
+      "herleitung": "Betreiberrolle undNormbeginn alleinbeseitigenBestandsschutznicht;vollständigeHistorie ohneerheblicheÄnderung."
+    },
+    {
+      "fall_id": "HR_BESTAND_ERHEBLICH_GEAENDERT",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-HR_BESTAND_UNVERAENDERT",
+        "gegenstand_id": "gegenstand-HR_BESTAND_UNVERAENDERT",
+        "vorgang_id": "vorgang-HR_BESTAND_UNVERAENDERT",
+        "stichtag": "2027-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": false,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": true,
+              "hochrisiko_nach_artikel_6_absatz_1": false,
+              "betreiberrolle": true,
+              "betreiber_niederlassung_in_union": true,
+              "betreiber_ist_natuerliche_person": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_026_001",
+            "eingaben": {
+              "betreiberrolle": true,
+              "hochrisikosystem": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "HOCHRISIKO_ANHANG_III",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2027-12-01"
+              },
+              "inbetriebnahme": {
+                "erfolgt": false
+              },
+              "aenderungen": [
+                {
+                  "datum": "2027-12-02",
+                  "erheblich": true
+                }
+              ],
+              "aenderungshistorie_vollstaendig": true,
+              "fuer_behoerden_bestimmt": false,
+              "anbieter_oder_betreiber": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "aenderungsvorbehalt_ausgeloest": true,
+              "behoerdenfrist_betroffen": false,
+              "erfuellungsfrist": null,
+              "friststatus": "KEINE_BEHOERDENFRIST"
+            }
+          }
+        }
+      ],
+      "herleitung": "ErheblicheÄnderung amBeginnstag löstVorbehalt aus; dieGrundpflicht bleibtgetrennt vonihrerErfüllung."
+    },
+    {
+      "fall_id": "HR_HISTORIE_UNVOLLSTAENDIG",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-HR_BESTAND_UNVERAENDERT",
+        "gegenstand_id": "gegenstand-HR_BESTAND_UNVERAENDERT",
+        "vorgang_id": "vorgang-HR_BESTAND_UNVERAENDERT",
+        "stichtag": "2027-12-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": false,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": true,
+              "hochrisiko_nach_artikel_6_absatz_1": false,
+              "betreiberrolle": true,
+              "betreiber_niederlassung_in_union": true,
+              "betreiber_ist_natuerliche_person": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_026_001",
+            "eingaben": {
+              "betreiberrolle": true,
+              "hochrisikosystem": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "HOCHRISIKO_ANHANG_III",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2027-12-01"
+              },
+              "inbetriebnahme": {
+                "erfolgt": false
+              },
+              "aenderungen": [],
+              "aenderungshistorie_vollstaendig": false,
+              "fuer_behoerden_bestimmt": false,
+              "anbieter_oder_betreiber": true
+            }
+          },
+          "erwartung": {
+            "status": "EINGABE_FEHLT",
+            "wert": {
+              "bestand": true,
+              "aenderungsvorbehalt_ausgeloest": null,
+              "behoerdenfrist_betroffen": false,
+              "erfuellungsfrist": null,
+              "friststatus": "KEINE_BEHOERDENFRIST"
+            }
+          }
+        }
+      ],
+      "herleitung": "LeereÄnderungsliste beiunvollständigerHistoriebelegtkeinefehlendeÄnderung."
+    },
+    {
+      "fall_id": "GPAI_ANPASSUNGSFRIST",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-GPAI_ANPASSUNGSFRIST",
+        "gegenstand_id": "gegenstand-GPAI_ANPASSUNGSFRIST",
+        "vorgang_id": "vorgang-GPAI_ANPASSUNGSFRIST",
+        "stichtag": "2027-08-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_MODELLRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_modell": true,
+              "anbieterrolle": true,
+              "gpai_modell_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_053_001_A",
+            "eingaben": {
+              "anbieterrolle": true,
+              "gpai_modell": true,
+              "gpai_modell_mit_systemischem_risiko": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "KAPITEL_V"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "GPAI_MODELL",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2025-08-01"
+              }
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "erfuellungsfrist": "2027-08-02",
+              "friststatus": "VOR_FRISTTAG"
+            }
+          }
+        }
+      ],
+      "herleitung": "Artikel53-SachpflichtundKapitelV-Beginn bestehen;Artikel111(3)-Anpassungsfrist bleibtseparat."
+    },
+    {
+      "fall_id": "GPAI_AM_ERFUELLUNGSTAG",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-GPAI_ANPASSUNGSFRIST",
+        "gegenstand_id": "gegenstand-GPAI_ANPASSUNGSFRIST",
+        "vorgang_id": "vorgang-GPAI_ANPASSUNGSFRIST",
+        "stichtag": "2027-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_MODELLRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_modell": true,
+              "anbieterrolle": true,
+              "gpai_modell_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_053_001_A",
+            "eingaben": {
+              "anbieterrolle": true,
+              "gpai_modell": true,
+              "gpai_modell_mit_systemischem_risiko": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "KAPITEL_V"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "GPAI_MODELL",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2025-08-01"
+              }
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "erfuellungsfrist": "2027-08-02",
+              "friststatus": "FRISTTAG"
+            }
+          }
+        }
+      ],
+      "herleitung": "FixerErfüllungstag istkeine tatsächlichePflichtenerfüllung."
+    },
+    {
+      "fall_id": "TRANSPARENZ_EIGENE_BESTANDSFRIST",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-TRANSPARENZ_EIGENE_BESTANDSFRIST",
+        "gegenstand_id": "gegenstand-TRANSPARENZ_EIGENE_BESTANDSFRIST",
+        "vorgang_id": "vorgang-TRANSPARENZ_EIGENE_BESTANDSFRIST",
+        "stichtag": "2026-12-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_050_002",
+            "eingaben": {
+              "anbieterrolle": true,
+              "system_generiert_synthetische_audio_bild_video_oder_textinhalte": true,
+              "assistenz_fuer_standardbearbeitung": false,
+              "keine_wesentliche_aenderung_eingabedaten_oder_semantik": false,
+              "gesetzlich_erlaubte_straftataufdeckung_verhuetung_untersuchung_oder_verfolgung": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "ALLGEMEIN"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_bestandsfrist",
+          "parameter": {
+            "fallgruppe": "SYNTHETISCHE_AUSGABEN_ART_50_2",
+            "ereignisse": {
+              "inverkehrbringen": {
+                "erfolgt": true,
+                "datum": "2026-08-01"
+              }
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": {
+              "bestand": true,
+              "erfuellungsfrist": "2026-12-02",
+              "friststatus": "VOR_FRISTTAG"
+            }
+          }
+        }
+      ],
+      "herleitung": "111(4) betrifftArtikel50(2), nichtpauschalalleTransparenzpflichten."
+    },
+    {
+      "fall_id": "BETREIBER_PRIVAT_AUSGENOMMEN",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-BETREIBER_PRIVAT_AUSGENOMMEN",
+        "gegenstand_id": "gegenstand-BETREIBER_PRIVAT_AUSGENOMMEN",
+        "vorgang_id": "vorgang-BETREIBER_PRIVAT_AUSGENOMMEN",
+        "stichtag": "2028-09-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": false,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": true,
+              "hochrisiko_nach_artikel_6_absatz_1": false,
+              "betreiberrolle": true,
+              "betreiber_niederlassung_in_union": true,
+              "betreiber_ist_natuerliche_person": true,
+              "nutzung_nichtberuflich": true,
+              "nutzung_rein_persoenlich": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": false
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_026_001",
+            "eingaben": {
+              "betreiberrolle": true,
+              "hochrisikosystem": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        }
+      ],
+      "herleitung": "QualifizierteausschliesslichpersönlicheNichtberufsnutzung schliesstdieBetreiberpflichtnach2(10)aus;Sachrolle alleinistkeinGeltungsbefund."
+    },
+    {
+      "fall_id": "KEIN_UNIONSRECHTSRAHMEN",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-KEIN_UNIONSRECHTSRAHMEN",
+        "gegenstand_id": "gegenstand-KEIN_UNIONSRECHTSRAHMEN",
+        "vorgang_id": "vorgang-KEIN_UNIONSRECHTSRAHMEN",
+        "stichtag": "2026-10-25",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": true,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": false
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_005_001_A",
+            "eingaben": {
+              "inverkehrbringen_inbetriebnahme_oder_verwendung": true,
+              "unterschwellige_techniken": false,
+              "gezielt_manipulative_oder_taeuschende_techniken": true,
+              "ziel_oder_wirkung_wesentliche_verhaltensverzerrung": true,
+              "erhebliche_beeintraechtigung_informierter_entscheidung": true,
+              "dadurch_sonst_nicht_getroffene_entscheidung": true,
+              "dadurch_erheblicher_schaden_oder_vernuenftigerweise_wahrscheinlich": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "KAPITEL_I_II_BESTAND"
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        }
+      ],
+      "herleitung": "PositiverVerbotsinhaltundBeginnüberschreiben keinenqualifiziertenAusschlussnachArtikel2."
+    },
+    {
+      "fall_id": "BIAS_BEGINN_OFFEN",
+      "kennzeichnung": "SYNTHETISCH",
+      "kontext": {
+        "organisation_id": "organisation-BIAS_BEGINN_OFFEN",
+        "gegenstand_id": "gegenstand-BIAS_BEGINN_OFFEN",
+        "vorgang_id": "vorgang-BIAS_BEGINN_OFFEN",
+        "stichtag": "2026-10-25",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "qualifikation": "Identischer Akteur, Gegenstand und Vorgang; Normgruppe und Bestandsfall explizit qualifiziert. Keine automatische rechtliche Gesamtfreigabe."
+      },
+      "schritte": [
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+            "eingaben": {
+              "ki_system": true,
+              "anbieterrolle": true,
+              "ki_system_in_union_inverkehrgebracht": true,
+              "betrachteter_bereich_ausserhalb_unionsrechts": false,
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+              "drittstaatliche_behoerde": false,
+              "internationale_organisation": false,
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+              "forschung_test_oder_entwicklung": false,
+              "freie_open_source_systemlizenz": false,
+              "betrachtete_norm_ist_betreiberpflicht": false,
+              "hochrisiko_nach_artikel_6_absatz_1": false
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_tatbestand",
+          "parameter": {
+            "regel_id": "AIA_004A_001_VORAUSSETZUNGEN",
+            "eingaben": {
+              "besondere_daten_nicht_durch_andere_auch_synthetische_anonyme_daten_effektiv_ersetzbar": true,
+              "besondere_daten_technischen_wiederverwendungsgrenzen_unterworfen": true,
+              "besondere_daten_sicherheits_und_datenschutzmassnahmen_stand_der_technik": true,
+              "besondere_daten_pseudonymisiert": true,
+              "besondere_daten_gesichert_und_geschuetzt": true,
+              "besondere_daten_strenge_zugriffskontrollen": true,
+              "besondere_daten_zugriffe_dokumentiert": true,
+              "besondere_daten_nur_autorisierte_personen_mit_vertraulichkeitspflichten": true,
+              "besondere_daten_keine_uebermittlung_uebertragung_oder_zugriffe_anderer_parteien": true,
+              "besondere_daten_loeschung_beim_frueheren_von_biaskorrektur_und_aufbewahrungsende_gewaehrleistet": true,
+              "verarbeitungsverzeichnis_begruendet_strikte_notwendigkeit_biaskorrektur": true,
+              "verarbeitungsverzeichnis_begruendet_ungeeignetheit_anderer_daten": true,
+              "angemessene_garantien_fuer_grundrechte_und_freiheiten_besonderer_daten": true,
+              "anbieterrolle": true,
+              "hochrisikosystem": true,
+              "besondere_kategorien_personenbezogener_daten_verarbeitet": true,
+              "verarbeitung_strikt_notwendig_fuer_biaserkennung_korrektur_nach_artikel_10_2_f_g": true
+            }
+          },
+          "erwartung": {
+            "status": "AUSGEWERTET",
+            "wert": true
+          }
+        },
+        {
+          "api": "pruefe_anwendungsbeginn",
+          "parameter": {
+            "bereich": "ARTIKEL_4A"
+          },
+          "erwartung": {
+            "status": "REGEL_UNGEKLAERT",
+            "wert": null
+          }
+        }
+      ],
+      "herleitung": "F002bleibtentscheidungsrelevanttrotzpositiverSachprüfung."
+    }
+  ]
+}

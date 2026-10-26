@@ -1,0 +1,681 @@
+{
+  "quellenfassung": "EUAIACT_2026_07_27",
+  "faelle": [
+    {
+      "fall_id": "REF_GESAMTPERIODE_MONATSENDE",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-03-16",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "31Jan+1Monat=28Feb; danach15Tage=15MaerzSonntag. Erst Gesamtende aufMontag16Maerz verschieben, nicht den Februarteil vorher."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_FESTER_TERMIN",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FESTER_TERMIN",
+        "kalender": null,
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-03-15",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "GanzeMonate zuerst, dann15Tage. Artikel4nimmt Endverschiebung aus; Sonntag bleibt."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_INKRAFT",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "INKRAFTTRETEN",
+        "kalender": null,
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-03-15",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Artikel5/4: Tagesbeginn des15Maerz, keine Werktagsverschiebung."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_ZWEI_MONATE",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 2,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-04-15",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "31Jan+2ganzeMonate=31Maerz, dann15Tage. Keine iterative Kappung auf28Maerz."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_SCHALTJAHR",
+      "eingaben": {
+        "ereignisdatum": "2028-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2028-03-15",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "31Jan2028+1Monat=29Feb; dann15Tage=15MaerzMittwoch."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_RUECKWAERTS",
+      "eingaben": {
+        "ereignisdatum": "2026-03-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "RUECKWAERTS",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-02-13",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Zuerst1Monat zurückzum28Feb, danach15Tage zum13Feb. Keine Zwischenverschiebung."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_GANZER_MONAT",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-03-02",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "EinMonat ohneBruch:28FebSamstag, Gesamtende Montag2Maerz."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_WOCHE",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-10-30",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "AllgemeineWoche abFreitag endet amfolgendenFreitag."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_JAHR",
+      "eingaben": {
+        "ereignisdatum": "2028-02-29",
+        "anzahl": 1,
+        "einheit": "JAHR",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2029-02-28",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "Fehlender29Feb imZieljahr: letzterFebruartag."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_NUR_BRUCH",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-11-09",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "HalberMonat=15Tage; 7NovSamstag, dann9NovMontag."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_EIN_TAG",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "30"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-10-26",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "EinDreißigstel=1Tag. Montag26nachEndverschiebung; keineZwei-Arbeitstage-Mindestdauer fürnur1Tag."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_ZWEI_TAGE",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "15"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-10-27",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "ZweiTage abFreitag enthalten erstamDienstag27zweiArbeitstage."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_RUECK_ZWEI_TAGE",
+      "eingaben": {
+        "ereignisdatum": "2026-10-26",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "RUECKWAERTS",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "15"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": "2026-10-22",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "ZweiTagezurückabMontagohneBezugstag: FreitagundDonnerstag sinddiebeidenArbeitstage."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_BRUCHTAG_OFFEN",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "7"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "REGEL_UNGEKLAERT"
+      },
+      "herleitung": "30/7Tage bleibenexakt; ohnequalifizierteuntertägigeEndkonventionkeingerundetesDatum."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_KALENDERLUECKE",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2026-02-28",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "KalenderdecktGesamtendenicht; keineDefaultfeiertage."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_KEIN_KALENDER",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": null,
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "ArbeitstagsregelnbenötigeneigenenKalender."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_KEIN_EREIGNIS",
+      "eingaben": {
+        "ereignisdatum": null,
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "KeinimplizitesSystemdatum."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_BRUCH_LUECKE",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": null,
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "FehlenderBruchzähleristkeineNull."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_UNECHTER_BRUCH",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "2",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "GanzeMonategehöreninanzahl,Bruchmussechtsein."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_NULLPERIODE",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Gesamtperiodemusspositivsein."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_1755_None",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": null,
+        "beginnbegruendung": null
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "REGEL_UNGEKLAERT"
+      },
+      "herleitung": "F007offen. Ereignisanker23Oktführtzu30Okt; Beginn26Oktzu2Nov; Vortag25Oktzu1NovmitEndverschiebungauf2Nov. OhneProfilkeinEnde."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_1755_EREIGNISTAG",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "SYNTHETISCH: explizites Profil fuer Vergleich, keine rechtliche F007-Loesung."
+      },
+      "erwartung": {
+        "wert": "2026-10-30",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "F007offen. Ereignisanker23Oktführtzu30Okt; Beginn26Oktzu2Nov; Vortag25Oktzu1NovmitEndverschiebungauf2Nov. OhneProfilkeinEnde."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_1755_BEGINNTAG",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "BEGINNTAG",
+        "beginnbegruendung": "SYNTHETISCH: explizites Profil fuer Vergleich, keine rechtliche F007-Loesung."
+      },
+      "erwartung": {
+        "wert": "2026-11-02",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "F007offen. Ereignisanker23Oktführtzu30Okt; Beginn26Oktzu2Nov; Vortag25Oktzu1NovmitEndverschiebungauf2Nov. OhneProfilkeinEnde."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_1755_VORTAG_DES_BEGINNS",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "VORTAG_DES_BEGINNS",
+        "beginnbegruendung": "SYNTHETISCH: explizites Profil fuer Vergleich, keine rechtliche F007-Loesung."
+      },
+      "erwartung": {
+        "wert": "2026-11-02",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "F007offen. Ereignisanker23Oktführtzu30Okt; Beginn26Oktzu2Nov; Vortag25Oktzu1NovmitEndverschiebungauf2Nov. OhneProfilkeinEnde."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_BEREICH",
+      "eingaben": {
+        "ereignisdatum": "9999-12-20",
+        "anzahl": 0,
+        "einheit": "MONAT",
+        "modus": "FESTER_TERMIN",
+        "kalender": null,
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "15TageüberschreitenJahr9999;keingekapptesDatum."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_FREMDES_PROFIL",
+      "eingaben": {
+        "ereignisdatum": "2026-01-31",
+        "anzahl": 1,
+        "einheit": "MONAT",
+        "modus": "FRIST",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": {
+          "zaehler": "1",
+          "nenner": "2"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "SYNTHETISCH"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_UNGUELTIG"
+      },
+      "herleitung": "Sonderprofilistnurfür1755zulässig."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_1755_KALENDERBEGINN",
+      "eingaben": {
+        "ereignisdatum": "2026-10-23",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-10-27",
+          "bis": "2030-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "BEGINNTAG",
+        "beginnbegruendung": "SYNTHETISCH"
+      },
+      "erwartung": {
+        "wert": null,
+        "status": "EINGABE_FEHLT"
+      },
+      "herleitung": "SchonbeiderSuchedesfolgendenArbeitstagsfehltDeckung."
+    },
+    {
+      "fall_id": "REF_GESAMTPERIODE_LANGE_FEIERTAGSPHASE",
+      "eingaben": {
+        "ereignisdatum": "2026-10-01",
+        "anzahl": 1,
+        "einheit": "WOCHE",
+        "modus": "VERFAHREN_1755",
+        "kalender": {
+          "von": "2026-01-01",
+          "bis": "2030-12-31",
+          "feiertage": [
+            "2026-10-02",
+            "2026-10-05",
+            "2026-10-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-15",
+            "2026-10-16"
+          ],
+          "bezug": "SYNTHETISCH"
+        },
+        "monatsbruch": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "SYNTHETISCH"
+      },
+      "erwartung": {
+        "wert": "2026-10-20",
+        "status": "AUSGEWERTET"
+      },
+      "herleitung": "ImexplizitenEreignisprofilnominal8Okt; ersterArbeitsbeginn19Okt. WochenperiodebenötigtmindestenszweiArbeitstage, daher20Okt. KeineUnterstellungrealerFeiertage."
+    }
+  ]
+}

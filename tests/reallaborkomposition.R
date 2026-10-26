@@ -1,0 +1,18 @@
+library(euaiact)
+f <- "EUAIACT_2026_07_27"
+coverage <- pruefe_tatbestand("AIA_057_001_KRITERIEN",list(nationales_ki_reallabor_betriebsbereit=FALSE,teilnahme_an_bestehendem_ki_reallabor=TRUE,teilnahme_gewaehrleistet_gleichwertige_nationale_abdeckung=TRUE),f)
+time <- berechne_regel("AIA_057_001_BETRIEBSTERMIN",list(nationale_reallaborabdeckung_betriebsbereit_seit="2027-08-03"),f)
+duty <- ermittle_pflicht("P_AIA_057_001",list(betrachteter_akteur_ist_mitgliedstaat=TRUE),f)
+stopifnot(isTRUE(coverage$wert),identical(time$wert,FALSE),duty$wert$erfuellung=="NICHT_GEPRUEFT",identical(duty$wert$erfuellungskriterien,list(coverage$regel_id)),identical(duty$wert$fristregel_ids,list(time$regel_id)))
+annual <- ermittle_pflicht("P_AIA_057_016_JAHR",list(betrachteter_akteur_ist_nationale_zustaendige_behoerde=TRUE,reallabor_jahresbericht_im_betrachteten_turnus_faellig=TRUE),f)
+final <- ermittle_pflicht("P_AIA_057_016_SCHLUSS",list(betrachteter_akteur_ist_nationale_zustaendige_behoerde=TRUE,reallabor_tatsaechlich_beendet=TRUE),f)
+public <- "AIA_057_016_JAHRESBERICHT_OEFFENTLICH"
+stopifnot(public %in% unlist(annual$wert$erfuellungskriterien),!public %in% unlist(final$wert$erfuellungskriterien),annual$wert$erfuellung=="NICHT_GEPRUEFT",final$wert$erfuellung=="NICHT_GEPRUEFT")
+period <- berechne_regel(annual$wert$fristregel_ids[[1L]],list(),f)
+anniversary <- berechne_frist("2027-08-02",period$wert$anzahl,period$wert$einheit,modus="FESTER_TERMIN",quellenfassung=f)
+stopifnot(anniversary$wert=="2028-08-02")
+period <- berechne_regel("AIA_058_002_A_BESCHEIDDAUER",list(),f)
+end <- berechne_frist("2027-01-31",period$wert$anzahl,period$wert$einheit,modus="FRIST",kalender=list(von="2027-01-01",bis="2027-12-31",feiertage=list(),bezug="SYNTHETISCH"),quellenfassung=f)
+duty <- ermittle_pflicht("P_AIA_058_001",list(betrachteter_akteur_ist_europaeische_kommission=TRUE),f)
+stopifnot(end$wert=="2027-04-30","AIA_058_002_D_AKTINHALT" %in% unlist(duty$wert$erfuellungskriterien),duty$wert$erfuellung=="NICHT_GEPRUEFT")
+cat("Three sandbox coverage/reporting/calendar compositions passed\n")

@@ -1,0 +1,17 @@
+Package: euaiact
+Type: Package
+Title: Offline Calculation and Logic Rules for the EU Artificial Intelligence Act
+Version: 0.1.0
+Authors@R: c(person("Dimitrios", "Geromichalos", email = "riskdatascience@web.de",
+    role = c("aut", "cre"), comment = "Dr."),
+    person("RiskDataScience GmbH", role = "cph"))
+Description: Native offline evaluation of explicit calculation and logic rules
+    for documented versions of the EU Artificial Intelligence Act. Supports
+    German identifiers, unknown facts and traceable decisions. Explicitly bounded
+    rule catalogue; evaluation of a factual condition is not a conformity assessment.
+License: Apache License (== 2.0)
+Encoding: UTF-8
+Language: de
+Depends: R (>= 4.1.0)
+Imports: jsonlite, stats
+URL: https://riskdatascience.net

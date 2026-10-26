@@ -1,0 +1,1722 @@
+{
+  "spezifikation": "BESTANDSFRISTEN_0_1_0",
+  "faelle": [
+    {
+      "fall_id": "BESTAND_001",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-01",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2027-08-02",
+          "friststatus": "VOR_FRISTTAG"
+        }
+      },
+      "herleitung": "111(3): Tag vor Bestandsgrenze, Erfüllungstag liegt noch bevor."
+    },
+    {
+      "fall_id": "BESTAND_002",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2027-08-02",
+          "friststatus": "FRISTTAG"
+        }
+      },
+      "herleitung": "111(3): 2. August 2027 ist der gesetzliche Erfüllungstag selbst."
+    },
+    {
+      "fall_id": "BESTAND_003",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-03",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2027-08-02",
+          "friststatus": "NACH_FRISTTAG"
+        }
+      },
+      "herleitung": "Tag nach gesetzlichem Termin; keine Aussage über tatsächlich erfüllte Pflichten."
+    },
+    {
+      "fall_id": "BESTAND_004",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-03",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-02"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BESTANDSFRIST"
+        }
+      },
+      "herleitung": "Vor dem 2. August ist strikt; Einführung auf Grenztag ist kein privilegierter Bestand."
+    },
+    {
+      "fall_id": "BESTAND_005",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-03",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": false
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BESTANDSFRIST"
+        }
+      },
+      "herleitung": "Bis Stichtag keine Einführung: kein Bestand aus Absatz 3."
+    },
+    {
+      "fall_id": "BESTAND_006",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-03",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": null,
+          "erfuellungsfrist": null,
+          "friststatus": "UNBESTIMMT"
+        }
+      },
+      "herleitung": "Einführung ohne Datum lässt Altersgrenze offen."
+    },
+    {
+      "fall_id": "BESTAND_007",
+      "eingaben": {
+        "fallgruppe": "GROSS_IT_ANHANG_X",
+        "stichtag": "2028-08-03",
+        "ereignisse": {
+          "inverkehrbringen": null,
+          "inbetriebnahme": {
+            "erfolgt": true,
+            "datum": "2027-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2030-12-31",
+          "friststatus": "VOR_FRISTTAG"
+        }
+      },
+      "herleitung": "111(1): eine bekannte alte Inbetriebnahme genügt trotz unbekanntem Inverkehrbringen."
+    },
+    {
+      "fall_id": "BESTAND_008",
+      "eingaben": {
+        "fallgruppe": "GROSS_IT_ANHANG_X",
+        "stichtag": "2028-08-03",
+        "ereignisse": {
+          "inverkehrbringen": null,
+          "inbetriebnahme": {
+            "erfolgt": true,
+            "datum": "2027-08-02"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": null,
+          "erfuellungsfrist": null,
+          "friststatus": "UNBESTIMMT"
+        }
+      },
+      "herleitung": "Junge Inbetriebnahme schließt ein mögliches älteres Inverkehrbringen nicht aus."
+    },
+    {
+      "fall_id": "BESTAND_009",
+      "eingaben": {
+        "fallgruppe": "GROSS_IT_ANHANG_X",
+        "stichtag": "2030-12-31",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": false
+          },
+          "inbetriebnahme": {
+            "erfolgt": true,
+            "datum": "2027-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2030-12-31",
+          "friststatus": "FRISTTAG"
+        }
+      },
+      "herleitung": "111(1): gesetzlicher Groß-IT-Erfüllungstag."
+    },
+    {
+      "fall_id": "BESTAND_010",
+      "eingaben": {
+        "fallgruppe": "GROSS_IT_ANHANG_X",
+        "stichtag": "2031-01-01",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-08-02"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BESTANDSFRIST"
+        }
+      },
+      "herleitung": "Beide Alternativen für Altbestand verneint."
+    },
+    {
+      "fall_id": "BESTAND_011",
+      "eingaben": {
+        "fallgruppe": "SYNTHETISCHE_AUSGABEN_ART_50_2",
+        "stichtag": "2026-12-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2026-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2026-12-02",
+          "friststatus": "FRISTTAG"
+        }
+      },
+      "herleitung": "111(4): nur Artikel 50(2), vor August eingeführtes System, Dezembertermin erreicht."
+    },
+    {
+      "fall_id": "BESTAND_012",
+      "eingaben": {
+        "fallgruppe": "SYNTHETISCHE_AUSGABEN_ART_50_2",
+        "stichtag": "2026-12-03",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2026-08-02"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BESTANDSFRIST"
+        }
+      },
+      "herleitung": "111(4): Einführung am August-Grenztag reicht nicht für Übergangsfrist."
+    },
+    {
+      "fall_id": "BESTAND_013",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-01",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2024_08_01"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2027-08-02",
+          "friststatus": "VOR_FRISTTAG"
+        }
+      },
+      "herleitung": "111(3) bereits in Ursprungsfassung gleicher Termin."
+    },
+    {
+      "fall_id": "BESTAND_014",
+      "eingaben": {
+        "fallgruppe": "SYNTHETISCHE_AUSGABEN_ART_50_2",
+        "stichtag": "2026-12-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2026-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2024_08_01"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Absatz 4 existiert in gewählter Ursprungsfassung nicht."
+    },
+    {
+      "fall_id": "BESTAND_015",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": false,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Nicht erfolgt und bekanntes Ereignisdatum widersprechen sich."
+    },
+    {
+      "fall_id": "BESTAND_016",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Als bereits erfolgt behauptetes Ereignis nach Stichtag ist inkonsistent."
+    },
+    {
+      "fall_id": "BESTAND_017",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-02-29"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "2025 ist kein Schaltjahr."
+    },
+    {
+      "fall_id": "BESTAND_018",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": "true",
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Text ist kein boolescher Sachverhalt."
+    },
+    {
+      "fall_id": "BESTAND_019",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Auch nicht entscheidende Ereignisse werden validiert."
+    },
+    {
+      "fall_id": "BESTAND_020",
+      "eingaben": {
+        "fallgruppe": "GROSS_IT_ANHANG_X",
+        "stichtag": "2031-01-01",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-08-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "erfuellungsfrist": "2030-12-31",
+          "friststatus": "NACH_FRISTTAG"
+        }
+      },
+      "herleitung": "Groß-IT-Termin bleibt unverändert; Tag danach."
+    },
+    {
+      "fall_id": "BESTAND_021",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2026-07-26",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Gewählte Änderungsfassung tritt erst 27. Juli 2026 in Kraft."
+    },
+    {
+      "fall_id": "BESTAND_022",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": null,
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "Expliziter Stichtag notwendig, keine Systemuhr."
+    },
+    {
+      "fall_id": "BESTAND_023",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {},
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": null,
+          "erfuellungsfrist": null,
+          "friststatus": "UNBESTIMMT"
+        }
+      },
+      "herleitung": "Fehlende Ereignisangabe ist kein negatives Ereignis."
+    },
+    {
+      "fall_id": "BESTAND_024",
+      "eingaben": {
+        "fallgruppe": "GPAI_MODELL",
+        "stichtag": "2027-08-02",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": null,
+            "datum": "2025-08-01"
+          }
+        },
+        "quellenfassung": "EUAIACT_2026_07_27"
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Bekanntes Datum verlangt explizite positive Ereignisbestätigung."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_UNVERAENDERT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Erstes Markt-Ereignis strikt vor Grenze; vollständig leere Änderungshistorie."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_GRENZTAG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-02"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Markteintritt am Grenztag ist kein Altbestand."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_INBETRIEBNAHME",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-01-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Alte Inbetriebnahme genügt trotz jungem Markteintritt."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_UNBEKANNTE_ALTERNATIVE",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-01-01"
+          },
+          "inbetriebnahme": null,
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": null,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Junges Markt-Ereignis widerlegt unbekannte Inbetriebnahme nicht; leere vollständige Historie entscheidet Änderungsfolge dennoch falsch."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ALTBESTAND_ENTSCHEIDET",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": null,
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Altes Markt-Ereignis entscheidet trotz unbekannter Inbetriebnahme."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_HISTORIE_UNVOLLSTAENDIG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": false,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Leere unvollständige Historie beweist keine Abwesenheit erheblicher Änderungen."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_HISTORIENSTATUS_FEHLT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": null,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Unbekannte Vollständigkeit ist keine Vollständigkeitsbestätigung."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_LISTE_FEHLT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": null,
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Vollständigkeitsflag allein ersetzt die Ereignisliste nicht."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_AENDERUNG_GRENZTAG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2027-12-02",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": true,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Erhebliche Änderung bereits am Grenztag löst den Vorbehalt aus."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_AENDERUNG_DAVOR",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2027-12-01",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Erhebliche Änderung vor der Grenze löst den Vorbehalt nicht aus."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_AENDERUNG_STICHTAG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2030-08-02",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": true,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Tatsächlich erfolgte erhebliche Änderung am Auswertungsstichtag zählt."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_AENDERUNG_ZUKUNFT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2030-08-03",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Eine künftige Änderung darf nicht als erfolgt eingegeben werden."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ERHEBLICHKEIT_OFFEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2028-01-01",
+              "erheblich": null
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Datum nach Grenze mit offener Erheblichkeit bleibt unbekannt."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DATUM_OFFEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": null,
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Erhebliche Änderung unbekannten Datums kann vor oder nach Grenze liegen."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ALTE_UNKLARE_AENDERUNG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2027-12-01",
+              "erheblich": null
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Sicher alte Änderung ist trotz unbekannter Erheblichkeit irrelevant."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_UNERHEBLICH_UNDATIERT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": null,
+              "erheblich": false
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Ausdrücklich unerhebliche Änderung ist trotz unbekannten Datums irrelevant."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ZEUGE_TROTZ_LUECKEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": null,
+              "erheblich": null
+            },
+            {
+              "datum": "2028-01-01",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": false,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": true,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Ein bekanntes relevantes Ereignis entscheidet trotz weiterer Lücken und unvollständiger Historie."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_BEHOERDEN_FRISTTAG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": true,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": true,
+          "erfuellungsfrist": "2030-08-02",
+          "friststatus": "FRISTTAG"
+        }
+      },
+      "herleitung": "Für Behörden bestimmter Bestand eines Anbieters/Betreibers: fester 2. August 2030."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_BEHOERDEN_DAVOR",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": true,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": true,
+          "erfuellungsfrist": "2030-08-02",
+          "friststatus": "VOR_FRISTTAG"
+        }
+      },
+      "herleitung": "Der Vortag des festen Termins liegt vor der Frist."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_BEHOERDEN_DANACH",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-03",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": true,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": true,
+          "erfuellungsfrist": "2030-08-02",
+          "friststatus": "NACH_FRISTTAG"
+        }
+      },
+      "herleitung": "Der Tag nach dem festen Termin liegt danach; keine automatische Feststellung einer Verletzung."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ANDERER_AKTEUR",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": true,
+          "anbieter_oder_betreiber": false
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Andere Wirtschaftsakteure sind nicht Adressaten der Anbieter-/Betreiberauffangfrist."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ROLLE_OFFEN_PRIVAT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": null
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Nicht für Behörden bestimmt entscheidet die Auffangfrist trotz Rollenlücke falsch."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ROLLE_OFFEN_BEHOERDE",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": true,
+          "anbieter_oder_betreiber": null
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": null,
+          "erfuellungsfrist": null,
+          "friststatus": "UNBESTIMMT"
+        }
+      },
+      "herleitung": "Öffentliche Bestimmung ohne bekannte Anbieter-/Betreiberrolle entscheidet die Frist nicht."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_NICHTBESTAND_LUECKEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": false
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": null,
+          "aenderungshistorie_vollstaendig": null,
+          "fuer_behoerden_bestimmt": null,
+          "anbieter_oder_betreiber": null
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Sicherer Nichtbestand unterliegt nicht den beiden Bestandsfolgen, auch bei unbekannter Historie und Bestimmung."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_VOR_BEGINN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2027-12-01",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": null,
+          "aenderungshistorie_vollstaendig": null,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Vor der Bestandsgrenze kann keine Änderung ab dieser Grenze bereits erfolgt sein."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ANHANG_I",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_I",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-08-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Für Anhang I ist ein Markt-Ereignis am 1. August 2028 noch Altbestand."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ANHANG_I_GRENZTAG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_I",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-08-02"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": false,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Markt-Ereignis am 2. August 2028 gehört nicht zum Anhang-I-Altbestand."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DOPPELT_GLEICH",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Altbestand und unveränderte Gestaltung sind unter beiden Stichtagen gleich; F004 ist nicht entscheidend."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DOPPELT_BESTAND_OFFEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2028-01-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": {
+          "bestand": null,
+          "aenderungsvorbehalt_ausgeloest": false,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Markt-Ereignis zwischen den beiden Grenzen führt zu unterschiedlicher Bestandseigenschaft; keine Wahl eines Stichtags."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DOPPELT_AENDERUNG_OFFEN",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2028-01-01",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Erhebliche Änderung zwischen den Grenzen führt bei bekanntem Altbestand zu unterschiedlichen Änderungsfolgen."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DOPPELT_AENDERUNG_GLEICH",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2029-01-01",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": true,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Änderung nach beiden Grenzen löst beide Wege aus; F004 verhindert das gemeinsame Ergebnis nicht."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_DOPPELT_DATENLUECKE",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": null,
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": null,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Gleiche unbekannte Historie in beiden Wegen bleibt Datenlücke statt automatisch Rechtsfrage."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_URSPRUNGSFASSUNG",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_DOPPELT",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2024_08_01",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2026-08-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2026-08-02",
+              "erheblich": true
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "bestand": true,
+          "aenderungsvorbehalt_ausgeloest": true,
+          "behoerdenfrist_betroffen": false,
+          "erfuellungsfrist": null,
+          "friststatus": "KEINE_BEHOERDENFRIST"
+        }
+      },
+      "herleitung": "Ursprünglicher Wortlaut hat für beide Einstufungen dieselbe Grenze 2. August 2026."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_STATUSKONFLIKT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": false,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Ein Datum bei ausdrücklich nicht erfolgtem Ereignis ist ein Eingabekonflikt."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_ZAHL_KEIN_BOOL",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": "2030-08-02",
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [
+            {
+              "datum": "2028-01-01",
+              "erheblich": 1
+            }
+          ],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Numerische 1 ist keine qualifizierte boolesche Erheblichkeit."
+    },
+    {
+      "fall_id": "REF_HRBESTAND_STICHTAG_FEHLT",
+      "eingaben": {
+        "fallgruppe": "HOCHRISIKO_ANHANG_III",
+        "stichtag": null,
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "ereignisse": {
+          "inverkehrbringen": {
+            "erfolgt": true,
+            "datum": "2027-12-01"
+          },
+          "inbetriebnahme": {
+            "erfolgt": false
+          },
+          "aenderungen": [],
+          "aenderungshistorie_vollstaendig": true,
+          "fuer_behoerden_bestimmt": false,
+          "anbieter_oder_betreiber": true
+        }
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "Ohne Stichtag lässt sich der Ereignisverlauf nicht bewerten."
+    }
+  ]
+}

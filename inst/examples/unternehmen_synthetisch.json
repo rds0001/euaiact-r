@@ -1,0 +1,1199 @@
+{
+  "schemaversion": "0.1.0",
+  "kennzeichnung": "SYNTHETISCH",
+  "umfang": "Integrationsbeispiele; keine vollständige Unternehmensprüfung. Organisatorische Rollen und Gegenstandsbezüge sind ausdrücklich gesetzte Szenariometadaten.",
+  "szenarien": [
+    {
+      "szenario_id": "KLEINER_EINZELANWENDER",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Ein kleines Gesundheitsunternehmen bewertet einen medizinischen Verwendungszweck einer Emotionsanwendung.",
+      "organisationen": [
+        {
+          "organisation_id": "praxis",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "assistenz",
+          "art": "KI_SYSTEM"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "praxis_1",
+          "organisation_id": "praxis",
+          "gegenstand_id": "assistenz",
+          "rolle": "BETREIBER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_005_001_F",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung": true,
+            "intern_biometrisch_gestuetzte_emotionsableitung": true,
+            "intern_arbeitsplatz": true,
+            "intern_bildungseinrichtung": false,
+            "intern_medizinischer_verwendungszweck": true,
+            "intern_sicherheitsbezogener_verwendungszweck": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung": "intern_inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung",
+              "biometrisch_gestuetzte_emotionsableitung": "intern_biometrisch_gestuetzte_emotionsableitung",
+              "arbeitsplatz": "intern_arbeitsplatz",
+              "bildungseinrichtung": "intern_bildungseinrichtung",
+              "medizinischer_verwendungszweck": "intern_medizinischer_verwendungszweck",
+              "sicherheitsbezogener_verwendungszweck": "intern_sicherheitsbezogener_verwendungszweck"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Der ausdrücklich medizinische Verwendungszweck erfüllt die Ausnahme nach Artikel 5 Absatz 1 Buchstabe f. Das ist keine allgemeine Rechtmäßigkeitserklärung.",
+          "referenz_id": "REF_EMOTION_MEDIZIN"
+        }
+      ]
+    },
+    {
+      "szenario_id": "MEHRERE_EINHEITEN_UND_ROLLEN",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Zwei Einheiten einer Gruppe: Forschung als Anbieter und Personalwesen als Betreiber. Die Zwecke werden getrennt bewertet.",
+      "organisationen": [
+        {
+          "organisation_id": "gruppe",
+          "uebergeordnet": null
+        },
+        {
+          "organisation_id": "labor",
+          "uebergeordnet": "gruppe"
+        },
+        {
+          "organisation_id": "personal",
+          "uebergeordnet": "gruppe"
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "prototyp",
+          "art": "KI_SYSTEM"
+        },
+        {
+          "gegenstand_id": "personal_assistenz",
+          "art": "KI_SYSTEM"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "labor_test",
+          "organisation_id": "labor",
+          "gegenstand_id": "prototyp",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_008",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_forschung_test_oder_entwicklung": true,
+            "intern_vor_inverkehrbringen_oder_inbetriebnahme": true,
+            "intern_test_unter_realbedingungen": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "forschung_test_oder_entwicklung": "intern_forschung_test_oder_entwicklung",
+              "vor_inverkehrbringen_oder_inbetriebnahme": "intern_vor_inverkehrbringen_oder_inbetriebnahme",
+              "test_unter_realbedingungen": "intern_test_unter_realbedingungen"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 2 Absatz 8 nimmt Tests unter Realbedingungen ausdrücklich aus dieser Forschungsausnahme aus.",
+          "referenz_id": "REF_FORSCHUNG_REALTEST"
+        },
+        {
+          "fall_id": "personal_offen",
+          "organisation_id": "personal",
+          "gegenstand_id": "personal_assistenz",
+          "rolle": "BETREIBER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_005_001_F",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung": true,
+            "intern_biometrisch_gestuetzte_emotionsableitung": true,
+            "intern_arbeitsplatz": true,
+            "intern_bildungseinrichtung": false,
+            "intern_medizinischer_verwendungszweck": null,
+            "intern_sicherheitsbezogener_verwendungszweck": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung": "intern_inverkehrbringen_oder_zweckbezogene_inbetriebnahme_oder_verwendung",
+              "biometrisch_gestuetzte_emotionsableitung": "intern_biometrisch_gestuetzte_emotionsableitung",
+              "arbeitsplatz": "intern_arbeitsplatz",
+              "bildungseinrichtung": "intern_bildungseinrichtung",
+              "medizinischer_verwendungszweck": "intern_medizinischer_verwendungszweck",
+              "sicherheitsbezogener_verwendungszweck": "intern_sicherheitsbezogener_verwendungszweck"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Der Grundtatbestand steht fest, die medizinische Ausnahme bleibt offen und kann das Ergebnis ändern.",
+          "referenz_id": "REF_EMOTION_AUSNAHME_UNBEKANNT"
+        },
+        {
+          "fall_id": "personal_datenfehler",
+          "organisation_id": "personal",
+          "gegenstand_id": "personal_assistenz",
+          "rolle": "BETREIBER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_005_001_F",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_arbeitsplatz": "false",
+            "intern_biometrisch_gestuetzte_emotionsableitung": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "arbeitsplatz": "intern_arbeitsplatz",
+              "biometrisch_gestuetzte_emotionsableitung": "intern_biometrisch_gestuetzte_emotionsableitung"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_UNGUELTIG"
+          },
+          "herleitung": "Auch wenn das fehlende Emotionsmerkmal entscheiden könnte, bleibt der Textwert anstelle eines Boolean ungültig.",
+          "referenz_id": "REF_EMOTION_FALSCHER_BOOLEAN_TYP"
+        }
+      ]
+    },
+    {
+      "szenario_id": "HETEROGENES_PORTFOLIO_MIT_AENDERUNG",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Ein Anbieter und Betreiber mit GPAI-Modell, Kreditbetrugserkennung und veränderter Kenntnis über Profiling. Separate Zeitprüfung vor und am neuen Anwendungsbeginn.",
+      "organisationen": [
+        {
+          "organisation_id": "portfolio",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "modell",
+          "art": "GPAI_MODELL"
+        },
+        {
+          "gegenstand_id": "betrug",
+          "art": "KI_SYSTEM"
+        },
+        {
+          "gegenstand_id": "verfahren",
+          "art": "KI_SYSTEM"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "modell_schwelle",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "modell",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_051_002",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_trainings_flops": "10000000000000000000000001"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "trainings_flops": "intern_trainings_flops"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "10^25 + 1 liegt strikt über der gesetzlichen Schwelle. Gleitkommarundung darf diese Einheit nicht verlieren.",
+          "referenz_id": "REF_FLOPS_EINS_DARUEBER"
+        },
+        {
+          "fall_id": "betrug_ausnahme",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "betrug",
+          "rolle": "BETREIBER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_ANH_III_5_B",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_natuerliche_person_als_kreditgegenstand": true,
+            "intern_zweck_kreditwuerdigkeitsbewertung": true,
+            "intern_zweck_erkennung_finanzbetrug": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "natuerliche_person_als_kreditgegenstand": "intern_natuerliche_person_als_kreditgegenstand",
+              "zweck_kreditwuerdigkeitsbewertung": "intern_zweck_kreditwuerdigkeitsbewertung",
+              "zweck_erkennung_finanzbetrug": "intern_zweck_erkennung_finanzbetrug"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Anhang III Nummer 5 Buchstabe b nimmt den spezifischen Zweck der Finanzbetrugserkennung aus. Andere parallele Systemzwecke müssen separat bewertet werden.",
+          "referenz_id": "REF_ANHANG_KREDIT_BETRUG"
+        },
+        {
+          "fall_id": "verfahren_vor_pruefung",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "verfahren",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-23",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_006_003_AUSNAHME",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_profiling_natuerlicher_personen": null,
+            "intern_enge_verfahrensaufgabe": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "profiling_natuerlicher_personen": "intern_profiling_natuerlicher_personen",
+              "enge_verfahrensaufgabe": "intern_enge_verfahrensaufgabe"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Die bestätigte Verfahrensbedingung genügt nicht, solange Profiling als vorrangiger Ausschluss unbekannt bleibt.",
+          "referenz_id": "REF_HOCHRISIKO_PROFILING_OFFEN"
+        },
+        {
+          "fall_id": "verfahren_nach_pruefung",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "verfahren",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-24",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_006_003_AUSNAHME",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_profiling_natuerlicher_personen": false,
+            "intern_enge_verfahrensaufgabe": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "profiling_natuerlicher_personen": "intern_profiling_natuerlicher_personen",
+              "enge_verfahrensaufgabe": "intern_enge_verfahrensaufgabe"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Eine eng ausgelegte Verfahrensaufgabe genügt nach Unterabsatz 2 alternativ. Keine Profiling-Ausnahme; unabhängige zusätzliche Risikobewertung ist nach ENT_006_003 nicht erforderlich.",
+          "referenz_id": "REF_HOCHRISIKO_ENGE_AUFGABE"
+        },
+        {
+          "fall_id": "zeit_2027-12-01",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "verfahren",
+          "rolle": "ANBIETER",
+          "stichtag": "2027-12-01",
+          "art": "ANWENDUNGSBEGINN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5",
+            "stichtag": "2027-12-01"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "bereich": "bereich",
+              "stichtag": "stichtag"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 113 Buchstabe c Ziffer i: allgemeiner Beginn 2. Dezember 2027; keine Entscheidung über Artikel 111."
+        },
+        {
+          "fall_id": "zeit_2027-12-02",
+          "organisation_id": "portfolio",
+          "gegenstand_id": "verfahren",
+          "rolle": "ANBIETER",
+          "stichtag": "2027-12-02",
+          "art": "ANWENDUNGSBEGINN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "bereich": "HOCHRISIKO_ANHANG_III_ABSCHNITT_1_BIS_3_OHNE_6_5",
+            "stichtag": "2027-12-02"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "bereich": "bereich",
+              "stichtag": "stichtag"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 113 Buchstabe c Ziffer i: allgemeiner Beginn 2. Dezember 2027; keine Entscheidung über Artikel 111."
+        }
+      ]
+    },
+    {
+      "szenario_id": "GPAI_VERFAHRENSAKTE",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Ein GPAI-Anbieter ordnet eigene Aktenfelder explizit zu: Zugangsanfrage, verzögerter Zugang, Seitenrechnung einschließlich Eingabekonflikt, unbekannte Belegübersetzung und alternative Empfangssituationen. Fälle sind getrennte Varianten, kein behaupteter realer Gesamtverlauf.",
+      "organisationen": [
+        {
+          "organisation_id": "modellunternehmen",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "gpai_modell_version_1",
+          "art": "GPAI_MODELL"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "gpai_zugangsanforderung",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "DVO_1755_002_004_BEREITSTELLUNG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_gpai_modellanbieter": true,
+            "akte_modellzugang_nach_92_3_angefordert": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "gpai_modellanbieter": "akte_gpai_modellanbieter",
+              "modellzugang_nach_92_3_angefordert": "akte_modellzugang_nach_92_3_angefordert"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "GPAI-Anbieter mit konkreter Artikel-92-Absatz-3-Anforderung muss Zugang bereitstellen. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_EVALZUGANG_BEREITSTELLUNG"
+        },
+        {
+          "fall_id": "gpai_verzoegerter_zugang",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "DVO_1755_002_004_BEREITSTELLUNGSKRITERIEN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_modellzugang_ohne_unangemessene_verzoegerung_bereitgestellt": false,
+            "akte_modellzugang_innerhalb_entscheidungsfrist_bereitgestellt": true,
+            "akte_modellzugang_umfasst_alle_fuer_92_1_ziele_noetigen_elemente": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "modellzugang_ohne_unangemessene_verzoegerung_bereitgestellt": "akte_modellzugang_ohne_unangemessene_verzoegerung_bereitgestellt",
+              "modellzugang_innerhalb_entscheidungsfrist_bereitgestellt": "akte_modellzugang_innerhalb_entscheidungsfrist_bereitgestellt",
+              "modellzugang_umfasst_alle_fuer_92_1_ziele_noetigen_elemente": "akte_modellzugang_umfasst_alle_fuer_92_1_ziele_noetigen_elemente"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Einhaltung äußerster Frist heilt unangemessene Verzögerung nicht. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_EVALZUGANG_BEREITSTELLUNG_VERZOEGERUNG"
+        },
+        {
+          "fall_id": "gpai_stellungnahmeseiten",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_gesamtseiten_einreichung": 80,
+            "akte_qualifiziert_ausgenommene_anhangsseiten": 30
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "gesamtseiten_einreichung": "akte_gesamtseiten_einreichung",
+              "qualifiziert_ausgenommene_anhangsseiten": "akte_qualifiziert_ausgenommene_anhangsseiten"
+            }
+          },
+          "erwartung": {
+            "wert": 50,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "80 Gesamtseiten abzüglich 30 tatsächlich qualifiziert ausgenommener Anhangseiten ergeben 50 anrechenbare Seiten. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_DVOFORMAT_RECHNUNG_ABZUG"
+        },
+        {
+          "fall_id": "gpai_widerspruechliche_seiten",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "DVO_1755_ANH_ZAEHLSEITEN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_gesamtseiten_einreichung": 10,
+            "akte_qualifiziert_ausgenommene_anhangsseiten": 11
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "gesamtseiten_einreichung": "akte_gesamtseiten_einreichung",
+              "qualifiziert_ausgenommene_anhangsseiten": "akte_qualifiziert_ausgenommene_anhangsseiten"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_UNGUELTIG"
+          },
+          "herleitung": "Ausgenommene Seiten sind Teilmenge der Gesamtseiten; mehr Abzug als Gesamtumfang ist widersprüchlich. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_DVOFORMAT_RECHNUNG_MEHR_ABZUG_ALS_GESAMT"
+        },
+        {
+          "fall_id": "gpai_beleguebersetzung_offen",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "DVO_1755_007_004_BELEGSPRACHE",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_unterstuetzendes_dokument_in_originalsprache_eingereicht": true,
+            "akte_originalsprache_des_belegs_eu_amtssprache": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "unterstuetzendes_dokument_in_originalsprache_eingereicht": "akte_unterstuetzendes_dokument_in_originalsprache_eingereicht",
+              "originalsprache_des_belegs_eu_amtssprache": "akte_originalsprache_des_belegs_eu_amtssprache"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Erforderliche Übersetzung unbekannt, nicht automatisch vorhanden oder fehlend. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_DVOVERFAHREN_BELEG_UEBERSETZUNG_FEHLT"
+        },
+        {
+          "fall_id": "gpai_digitaler_empfang",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "DVO_1755_014_003_EMPFANGSVORAUSSETZUNG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_digitale_uebermittlung_an_kommission": true,
+            "akte_dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar": false,
+            "akte_dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen": false,
+            "akte_dokument_enthaelt_elektronische_signatur": true,
+            "akte_signaturgueltigkeit_durch_kommission_verifizierbar": true,
+            "akte_uebermittlung_betrifft_dokument": true,
+            "akte_kommission_hat_empfangsbestaetigung_abgesandt": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "digitale_uebermittlung_an_kommission": "akte_digitale_uebermittlung_an_kommission",
+              "dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar": "akte_dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar",
+              "dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen": "akte_dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen",
+              "dokument_enthaelt_elektronische_signatur": "akte_dokument_enthaelt_elektronische_signatur",
+              "signaturgueltigkeit_durch_kommission_verifizierbar": "akte_signaturgueltigkeit_durch_kommission_verifizierbar",
+              "uebermittlung_betrifft_dokument": "akte_uebermittlung_betrifft_dokument",
+              "kommission_hat_empfangsbestaetigung_abgesandt": "akte_kommission_hat_empfangsbestaetigung_abgesandt"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Digitale Dokumentübermittlung, abgesandte Bestätigung und kein Absatz-5-Mangel. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_UEBERMITTLUNG_EMPFANG"
+        },
+        {
+          "fall_id": "gpai_empfang_bestaetigung_ausstehend",
+          "organisation_id": "modellunternehmen",
+          "gegenstand_id": "gpai_modell_version_1",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "DVO_1755_014_003_EMPFANGSVORAUSSETZUNG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "akte_digitale_uebermittlung_an_kommission": true,
+            "akte_dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar": false,
+            "akte_dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen": false,
+            "akte_dokument_enthaelt_elektronische_signatur": true,
+            "akte_signaturgueltigkeit_durch_kommission_verifizierbar": true,
+            "akte_uebermittlung_betrifft_dokument": true,
+            "akte_kommission_hat_empfangsbestaetigung_abgesandt": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-gpai-1",
+            "felder": {
+              "digitale_uebermittlung_an_kommission": "akte_digitale_uebermittlung_an_kommission",
+              "dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar": "akte_dokument_oder_teil_nicht_funktionsfaehig_oder_unbrauchbar",
+              "dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen": "akte_dokument_enthaelt_viren_schadsoftware_oder_andere_bedrohungen",
+              "dokument_enthaelt_elektronische_signatur": "akte_dokument_enthaelt_elektronische_signatur",
+              "signaturgueltigkeit_durch_kommission_verifizierbar": "akte_signaturgueltigkeit_durch_kommission_verifizierbar",
+              "uebermittlung_betrifft_dokument": "akte_uebermittlung_betrifft_dokument",
+              "kommission_hat_empfangsbestaetigung_abgesandt": "akte_kommission_hat_empfangsbestaetigung_abgesandt"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Bloßes Absenden des Dokuments genügt nicht als gesetzlicher Empfangstag. Synthetische Aktenwerte; keine Gesamtentscheidung zur Verfahrenskonformität.",
+          "referenz_id": "REF_UEBERMITTLUNG_EMPFANG_BESTAETIGUNG_FEHLT"
+        }
+      ]
+    },
+    {
+      "szenario_id": "TRANSPARENZ_MIT_ZEITSTEMPELN",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Ein Anbieter prüft drei getrennte Nutzerkontakte anhand eigener Zeitstempelfelder: rechtzeitig trotz unterschiedlicher Offsets, eine Mikrosekunde verspätet und unbekannter Bereitstellungszeitpunkt. Rollen-/Pflichtauslösung und Inhaltsqualität separat.",
+      "organisationen": [
+        {
+          "organisation_id": "dialoganbieter",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "dialogsystem",
+          "art": "KI_SYSTEM"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "transparenz_rechtzeitig",
+          "organisation_id": "dialoganbieter",
+          "gegenstand_id": "dialogsystem",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "hinweis_ereignis": "2026-10-25T12:00:00+02:00",
+            "erstkontakt_ereignis": "2026-10-25T10:00:00Z"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-zeit-1",
+            "felder": {
+              "transparenzinformation_zeitpunkt": "hinweis_ereignis",
+              "erste_interaktion_oder_exposition_zeitpunkt": "erstkontakt_ereignis"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Synthetische, getrennte Nutzerkontakte mit qualifizierten Bereitstellungs- und Erstkontaktzeitpunkten; Vergleich in UTC ohne Rundung. Nur das Zeitkriterium wird geprüft.",
+          "referenz_id": "REF_ZEITPUNKT_OFFSET_GLEICH"
+        },
+        {
+          "fall_id": "transparenz_verspaetet",
+          "organisation_id": "dialoganbieter",
+          "gegenstand_id": "dialogsystem",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "hinweis_ereignis": "2026-10-25T10:00:00.000001Z",
+            "erstkontakt_ereignis": "2026-10-25T10:00:00Z"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-zeit-1",
+            "felder": {
+              "transparenzinformation_zeitpunkt": "hinweis_ereignis",
+              "erste_interaktion_oder_exposition_zeitpunkt": "erstkontakt_ereignis"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Synthetische, getrennte Nutzerkontakte mit qualifizierten Bereitstellungs- und Erstkontaktzeitpunkten; Vergleich in UTC ohne Rundung. Nur das Zeitkriterium wird geprüft.",
+          "referenz_id": "REF_ZEITPUNKT_MIKROSEKUNDE_SPAET"
+        },
+        {
+          "fall_id": "transparenz_offen",
+          "organisation_id": "dialoganbieter",
+          "gegenstand_id": "dialogsystem",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "AIA_050_005_INFORMATIONSZEITPUNKT",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "hinweis_ereignis": null,
+            "erstkontakt_ereignis": "2026-10-25T10:00:00Z"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-zeit-1",
+            "felder": {
+              "transparenzinformation_zeitpunkt": "hinweis_ereignis",
+              "erste_interaktion_oder_exposition_zeitpunkt": "erstkontakt_ereignis"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Synthetische, getrennte Nutzerkontakte mit qualifizierten Bereitstellungs- und Erstkontaktzeitpunkten; Vergleich in UTC ohne Rundung. Nur das Zeitkriterium wird geprüft.",
+          "referenz_id": "REF_ZEITPUNKT_INFORMATION_OFFEN"
+        }
+      ]
+    },
+    {
+      "szenario_id": "PERSONAL_JAE_DEZIMAL",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Bereits qualifizierte, überschneidungsfreie Personalabschnitte mit exakt endlichen Anteilen. Keine Personenzuordnung oder Rechts-/Gruppen-/Historienprüfung aus der Rechnung allein.",
+      "organisationen": [
+        {
+          "organisation_id": "musteranbieter",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "personal_bezugsjahr",
+          "art": "UNTERNEHMENSDATEN"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "jae_halb_halb",
+          "organisation_id": "musteranbieter",
+          "gegenstand_id": "personal_bezugsjahr",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "KMU_JAE_DEZIMALBEITRAG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "pensum": "0.5",
+            "jahresabschnitt": "0.5"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-personal-1",
+            "felder": {
+              "arbeitszeitanteil_an_vollzeit": "pensum",
+              "anrechenbarer_jahresanteil": "jahresabschnitt"
+            }
+          },
+          "erwartung": {
+            "wert": "0.25",
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Fachlich qualifizierte synthetische endliche Dezimalanteile; Halbtagsarbeit für ein halbes Bezugsjahr ergibt 0.25 JAE. Zusätzliche 0.5 gehören zu einem disjunkten bereits qualifizierten Beitrag. Fehlendes Pensum ist keine Null.",
+          "referenz_id": "REF_JAE_KMU_HALB_HALB"
+        },
+        {
+          "fall_id": "jae_abschnitt_offen",
+          "organisation_id": "musteranbieter",
+          "gegenstand_id": "personal_bezugsjahr",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "SMC_JAE_DEZIMALBEITRAG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "pensum": null,
+            "jahresabschnitt": "1"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-personal-1",
+            "felder": {
+              "arbeitszeitanteil_an_vollzeit": "pensum",
+              "anrechenbarer_jahresanteil": "jahresabschnitt"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Fachlich qualifizierte synthetische endliche Dezimalanteile; Halbtagsarbeit für ein halbes Bezugsjahr ergibt 0.25 JAE. Zusätzliche 0.5 gehören zu einem disjunkten bereits qualifizierten Beitrag. Fehlendes Pensum ist keine Null.",
+          "referenz_id": "REF_JAE_SMC_OFFEN"
+        },
+        {
+          "fall_id": "jae_disjunkte_summe",
+          "organisation_id": "musteranbieter",
+          "gegenstand_id": "personal_bezugsjahr",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "JAE_DEZIMALSUMME",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "bereits_erfasst": "0.25",
+            "noch_nicht_erfasst": "0.5"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-personal-1",
+            "felder": {
+              "bisherige_jahresarbeitseinheiten": "bereits_erfasst",
+              "zusaetzliche_jahresarbeitseinheiten": "noch_nicht_erfasst"
+            }
+          },
+          "erwartung": {
+            "wert": "0.75",
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Fachlich qualifizierte synthetische endliche Dezimalanteile; Halbtagsarbeit für ein halbes Bezugsjahr ergibt 0.25 JAE. Zusätzliche 0.5 gehören zu einem disjunkten bereits qualifizierten Beitrag. Fehlendes Pensum ist keine Null.",
+          "referenz_id": "REF_JAE_SUMME_ABSCHNITTE"
+        }
+      ]
+    },
+    {
+      "szenario_id": "SYSTEMGRENZEN_LOKALE_BEWERTUNG",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Ein fiktiver Anbieter beurteilt unterschiedliche Systemfassungen und Zwecke anhand lokal dokumentierter Feststellungen. Open Source, Transparenzrückausnahme, Realtest und reine Forschung werden getrennt betrachtet. Kein Gesamturteil aus dem Rahmen nach Artikel 2(1)–(12); Normtatbestand, Absatz 13 und zeitliche Regeln zusätzlich.",
+      "organisationen": [
+        {
+          "organisation_id": "beispielsoftware",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "assistenz_varianten",
+          "art": "KI_SYSTEM"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "geltung_open_source",
+          "organisation_id": "beispielsoftware",
+          "gegenstand_id": "assistenz_varianten",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "lokal_ki_system": true,
+            "lokal_anbieterrolle": true,
+            "lokal_ki_system_in_union_inverkehrgebracht": true,
+            "lokal_betrachteter_bereich_ausserhalb_unionsrechts": false,
+            "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+            "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+            "lokal_drittstaatliche_behoerde": false,
+            "lokal_internationale_organisation": false,
+            "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+            "lokal_forschung_test_oder_entwicklung": false,
+            "lokal_freie_open_source_systemlizenz": true,
+            "lokal_betrachtete_norm_ist_betreiberpflicht": false,
+            "lokal_hochrisiko_nach_artikel_6_absatz_1": false,
+            "lokal_als_hochrisikosystem_bereitgestellt": false,
+            "lokal_system_faellt_unter_artikel_5": false,
+            "lokal_system_faellt_unter_artikel_50": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-systemgrenzen-1",
+            "felder": {
+              "ki_system": "lokal_ki_system",
+              "anbieterrolle": "lokal_anbieterrolle",
+              "ki_system_in_union_inverkehrgebracht": "lokal_ki_system_in_union_inverkehrgebracht",
+              "betrachteter_bereich_ausserhalb_unionsrechts": "lokal_betrachteter_bereich_ausserhalb_unionsrechts",
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit",
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen",
+              "drittstaatliche_behoerde": "lokal_drittstaatliche_behoerde",
+              "internationale_organisation": "lokal_internationale_organisation",
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt",
+              "forschung_test_oder_entwicklung": "lokal_forschung_test_oder_entwicklung",
+              "freie_open_source_systemlizenz": "lokal_freie_open_source_systemlizenz",
+              "betrachtete_norm_ist_betreiberpflicht": "lokal_betrachtete_norm_ist_betreiberpflicht",
+              "hochrisiko_nach_artikel_6_absatz_1": "lokal_hochrisiko_nach_artikel_6_absatz_1",
+              "als_hochrisikosystem_bereitgestellt": "lokal_als_hochrisikosystem_bereitgestellt",
+              "system_faellt_unter_artikel_5": "lokal_system_faellt_unter_artikel_5",
+              "system_faellt_unter_artikel_50": "lokal_system_faellt_unter_artikel_50"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 2: positive Anknüpfung und für den konkret getrennten System-/Modellgegenstand einschlägige Ausnahmen kombinieren. Nur Rahmen bis Absatz 12, keine zeitliche oder normeigene Gesamtanwendbarkeit. Diese Varianten sind ausdrücklich getrennte hypothetische Sachverhalte.",
+          "referenz_id": "REF_GELTUNGSRAHMEN_OPEN_SOURCE"
+        },
+        {
+          "fall_id": "geltung_open_source_transparenz",
+          "organisation_id": "beispielsoftware",
+          "gegenstand_id": "assistenz_varianten",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "lokal_ki_system": true,
+            "lokal_anbieterrolle": true,
+            "lokal_ki_system_in_union_inverkehrgebracht": true,
+            "lokal_betrachteter_bereich_ausserhalb_unionsrechts": false,
+            "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+            "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+            "lokal_drittstaatliche_behoerde": false,
+            "lokal_internationale_organisation": false,
+            "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+            "lokal_forschung_test_oder_entwicklung": false,
+            "lokal_freie_open_source_systemlizenz": true,
+            "lokal_betrachtete_norm_ist_betreiberpflicht": false,
+            "lokal_hochrisiko_nach_artikel_6_absatz_1": false,
+            "lokal_system_faellt_unter_artikel_50": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-systemgrenzen-1",
+            "felder": {
+              "ki_system": "lokal_ki_system",
+              "anbieterrolle": "lokal_anbieterrolle",
+              "ki_system_in_union_inverkehrgebracht": "lokal_ki_system_in_union_inverkehrgebracht",
+              "betrachteter_bereich_ausserhalb_unionsrechts": "lokal_betrachteter_bereich_ausserhalb_unionsrechts",
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit",
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen",
+              "drittstaatliche_behoerde": "lokal_drittstaatliche_behoerde",
+              "internationale_organisation": "lokal_internationale_organisation",
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt",
+              "forschung_test_oder_entwicklung": "lokal_forschung_test_oder_entwicklung",
+              "freie_open_source_systemlizenz": "lokal_freie_open_source_systemlizenz",
+              "betrachtete_norm_ist_betreiberpflicht": "lokal_betrachtete_norm_ist_betreiberpflicht",
+              "hochrisiko_nach_artikel_6_absatz_1": "lokal_hochrisiko_nach_artikel_6_absatz_1",
+              "system_faellt_unter_artikel_50": "lokal_system_faellt_unter_artikel_50"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 2: positive Anknüpfung und für den konkret getrennten System-/Modellgegenstand einschlägige Ausnahmen kombinieren. Nur Rahmen bis Absatz 12, keine zeitliche oder normeigene Gesamtanwendbarkeit. Diese Varianten sind ausdrücklich getrennte hypothetische Sachverhalte.",
+          "referenz_id": "REF_GELTUNGSRAHMEN_OPEN_SOURCE_TRANSPARENZ"
+        },
+        {
+          "fall_id": "geltung_realtest",
+          "organisation_id": "beispielsoftware",
+          "gegenstand_id": "assistenz_varianten",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "lokal_ki_system": true,
+            "lokal_anbieterrolle": true,
+            "lokal_ki_system_in_union_inverkehrgebracht": true,
+            "lokal_betrachteter_bereich_ausserhalb_unionsrechts": false,
+            "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+            "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+            "lokal_drittstaatliche_behoerde": false,
+            "lokal_internationale_organisation": false,
+            "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+            "lokal_forschung_test_oder_entwicklung": true,
+            "lokal_freie_open_source_systemlizenz": false,
+            "lokal_betrachtete_norm_ist_betreiberpflicht": false,
+            "lokal_hochrisiko_nach_artikel_6_absatz_1": false,
+            "lokal_vor_inverkehrbringen_oder_inbetriebnahme": true,
+            "lokal_test_unter_realbedingungen": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-systemgrenzen-1",
+            "felder": {
+              "ki_system": "lokal_ki_system",
+              "anbieterrolle": "lokal_anbieterrolle",
+              "ki_system_in_union_inverkehrgebracht": "lokal_ki_system_in_union_inverkehrgebracht",
+              "betrachteter_bereich_ausserhalb_unionsrechts": "lokal_betrachteter_bereich_ausserhalb_unionsrechts",
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit",
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen",
+              "drittstaatliche_behoerde": "lokal_drittstaatliche_behoerde",
+              "internationale_organisation": "lokal_internationale_organisation",
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt",
+              "forschung_test_oder_entwicklung": "lokal_forschung_test_oder_entwicklung",
+              "freie_open_source_systemlizenz": "lokal_freie_open_source_systemlizenz",
+              "betrachtete_norm_ist_betreiberpflicht": "lokal_betrachtete_norm_ist_betreiberpflicht",
+              "hochrisiko_nach_artikel_6_absatz_1": "lokal_hochrisiko_nach_artikel_6_absatz_1",
+              "vor_inverkehrbringen_oder_inbetriebnahme": "lokal_vor_inverkehrbringen_oder_inbetriebnahme",
+              "test_unter_realbedingungen": "lokal_test_unter_realbedingungen"
+            }
+          },
+          "erwartung": {
+            "wert": true,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 2: positive Anknüpfung und für den konkret getrennten System-/Modellgegenstand einschlägige Ausnahmen kombinieren. Nur Rahmen bis Absatz 12, keine zeitliche oder normeigene Gesamtanwendbarkeit. Diese Varianten sind ausdrücklich getrennte hypothetische Sachverhalte.",
+          "referenz_id": "REF_GELTUNGSRAHMEN_REALTEST_KEINE_8_AUSNAHME"
+        },
+        {
+          "fall_id": "geltung_reine_forschung",
+          "organisation_id": "beispielsoftware",
+          "gegenstand_id": "assistenz_varianten",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "lokal_ki_system": true,
+            "lokal_anbieterrolle": true,
+            "lokal_ki_system_in_union_inverkehrgebracht": true,
+            "lokal_betrachteter_bereich_ausserhalb_unionsrechts": false,
+            "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+            "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+            "lokal_drittstaatliche_behoerde": false,
+            "lokal_internationale_organisation": false,
+            "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt": true,
+            "lokal_forschung_test_oder_entwicklung": false,
+            "lokal_freie_open_source_systemlizenz": false,
+            "lokal_betrachtete_norm_ist_betreiberpflicht": false,
+            "lokal_hochrisiko_nach_artikel_6_absatz_1": false,
+            "lokal_ausschliesslich_wissenschaftliche_forschung_inbetriebnahme": true
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-systemgrenzen-1",
+            "felder": {
+              "ki_system": "lokal_ki_system",
+              "anbieterrolle": "lokal_anbieterrolle",
+              "ki_system_in_union_inverkehrgebracht": "lokal_ki_system_in_union_inverkehrgebracht",
+              "betrachteter_bereich_ausserhalb_unionsrechts": "lokal_betrachteter_bereich_ausserhalb_unionsrechts",
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit",
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen",
+              "drittstaatliche_behoerde": "lokal_drittstaatliche_behoerde",
+              "internationale_organisation": "lokal_internationale_organisation",
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt",
+              "forschung_test_oder_entwicklung": "lokal_forschung_test_oder_entwicklung",
+              "freie_open_source_systemlizenz": "lokal_freie_open_source_systemlizenz",
+              "betrachtete_norm_ist_betreiberpflicht": "lokal_betrachtete_norm_ist_betreiberpflicht",
+              "hochrisiko_nach_artikel_6_absatz_1": "lokal_hochrisiko_nach_artikel_6_absatz_1",
+              "ausschliesslich_wissenschaftliche_forschung_inbetriebnahme": "lokal_ausschliesslich_wissenschaftliche_forschung_inbetriebnahme"
+            }
+          },
+          "erwartung": {
+            "wert": false,
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Artikel 2: positive Anknüpfung und für den konkret getrennten System-/Modellgegenstand einschlägige Ausnahmen kombinieren. Nur Rahmen bis Absatz 12, keine zeitliche oder normeigene Gesamtanwendbarkeit. Diese Varianten sind ausdrücklich getrennte hypothetische Sachverhalte.",
+          "referenz_id": "REF_GELTUNGSRAHMEN_FORSCHUNG_6"
+        },
+        {
+          "fall_id": "geltung_system_offen",
+          "organisation_id": "beispielsoftware",
+          "gegenstand_id": "assistenz_varianten",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "TATBESTAND",
+          "regel_id": "AIA_002_SYSTEMRAHMEN_1_BIS_12",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "lokal_ki_system": null,
+            "lokal_anbieterrolle": true,
+            "lokal_ki_system_in_union_inverkehrgebracht": true,
+            "lokal_betrachteter_bereich_ausserhalb_unionsrechts": false,
+            "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": false,
+            "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen": true,
+            "lokal_drittstaatliche_behoerde": false,
+            "lokal_internationale_organisation": false,
+            "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt": false,
+            "lokal_forschung_test_oder_entwicklung": false,
+            "lokal_freie_open_source_systemlizenz": false,
+            "lokal_betrachtete_norm_ist_betreiberpflicht": false,
+            "lokal_hochrisiko_nach_artikel_6_absatz_1": false
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-systemgrenzen-1",
+            "felder": {
+              "ki_system": "lokal_ki_system",
+              "anbieterrolle": "lokal_anbieterrolle",
+              "ki_system_in_union_inverkehrgebracht": "lokal_ki_system_in_union_inverkehrgebracht",
+              "betrachteter_bereich_ausserhalb_unionsrechts": "lokal_betrachteter_bereich_ausserhalb_unionsrechts",
+              "betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit": "lokal_betrachtete_taetigkeit_ausschliesslich_militaer_verteidigung_nationale_sicherheit",
+              "system_in_union_inverkehrgebracht_oder_inbetriebgenommen": "lokal_system_in_union_inverkehrgebracht_oder_inbetriebgenommen",
+              "drittstaatliche_behoerde": "lokal_drittstaatliche_behoerde",
+              "internationale_organisation": "lokal_internationale_organisation",
+              "speziell_fuer_wissenschaftliche_forschung_entwickelt": "lokal_speziell_fuer_wissenschaftliche_forschung_entwickelt",
+              "forschung_test_oder_entwicklung": "lokal_forschung_test_oder_entwicklung",
+              "freie_open_source_systemlizenz": "lokal_freie_open_source_systemlizenz",
+              "betrachtete_norm_ist_betreiberpflicht": "lokal_betrachtete_norm_ist_betreiberpflicht",
+              "hochrisiko_nach_artikel_6_absatz_1": "lokal_hochrisiko_nach_artikel_6_absatz_1"
+            }
+          },
+          "erwartung": {
+            "wert": null,
+            "status": "EINGABE_FEHLT"
+          },
+          "herleitung": "Artikel 2: positive Anknüpfung und für den konkret getrennten System-/Modellgegenstand einschlägige Ausnahmen kombinieren. Nur Rahmen bis Absatz 12, keine zeitliche oder normeigene Gesamtanwendbarkeit. Diese Varianten sind ausdrücklich getrennte hypothetische Sachverhalte.",
+          "referenz_id": "REF_GELTUNGSRAHMEN_SYSTEM_OFFEN"
+        }
+      ]
+    },
+    {
+      "szenario_id": "PERSONAL_JAE_RATIONAL",
+      "kennzeichnung": "SYNTHETISCH",
+      "beschreibung": "Exakte Bruchteile aus eigenen qualifizierten Personal- und Gruppendaten; keine echten Personaldaten und keine automatische Gruppenklassifikation.",
+      "organisationen": [
+        {
+          "organisation_id": "synthetischer_betrieb",
+          "uebergeordnet": null
+        }
+      ],
+      "gegenstaende": [
+        {
+          "gegenstand_id": "personal",
+          "art": "PERSONALDATEN"
+        }
+      ],
+      "faelle": [
+        {
+          "fall_id": "jae_rational_1",
+          "organisation_id": "synthetischer_betrieb",
+          "gegenstand_id": "personal",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "KMU_JAE_RATIONALBEITRAG",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_pensum_zaehler": "1",
+            "intern_pensum_nenner": "3",
+            "intern_jahresabschnitt_zaehler": "1",
+            "intern_jahresabschnitt_nenner": "2"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "pensum_zaehler": "intern_pensum_zaehler",
+              "pensum_nenner": "intern_pensum_nenner",
+              "jahresabschnitt_zaehler": "intern_jahresabschnitt_zaehler",
+              "jahresabschnitt_nenner": "intern_jahresabschnitt_nenner"
+            }
+          },
+          "erwartung": {
+            "wert": {
+              "zaehler": "1",
+              "nenner": "6"
+            },
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Ein Drittel Pensum für ein halbes Bezugsjahr ist exakt ein Sechstel JAE; kein gerundeter Dezimalbruch.",
+          "referenz_id": "REF_RATIONALJAE_001"
+        },
+        {
+          "fall_id": "jae_rational_2",
+          "organisation_id": "synthetischer_betrieb",
+          "gegenstand_id": "personal",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "JAE_RATIONALSUMME",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_beitrag_links_zaehler": "1",
+            "intern_beitrag_links_nenner": "3",
+            "intern_beitrag_rechts_zaehler": "1",
+            "intern_beitrag_rechts_nenner": "6"
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "beitrag_links_zaehler": "intern_beitrag_links_zaehler",
+              "beitrag_links_nenner": "intern_beitrag_links_nenner",
+              "beitrag_rechts_zaehler": "intern_beitrag_rechts_zaehler",
+              "beitrag_rechts_nenner": "intern_beitrag_rechts_nenner"
+            }
+          },
+          "erwartung": {
+            "wert": {
+              "zaehler": "1",
+              "nenner": "2"
+            },
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Disjunkte qualifizierte Beiträge exakt addieren und kürzen.",
+          "referenz_id": "REF_RATIONALJAE_015"
+        },
+        {
+          "fall_id": "jae_rational_3",
+          "organisation_id": "synthetischer_betrieb",
+          "gegenstand_id": "personal",
+          "rolle": "ANBIETER",
+          "stichtag": "2026-10-25",
+          "art": "RECHENREGEL",
+          "regel_id": "KMU_RATIONALSCHWELLEN",
+          "quellenfassung": "EUAIACT_2026_07_27",
+          "daten": {
+            "intern_jae_zaehler": "500",
+            "intern_jae_nenner": "2",
+            "intern_jahresumsatz_eur": "0",
+            "intern_jahresbilanzsumme_eur": null
+          },
+          "zuordnung": {
+            "mappingversion": "synthetisch-1",
+            "felder": {
+              "jae_zaehler": "intern_jae_zaehler",
+              "jae_nenner": "intern_jae_nenner",
+              "jahresumsatz_eur": "intern_jahresumsatz_eur",
+              "jahresbilanzsumme_eur": "intern_jahresbilanzsumme_eur"
+            }
+          },
+          "erwartung": {
+            "wert": {
+              "kleinst": false,
+              "klein": false,
+              "kmu": false,
+              "smc_groessenrahmen": true
+            },
+            "status": "AUSGEWERTET"
+          },
+          "herleitung": "Personalschwellen10/50/250/750 strikt; Umsatz0 erfüllt Finanzalternative unabhängig von unbekannter Bilanz.",
+          "referenz_id": "REF_RATIONALJAE_025"
+        }
+      ]
+    }
+  ]
+}

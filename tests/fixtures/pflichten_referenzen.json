@@ -1,0 +1,749 @@
+{
+  "quellenfassung": "EUAIACT_2026_07_27",
+  "faelle": [
+    {
+      "fall_id": "PFLICHT_ARBEITGEBER",
+      "pflicht_id": "P_AIA_026_007",
+      "eingaben": {
+        "betreiberrolle": true,
+        "hochrisikosystem": true,
+        "betreiber_ist_arbeitgeber": true,
+        "einsatz_am_arbeitsplatz_geplant": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 26(7): Arbeitgeber mit vorgesehenem Arbeitsplatz-Einsatz erfüllt sachlichen Informationsauslöser."
+    },
+    {
+      "fall_id": "PFLICHT_KEIN_ARBEITGEBER",
+      "pflicht_id": "P_AIA_026_007",
+      "eingaben": {
+        "betreiberrolle": true,
+        "hochrisikosystem": true,
+        "betreiber_ist_arbeitgeber": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Arbeitgebereigenschaft fehlt; Arbeitsplatzplan ist für diesen negativen Auslöser nicht entscheidend."
+    },
+    {
+      "fall_id": "PFLICHT_ARBEITGEBER_OFFEN",
+      "pflicht_id": "P_AIA_026_007",
+      "eingaben": {
+        "betreiberrolle": true,
+        "hochrisikosystem": true
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Arbeitgeberrolle und Einsatzplan sind unbekannt; kein negatives Urteil."
+    },
+    {
+      "fall_id": "PFLICHT_FALSCHER_TYP",
+      "pflicht_id": "P_AIA_026_007",
+      "eingaben": {
+        "betreiberrolle": "true"
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Text ist keine boolesche Betreiberrolle."
+    },
+    {
+      "fall_id": "PFLICHT_UNBEKANNTE_PFLICHT",
+      "pflicht_id": "P_NICHT_IM_KATALOG",
+      "eingaben": {},
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_UNGUELTIG",
+      "herleitung": "Keine frei erfundene Pflicht aus einer unbekannten Kennung."
+    },
+    {
+      "fall_id": "PFLICHT_VERDACHT",
+      "pflicht_id": "P_AIA_020_001",
+      "eingaben": {
+        "anbieterrolle": true,
+        "hochrisikosystem": true,
+        "selbst_inverkehrgebracht_oder_inbetriebgenommen": true,
+        "anbieter_hat_grund_fuer_nichtkonformitaetsannahme": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 20(1): begründeter Verdacht reicht für den sachlichen Korrekturauslöser."
+    },
+    {
+      "fall_id": "PFLICHT_NACHMARKT",
+      "pflicht_id": "P_AIA_072_001",
+      "eingaben": {
+        "anbieterrolle": true,
+        "hochrisikosystem": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Artikel 72(1): Beobachtungspflichtauslöser; Plan- und Datenkriterien dadurch noch nicht erfüllt."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_0",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": true,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": true,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_1",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": true,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_2",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": true,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_3",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": false,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_4",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": false,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_5",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": false,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_6",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": null,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": true
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_7",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": null,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_EINSTUFUNGSPFLICHT_8",
+      "pflicht_id": "P_AIA_006_007",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": null,
+        "konkrete_zuverlaessige_belege_streichung_ausnahmebedingung_schutznotwendig": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 6(7): Nur Kommission und Schutznotwendigkeitsevidenz gemeinsam lösen institutionelle Pflicht aus. Erfüllung und zeitliche Anwendbarkeit bleiben separat."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_00",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": true,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_01",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_02",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_03",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_04",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_05",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_06",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_07",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_08",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": true,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_09",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_10",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_11",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_12",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_13",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_14",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_15",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_16",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_17",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": false,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_18",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_19",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_20",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": true,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_21",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_22",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_23",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": false,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_24",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": true
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_25",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": false
+      },
+      "status": "AUSGEWERTET",
+      "ausloeser_erfuellt": false,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "REF_PRODUKTPFLICHT_26",
+      "pflicht_id": "P_AIA_008_002",
+      "eingaben": {
+        "anbieterrolle": null,
+        "produkt_enthaelt_ki_system": null,
+        "ai_act_und_anhang_i_a_sektorrecht_auf_produkt_anwendbar": null
+      },
+      "status": "EINGABE_FEHLT",
+      "ausloeser_erfuellt": null,
+      "herleitung": "Artikel 8(2): Anbieter, KI im Produkt und Anwendbarkeit beider Regime gemeinsam. Die Verantwortung hängt nicht von der Wahl integrierter Dokumentation ab. Erfüllung bleibt ungeprüft."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_001",
+      "pflicht_id": "P_AIA_005_003_ABLEHNUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "genehmigung_abgelehnt": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Abgelehnter konkreter Einsatz löst sofortige Stopp-/Löschungsfolge aus; noch keine tatsächliche Löschung bestätigt. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_002",
+      "pflicht_id": "P_AIA_005_003_ABLEHNUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "genehmigung_abgelehnt": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Abgelehnter konkreter Einsatz löst sofortige Stopp-/Löschungsfolge aus; noch keine tatsächliche Löschung bestätigt. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_003",
+      "pflicht_id": "P_AIA_005_003_ABLEHNUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "genehmigung_abgelehnt": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Abgelehnter konkreter Einsatz löst sofortige Stopp-/Löschungsfolge aus; noch keine tatsächliche Löschung bestätigt. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_004",
+      "pflicht_id": "P_AIA_005_003_DRINGLICHER_ANTRAG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "hinreichend_begruendete_dringlichkeit": true,
+        "vorherige_richterliche_oder_unabhaengige_bindende_genehmigung": false
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Dringlicher Beginn ohne Vorabgenehmigung löst unverzügliche Antragspflicht aus; keine Warteerlaubnis bis 24 Stunden. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_005",
+      "pflicht_id": "P_AIA_005_003_DRINGLICHER_ANTRAG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "hinreichend_begruendete_dringlichkeit": true,
+        "vorherige_richterliche_oder_unabhaengige_bindende_genehmigung": true
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Dringlicher Beginn ohne Vorabgenehmigung löst unverzügliche Antragspflicht aus; keine Warteerlaubnis bis 24 Stunden. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_006",
+      "pflicht_id": "P_AIA_005_003_DRINGLICHER_ANTRAG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true,
+        "hinreichend_begruendete_dringlichkeit": true,
+        "vorherige_richterliche_oder_unabhaengige_bindende_genehmigung": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Dringlicher Beginn ohne Vorabgenehmigung löst unverzügliche Antragspflicht aus; keine Warteerlaubnis bis 24 Stunden. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_007",
+      "pflicht_id": "P_AIA_005_004_MELDUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": true,
+        "strafverfolgungszweck": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Jeder qualifizierte Echtzeit-Einsatz wird an beide Aufsichten gemeldet; Genehmigung ist kein Ersatz. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_008",
+      "pflicht_id": "P_AIA_005_004_MELDUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": false,
+        "strafverfolgungszweck": true
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Jeder qualifizierte Echtzeit-Einsatz wird an beide Aufsichten gemeldet; Genehmigung ist kein Ersatz. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_009",
+      "pflicht_id": "P_AIA_005_004_MELDUNG",
+      "eingaben": {
+        "verwendung_echtzeit_biometrische_fernidentifizierung": true,
+        "oeffentlich_zugaenglicher_raum": null,
+        "strafverfolgungszweck": true
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Jeder qualifizierte Echtzeit-Einsatz wird an beide Aufsichten gemeldet; Genehmigung ist kein Ersatz. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_010",
+      "pflicht_id": "P_AIA_005_005_NATIONALE_REGELN",
+      "eingaben": {
+        "betrachteter_akteur_ist_mitgliedstaat": true,
+        "mitgliedstaat_hat_nationale_echtzeit_zulassungsregeln_erlassen": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Tatsächlich erlassene nationale Detailregeln lösen konkret Inhalts-/Mitteilungsfolge aus; bloße Absicht genügt nicht. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_011",
+      "pflicht_id": "P_AIA_005_005_NATIONALE_REGELN",
+      "eingaben": {
+        "betrachteter_akteur_ist_mitgliedstaat": true,
+        "mitgliedstaat_hat_nationale_echtzeit_zulassungsregeln_erlassen": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Tatsächlich erlassene nationale Detailregeln lösen konkret Inhalts-/Mitteilungsfolge aus; bloße Absicht genügt nicht. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_012",
+      "pflicht_id": "P_AIA_005_005_NATIONALE_REGELN",
+      "eingaben": {
+        "betrachteter_akteur_ist_mitgliedstaat": true,
+        "mitgliedstaat_hat_nationale_echtzeit_zulassungsregeln_erlassen": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Tatsächlich erlassene nationale Detailregeln lösen konkret Inhalts-/Mitteilungsfolge aus; bloße Absicht genügt nicht. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_013",
+      "pflicht_id": "P_AIA_005_006_BEHOERDENBERICHT",
+      "eingaben": {
+        "akteur_ist_nationale_marktaufsicht_oder_datenschutzaufsicht": true,
+        "behoerde_hat_echtzeiteinsatzmeldung_nach_absatz_4_erhalten": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Informierte Aufsicht ist jährliche Berichtsadressatin; bloße Zuständigkeit ersetzt erhaltene Meldung nicht. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_014",
+      "pflicht_id": "P_AIA_005_006_BEHOERDENBERICHT",
+      "eingaben": {
+        "akteur_ist_nationale_marktaufsicht_oder_datenschutzaufsicht": true,
+        "behoerde_hat_echtzeiteinsatzmeldung_nach_absatz_4_erhalten": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Informierte Aufsicht ist jährliche Berichtsadressatin; bloße Zuständigkeit ersetzt erhaltene Meldung nicht. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_015",
+      "pflicht_id": "P_AIA_005_006_BEHOERDENBERICHT",
+      "eingaben": {
+        "akteur_ist_nationale_marktaufsicht_oder_datenschutzaufsicht": true,
+        "behoerde_hat_echtzeiteinsatzmeldung_nach_absatz_4_erhalten": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Informierte Aufsicht ist jährliche Berichtsadressatin; bloße Zuständigkeit ersetzt erhaltene Meldung nicht. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_016",
+      "pflicht_id": "P_AIA_005_006_VORLAGE",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Kommission stellt Vorlage bereit; Pflichtauslösung beweist keine tatsächliche Bereitstellung. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_017",
+      "pflicht_id": "P_AIA_005_006_VORLAGE",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Kommission stellt Vorlage bereit; Pflichtauslösung beweist keine tatsächliche Bereitstellung. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_018",
+      "pflicht_id": "P_AIA_005_006_VORLAGE",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Kommission stellt Vorlage bereit; Pflichtauslösung beweist keine tatsächliche Bereitstellung. Fallklasse: unbekannt."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_019",
+      "pflicht_id": "P_AIA_005_007_KOMMISSIONSBERICHT",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": true
+      },
+      "ausloeser_erfuellt": true,
+      "status": "AUSGEWERTET",
+      "herleitung": "Jährlicher öffentlicher Kommissionsbericht bleibt von nationaler Behördenberichterstattung getrennt. Fallklasse: positiv."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_020",
+      "pflicht_id": "P_AIA_005_007_KOMMISSIONSBERICHT",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": false
+      },
+      "ausloeser_erfuellt": false,
+      "status": "AUSGEWERTET",
+      "herleitung": "Jährlicher öffentlicher Kommissionsbericht bleibt von nationaler Behördenberichterstattung getrennt. Fallklasse: ausgeschlossen."
+    },
+    {
+      "fall_id": "PFLICHT_VERBOTSVERFAHREN_021",
+      "pflicht_id": "P_AIA_005_007_KOMMISSIONSBERICHT",
+      "eingaben": {
+        "betrachteter_akteur_ist_europaeische_kommission": null
+      },
+      "ausloeser_erfuellt": null,
+      "status": "EINGABE_FEHLT",
+      "herleitung": "Jährlicher öffentlicher Kommissionsbericht bleibt von nationaler Behördenberichterstattung getrennt. Fallklasse: unbekannt."
+    }
+  ]
+}

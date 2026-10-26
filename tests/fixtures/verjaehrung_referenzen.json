@@ -1,0 +1,927 @@
+{
+  "quellenfassung": "EUAIACT_2026_07_27",
+  "herkunft": "Manuelle Ablauf- und Grenzerwartungen unter ausdrücklich qualifizierter Rechenkonvention; kein automatischer AuslegungsentscheidF007.",
+  "faelle": [
+    {
+      "fall_id": "REF_VERJAEHRUNG_BASIS",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-01",
+          "hoechstfristende": "2030-01-01",
+          "ablauf_vor_stichtag": true
+        }
+      },
+      "herleitung": "Unter ausdrücklich gewähltem Ereignisanker fünf und zehn Jahre; Stichtag liegt nach regulärem Ende."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_AM_ENDE",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-01",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-01",
+          "ablauf_vor_stichtag": false
+        }
+      },
+      "herleitung": "Am Enddatum ist das Ende nicht bereits vor dem Stichtagsdatum."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_UNTERBRECHUNG_AM_ENDE",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2025-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2030-01-01",
+          "letztes_neustartereignis": "2025-01-01"
+        }
+      },
+      "herleitung": "Unterbrechung am letzten Fristtag beginnt fünf Jahre neu; ursprüngliche Zehnjahresgrenze bleibt."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_KEINE_WIEDERBELEBUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2025-01-02",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-01",
+          "letztes_neustartereignis": "2020-01-01",
+          "unterbrechungsschritte": [
+            {
+              "ereignisdatum": "2025-01-02",
+              "wirkung": "NACH_ABLAUF_OHNE_WIEDERBELEBUNG"
+            }
+          ]
+        }
+      },
+      "herleitung": "Unterbrechung nach Ablauf lässt den abgelaufenen Lauf nicht neu beginnen."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_HOECHSTFRIST",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          },
+          {
+            "datum": "2028-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2030-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2030-01-01",
+          "regulaeres_fristende": "2033-01-03",
+          "ablauf_vor_stichtag": true
+        }
+      },
+      "herleitung": "Mehrfache Unterbrechung verlängert reguläre Frist bisWochenendverschiebung3Jan2033; ursprünglicher10Jahresdeckel ist früher."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_VOLLSTRECKUNG_OHNE_DECKEL",
+      "eingaben": {
+        "verfahren": "GPAI_VOLLSTRECKUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-01",
+            "art": "KOMMISSIONSVOLLSTRECKUNG"
+          },
+          {
+            "datum": "2028-01-01",
+            "art": "KOMMISSIONSVOLLSTRECKUNG"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2030-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2033-01-03",
+          "hoechstfristende": null,
+          "ablauf_vor_stichtag": false
+        }
+      },
+      "herleitung": "Artikel11 kennt keinen zehnjährigen Höchstdeckel."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_UEBERLAPPUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2022-01-01",
+            "bis_exklusiv": "2022-01-11",
+            "art": "EUGH_ANHAENGIGKEIT"
+          },
+          {
+            "von": "2022-01-06",
+            "bis_exklusiv": "2022-01-21",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-21",
+          "hoechstfristende": "2030-01-21",
+          "vereinigte_bekannte_hemmungstage": 20
+        }
+      },
+      "herleitung": "Vereinigung1bis21Jan exklusiv ergibt20Tage, nicht10+15."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_NEUSTART_VERWIRFT_ALTE_HEMMUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2023-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [
+          {
+            "von": "2022-01-01",
+            "bis_exklusiv": "2022-01-21",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2028-01-03",
+          "hoechstfristende": "2030-01-21"
+        }
+      },
+      "herleitung": "Vor Neustart verbrauchte Hemmung verlängert nicht nochmals den neuen Fünfjahreslauf, bleibt aber beim ursprünglichen Deckel."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_UNTERBRECHUNG_IN_HEMMUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-16",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [
+          {
+            "von": "2024-01-01",
+            "bis_exklusiv": "2024-02-01",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2029-01-31",
+          "hoechstfristende": "2030-02-01"
+        }
+      },
+      "herleitung": "Neuer Ereignisanker16Jan2024; nur17Janbis1Feb exklusiv=15Hemmungstage im neuen Lauf. Deckel berücksichtigt alle31Tage."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_LAUFEND",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2024-01-01",
+            "bis_exklusiv": null,
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": {
+          "wirksames_fristende": null,
+          "laufende_hemmung": true,
+          "ablauf_vor_stichtag": false,
+          "vereinigte_bekannte_hemmungstage": 367
+        }
+      },
+      "herleitung": "Offene Hemmung ab1Jan2024 bisStichtag2Jan2025 exklusiv:367bekannteTage, kein endgültiges Ende."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_SPAETE_HEMMUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2026-01-01",
+            "bis_exklusiv": null,
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2026-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-01",
+          "laufende_hemmung": false,
+          "ablauf_vor_stichtag": true
+        }
+      },
+      "herleitung": "Erst nach Ablauf beginnende Hemmung bewirkt keine Wiederbelebung."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DOPPELTE_UNTERBRECHUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          },
+          {
+            "datum": "2024-01-01",
+            "art": "DIALOGEINLADUNG"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "letztes_neustartereignis": "2024-01-01",
+          "unterbrechungsschritte": [
+            {
+              "ereignisdatum": "2024-01-01",
+              "wirkung": "FUENFJAHRESFRIST_NEU"
+            }
+          ]
+        }
+      },
+      "herleitung": "Mehrere wirksame Anlässe am selben qualifizierten Tag verschieben nicht zweimal."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_F007",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": null,
+        "beginnbegruendung": null
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": null
+      },
+      "herleitung": "Ohne begründete externe Beginnqualifikation keine behauptete1755-Langfrist."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_UNBEGRUENDETE_KONVENTION",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": null
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": null
+      },
+      "herleitung": "Eine bloße Auswahl ohne dokumentierte Begründung schließtF007 nicht."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_BEGINNTAG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2026-10-27",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2026-10-28",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "BEGINNTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2031-10-28"
+        }
+      },
+      "herleitung": "Nutzervorgabe: nächsterArbeitstag28Okt als Endanker, fünfJahre=28Okt2031."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_VORTAG_DES_BEGINNS",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2026-10-27",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2026-10-28",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "VORTAG_DES_BEGINNS",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2031-10-27"
+        }
+      },
+      "herleitung": "Andere ausdrücklich gewählte Konvention:27Okt als Endanker. Kein vomKern behaupteter Rechtsentscheid."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_75C_BASIS",
+      "eingaben": {
+        "verfahren": "KI_BUERO_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": null,
+        "beginnbegruendung": null
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-01",
+          "hoechstfristende": null
+        }
+      },
+      "herleitung": "75c ausdrückliche5Jahre, kein automatisch übernommener1755-Höchstdeckel."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_75C_FOLGEAKT_FEHLT",
+      "eingaben": {
+        "verfahren": "KI_BUERO_VOLLSTRECKUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-01",
+            "art": "FOLGEAKT_75D3_ZU_QUALIFIZIEREN"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": null,
+        "beginnbegruendung": null
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": null
+      },
+      "herleitung": "Ohne einschlägige75d3-Folgeaktbedingungen kein geratenes Unterbrechungsmodell."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_FREMDE_UNTERBRECHUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2024-01-01",
+            "art": "KOMMISSIONSVOLLSTRECKUNG"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Vollstreckungsereignis nicht alsVerfolgungsunterbrechung umdeuten."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_FREMDE_HEMMUNG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2024-01-01",
+            "bis_exklusiv": "2024-02-01",
+            "art": "ZAHLUNGSAUFSCHUB"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Zahlungsaufschub ist keine Verfolgungshemmung."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_ZUKUNFT",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2025-01-03",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Kein nachStichtag liegendes Ereignis in historischem Lauf."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_LUECKE",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": null,
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "Fehlende Ereignisakte ist keine leere Akte."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_KALENDERLUECKE",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2029-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_FEHLT",
+        "wert": null
+      },
+      "herleitung": "Kalender deckt angefordertes Höchstfristende nicht."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_LEERES_INTERVALL",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2024-01-01",
+            "bis_exklusiv": "2024-01-01",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Abgeschlossene Hemmung braucht positiven Zeitraum."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_SCHALTJAHR",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-02-29",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-03-01",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-02-28",
+          "hoechstfristende": "2030-02-28"
+        }
+      },
+      "herleitung": "Fünf-/Zehnjahresziel ohne29Feb endet am Monatsletzten."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_ENDVERSCHIEBUNGSFRAGE",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2023-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2028-01-02",
+            "bis_exklusiv": "2028-01-03",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2028-01-04",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "REGEL_UNGEKLAERT",
+        "wert": null
+      },
+      "herleitung": "Hemmung beginnt erst zwischen nominalemSamstagsende undMontagsverschiebung: offene Konventionsgrenze, kein geratenes Ende."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_FRUEHER_NEUSTART_ENTSCHEIDET",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2023-01-01",
+        "unterbrechungen": [
+          {
+            "datum": "2027-01-01",
+            "art": "DOKUMENTENANFRAGE"
+          }
+        ],
+        "hemmungen": [
+          {
+            "von": "2028-01-02",
+            "bis_exklusiv": "2028-01-03",
+            "art": "EUGH_ANHAENGIGKEIT"
+          }
+        ],
+        "stichtag": "2028-01-04",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2032-01-02"
+        }
+      },
+      "herleitung": "Neustart2027 ersetzt früheren Lauf vor dessenEndverschiebung; spätereHemmung verlängert neuenLauf um1Tag. Keine irrelevante Rechtsfrage vomalten hypothetischenEnde."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_VOLLSTRECKUNG_ZAHLUNGSAUFSCHUB",
+      "eingaben": {
+        "verfahren": "GPAI_VOLLSTRECKUNG",
+        "ereignisdatum": "2020-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [
+          {
+            "von": "2022-01-01",
+            "bis_exklusiv": "2022-01-21",
+            "art": "ZAHLUNGSAUFSCHUB"
+          }
+        ],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "AUSGEWERTET",
+        "wert": {
+          "wirksames_fristende": "2025-01-21",
+          "hoechstfristende": null
+        }
+      },
+      "herleitung": "Zahlungsaufschub ist imVollstreckungszweig ausdrücklich eingeschlossen."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_DATUM_UNGUELTIG",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "2020-02-30",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "2025-01-02",
+        "kalender": {
+          "von": "2019-01-01",
+          "bis": "2040-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Ungültiger Kalendertag wird zurückgewiesen."
+    },
+    {
+      "fall_id": "REF_VERJAEHRUNG_BEREICH",
+      "eingaben": {
+        "verfahren": "GPAI_VERFOLGUNG",
+        "ereignisdatum": "9996-01-01",
+        "unterbrechungen": [],
+        "hemmungen": [],
+        "stichtag": "9996-01-02",
+        "kalender": {
+          "von": "9996-01-01",
+          "bis": "9999-12-31",
+          "feiertage": [],
+          "bezug": "SYNTHETISCH"
+        },
+        "quellenfassung": "EUAIACT_2026_07_27",
+        "beginnkonvention": "EREIGNISTAG",
+        "beginnbegruendung": "Synthetisch ausdrücklich qualifizierte Rechenkonvention, keine Auflösung vonF007."
+      },
+      "erwartung": {
+        "status": "EINGABE_UNGUELTIG",
+        "wert": null
+      },
+      "herleitung": "Jahresaddition außerhalb unterstützten Datumsbereichs wird zurückgewiesen."
+    }
+  ]
+}

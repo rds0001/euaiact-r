@@ -1,0 +1,13 @@
+library(euaiact)
+f <- "EUAIACT_2026_07_27"
+minimum <- berechne_regel("PANEL_EINFACHE_MEHRHEIT",list(mitgliederzahl=60L),f)
+recommendation <- pruefe_tatbestand("DVO_0454_005_001_EMPFEHLUNG",list(panel_hat_vorsitz_aus_mitgliedern_empfohlen=TRUE,panel_hat_stellvertretung_aus_mitgliedern_empfohlen=TRUE,vorsitzempfehlung_hat_einfache_mehrheit_aller_mitglieder=31>=minimum$wert,stellvertretungsempfehlung_hat_einfache_mehrheit_aller_mitglieder=30>=minimum$wert),f)
+duty <- ermittle_pflicht("P_DVO_0454_005_001",list(betrachteter_akteur_ist_europaeische_kommission=TRUE,beginn_einer_panelamtszeit=TRUE),f)
+stopifnot(minimum$wert==31L,identical(recommendation$wert,FALSE),isTRUE(duty$wert$ausloeser_erfuellt),duty$wert$erfuellung=="NICHT_GEPRUEFT",identical(duty$wert$erfuellungskriterien,list("DVO_0454_005_001_BESTELLUNG","DVO_0454_005_001_EMPFEHLUNG","DVO_0454_005_002_AMTSGLEICHLAUF")))
+hearing <- ermittle_pflicht("P_DVO_0454_007_005",list(thematische_panelanhoerung_tatsaechlich_durchgefuehrt=TRUE),f)
+stopifnot(isTRUE(hearing$wert$ausloeser_erfuellt),identical(hearing$wert$erfuellungskriterien,list("DVO_0454_007_005_VEROEFFENTLICHUNG")),hearing$wert$erfuellung=="NICHT_GEPRUEFT")
+period <- berechne_regel("DVO_0454_016_005_BEARBEITUNG",list(),f)
+end <- berechne_frist("2026-10-23",period$wert$anzahl,period$wert$einheit,modus="FRIST",kalender=list(von="2026-10-01",bis="2026-12-31",feiertage=list("2026-11-06"),bezug="SYNTHETISCH"),quellenfassung=f)
+duty <- ermittle_pflicht("P_DVO_0454_016_003_ABLEHNUNGSMITTEILUNG",list(panelhilfeantrag_durch_ki_buero_nach_16_1_geprueft=TRUE,ki_buero_haelt_panelinformationshilfe_fuer_notwendig=FALSE,ki_buero_haelt_panelinformationshilfe_fuer_verhaeltnismaessig=TRUE),f)
+stopifnot(end$wert=="2026-11-09",identical(duty$wert$fristregel_ids,list(period$regel_id)),duty$wert$erfuellung=="NICHT_GEPRUEFT")
+cat("Three panel duty/majority/calendar compositions passed\n")
